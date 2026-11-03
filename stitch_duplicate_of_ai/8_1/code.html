@@ -9,7 +9,7 @@
 <div class="max-w-[1760px] mx-auto flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
 <!-- Left Title, Return Link & Meta Badges -->
 <div class="flex flex-wrap items-center gap-space-md">
-<a class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm group" href="#" title="홈으로 이동" onclick="event.preventDefault(); openExitModal();">
+<a class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm group cursor-pointer" href="/studio" data-path="studio" title="홈으로 이동" onclick="event.preventDefault(); openExitModal();">
 <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
 <span class="">← 홈으로 돌아가기</span>
 </a>
@@ -45,26 +45,26 @@
 <div class="flex flex-wrap items-center gap-space-sm">
 <!-- Format Switcher: 4-Cut vs 8-Cut Webtoon -->
 <div class="flex items-center bg-surface-container p-1 rounded-full shadow-inner border border-outline-variant/30" id="format-switcher-tabs">
-<button class="px-3 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all active:scale-95 duration-200" id="btn-format-4cut" onclick="switchFormatMode('4cut')" type="button">
+<button class="px-3 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all active:scale-95 duration-200 cursor-pointer" id="btn-format-4cut" onclick="switchFormatMode('4cut')" type="button">
 <span class="material-symbols-outlined text-[16px]">view_agenda</span>
   4컷 인스타 피드 모드 (4:5)
 </button>
-<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 bg-primary-container text-on-primary-container shadow-md font-bold transition-all active:scale-95 duration-200" id="btn-format-8cut" onclick="switchFormatMode('8cut')" type="button">
+<button class="px-3.5 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 bg-primary-container text-on-primary-container shadow-md font-bold transition-all active:scale-95 duration-200 cursor-pointer" id="btn-format-8cut" onclick="switchFormatMode('8cut')" type="button">
 <span class="material-symbols-outlined text-[16px] text-on-primary-container">auto_stories</span>
   ✨ 8컷 웹툰 세로 스크롤 모드
 </button>
 </div>
 <!-- Upper Studio Actions -->
-<div class="flex items-center gap-1.5 flex-wrap"><button class="h-9 px-3.5 rounded-full bg-gradient-to-r from-tertiary to-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-md active:scale-95 hover:scale-105 hover:brightness-110 font-bold group relative overflow-hidden" onclick="showMovingtoonStudioModal()" type="button" id="btn-make-movingtoon"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim animate-pulse">movie_filter</span><span class="">무빙툰 제작하기</span><span class="px-1.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] font-bold tracking-tight shadow-xs">NEW</span></button>
-<button class="h-9 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-xs active:scale-95 hover:scale-105 border border-outline-variant/30" onclick="showStudioToast('📲 인스타그램 그래프 API와 연동되어 자동 발행 예약이 시작됩니다.')" type="button">
+<div class="flex items-center gap-1.5 flex-wrap"><button class="h-9 px-3.5 rounded-full bg-gradient-to-r from-tertiary to-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-md active:scale-95 hover:scale-105 hover:brightness-110 font-bold group relative overflow-hidden cursor-pointer" onclick="showMovingtoonStudioModal()" type="button" id="btn-make-movingtoon"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim animate-pulse">movie_filter</span><span class="">무빙툰 제작하기</span><span class="px-1.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] font-bold tracking-tight shadow-xs">NEW</span></button>
+<button class="h-9 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-xs active:scale-95 hover:scale-105 border border-outline-variant/30 cursor-pointer" onclick="showStudioToast('📲 인스타그램 자동 발행 화면으로 이동합니다.'); setTimeout(() => window.location.href='/instagram', 500);" type="button">
 <span class="material-symbols-outlined text-[16px] text-primary">share</span>
   인스타그램 자동 발행 연동
 </button>
-<button class="h-9 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-xs active:scale-95 hover:scale-105 border border-secondary/30 text-secondary" onclick="showStudioToast('📖 8컷 풀버전 고품질 실물 만화책 주문 발주창으로 이동합니다.')" type="button">
+<button class="h-9 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-xs active:scale-95 hover:scale-105 border border-secondary/30 text-secondary cursor-pointer" onclick="showStudioToast('📖 8컷 풀버전 고품질 실물 만화책 주문 발주창으로 이동합니다.'); setTimeout(() => window.location.href='/grants', 500);" type="button">
 <span class="material-symbols-outlined text-[16px]">menu_book</span>
   단행본 만화책 주문
 </button>
-<button class="h-9 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-xs active:scale-95 hover:scale-105 border border-outline-variant/30" onclick="showStudioToast('💾 4K 무손실 PNG &amp; Webtoon 롱 스트립 다운로드가 준비 중입니다.')" type="button">
+<button class="h-9 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all shadow-xs active:scale-95 hover:scale-105 border border-outline-variant/30 cursor-pointer" onclick="showStudioToast('💾 4K 무손실 PNG &amp; Webtoon 롱 스트립 다운로드가 준비 중입니다.')" type="button">
 <span class="material-symbols-outlined text-[16px] text-tertiary">download</span>
   4K 무손실 내보내기
 </button>
@@ -595,7 +595,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
         4컷/8컷 자유 생성, 4K 무손실 롱 스트립 웹툰 다운로드, AI 워터마크 완전 제거 혜택을 누려보세요.
       </p>
-<a class="mt-space-sm inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:underline" href="#">
+<a class="mt-space-sm inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:underline" href="/profile" data-path="profile">
 <span class="">멤버십 혜택 &amp; 요금제 확인</span>
 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 </a>
@@ -1030,6 +1030,67 @@
         toast.classList.add('opacity-0', 'translate-y-2');
         setTimeout(() => toast.remove(), 300);
       }, 2500);
+    }
+
+    // Modal & Navigation Functions
+    function openExitModal() {
+      const modal = document.getElementById('exit-confirm-modal');
+      const card = document.getElementById('exit-confirm-card');
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+      }
+      if (card) {
+        card.classList.remove('scale-95');
+        card.classList.add('scale-100');
+      }
+    }
+
+    function closeExitModal() {
+      const modal = document.getElementById('exit-confirm-modal');
+      const card = document.getElementById('exit-confirm-card');
+      if (modal) {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+      if (card) {
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+      }
+    }
+
+    function confirmGoHome() {
+      window.location.href = '/studio';
+    }
+
+    function showMovingtoonStudioModal() {
+      const modal = document.getElementById('movingtoon-transition-modal');
+      const card = document.getElementById('movingtoon-transition-card');
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+      }
+      if (card) {
+        card.classList.remove('scale-95');
+        card.classList.add('scale-100');
+      }
+    }
+
+    function closeMovingtoonModal() {
+      const modal = document.getElementById('movingtoon-transition-modal');
+      const card = document.getElementById('movingtoon-transition-card');
+      if (modal) {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+      if (card) {
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+      }
+    }
+
+    function confirmGoToMovingtoonStudio() {
+      window.location.href = '/motion';
     }
 
     // Initialize Active Tab

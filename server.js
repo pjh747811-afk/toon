@@ -22,39 +22,52 @@ app.use((req, res, next) => {
 
 // Route dictionary mapping path names to HTML files
 const ROUTES = {
-  // Main Studio
+  // Main Studio & Dashboard
   '/': 'stitch_duplicate_of_ai/_4/code.html',
   '/studio': 'stitch_duplicate_of_ai/_4/code.html',
+  '/dashboard': 'stitch_duplicate_of_ai/_4/code.html',
+  '/home': 'stitch_duplicate_of_ai/_4/code.html',
   // 4-Cut & 8-Cut Webtoon Editors
   '/editor': 'stitch_duplicate_of_ai/_2/code.html',
   '/editor/4cut': 'stitch_duplicate_of_ai/_2/code.html',
-  '/editor/8cut': 'stitch_duplicate_of_ai/_1/code.html',
+  '/editor/8cut': 'stitch_duplicate_of_ai/8_1/code.html',
+  '/8cut': 'stitch_duplicate_of_ai/8_1/code.html',
   // Styles Library
   '/styles': 'stitch_duplicate_of_ai/24/code.html',
   '/style-gallery': 'stitch_duplicate_of_ai/24/code.html',
   // Story Feed
   '/feed': 'stitch_duplicate_of_ai/_5/code.html',
   '/feed-and-explore': 'stitch_duplicate_of_ai/_5/code.html',
-  // Archive & Calendar
+  // Archive & Calendar / 일정관리
   '/archive': 'stitch_duplicate_of_ai/_6/code.html',
   '/my-archive': 'stitch_duplicate_of_ai/_6/code.html',
-  // Character & Persona
+  '/calendar': 'stitch_duplicate_of_ai/_6/code.html',
+  '/schedule': 'stitch_duplicate_of_ai/_6/code.html',
+  // Character & Persona / 멘토 검색·매칭
+  '/mentor': 'stitch_duplicate_of_ai/_11/code.html',
+  '/mentor-matching': 'stitch_duplicate_of_ai/_11/code.html',
   '/character': 'stitch_duplicate_of_ai/_11/code.html',
   '/character-studio': 'stitch_duplicate_of_ai/_11/code.html',
   '/character-settings': 'stitch_duplicate_of_ai/_11/code.html',
   '/character-vault': 'stitch_duplicate_of_ai/_11/code.html',
   '/dual-persona': 'stitch_duplicate_of_ai/ai_1/code.html',
-  // Custom LoRA Tuning
+  // Custom LoRA Tuning / AI 분석
+  '/ai-analysis': 'stitch_duplicate_of_ai/_7/code.html',
+  '/analysis': 'stitch_duplicate_of_ai/_7/code.html',
   '/custom-style': 'stitch_duplicate_of_ai/_7/code.html',
   '/lora': 'stitch_duplicate_of_ai/_7/code.html',
   // Instagram Sync
   '/instagram': 'stitch_duplicate_of_ai/_3/code.html',
   '/instagram-sync': 'stitch_duplicate_of_ai/_3/code.html',
   '/instagram_publish': 'stitch_duplicate_of_ai/_3/code.html',
-  // Pricing
+  // Pricing & Profile / 프로필
+  '/profile': 'stitch_duplicate_of_ai/_8/code.html',
+  '/my-profile': 'stitch_duplicate_of_ai/_8/code.html',
   '/pricing': 'stitch_duplicate_of_ai/_8/code.html',
   '/pricing-and-membership': 'stitch_duplicate_of_ai/_8/code.html',
-  // Physical Book Publishing
+  // Physical Book Publishing & Grants / 정부지원사업
+  '/grants': 'stitch_duplicate_of_ai/_12/code.html',
+  '/support': 'stitch_duplicate_of_ai/_12/code.html',
   '/book': 'stitch_duplicate_of_ai/_12/code.html',
   '/book-publish': 'stitch_duplicate_of_ai/_12/code.html',
   '/book/specs': 'stitch_duplicate_of_ai/_13/code.html',
@@ -98,7 +111,7 @@ const PALETTE_THEME_CSS = `
       min-width: 260px !important;
       max-width: 260px !important;
       height: 100vh !important;
-      z-index: 40 !important;
+      z-index: 99999 !important;
       background-color: #ffffff !important;
       border-right: 1px solid #fed7aa !important;
       box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05) !important;
@@ -150,7 +163,7 @@ const PALETTE_THEME_CSS = `
       left: 0 !important;
       right: 0 !important;
       height: 58px !important;
-      z-index: 40 !important;
+      z-index: 99999 !important;
       background: #ffffff !important;
       border-top: 1px solid #fed7aa !important;
       box-shadow: 0 -4px 16px rgba(254, 94, 127, 0.08) !important;
@@ -402,12 +415,19 @@ const NAVIGATION_HTML_AND_SCRIPT = `
         <span>캐릭터 & 아카이브</span>
       </div>
       <nav class="flex flex-col gap-1 text-[13px]" id="pc-nav-links-2">
-        <a href="/character" data-route="/character" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+        <a href="/mentor" data-route="/mentor" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
           <div class="flex items-center gap-2.5">
             <span class="material-symbols-outlined text-[20px] text-[#fe5e7f]">face</span>
-            <span class="font-medium">고정 캐릭터 (SeedLock™)</span>
+            <span class="font-medium">멘토 & 고정 캐릭터</span>
           </div>
           <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ccffc0]/70 text-[#134418] font-bold">고정</span>
+        </a>
+        <a href="/ai-analysis" data-route="/ai-analysis" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#ffd7a5]">tune</span>
+            <span class="font-medium">AI 분석 & LoRA 화풍</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ffd7a5]/60 text-[#523200] font-semibold">학습</span>
         </a>
         <a href="/dual-persona" data-route="/dual-persona" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
           <div class="flex items-center gap-2.5">
@@ -416,17 +436,10 @@ const NAVIGATION_HTML_AND_SCRIPT = `
           </div>
           <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#9cf6fe]/50 text-[#004d57] font-semibold">듀얼</span>
         </a>
-        <a href="/custom-style" data-route="/custom-style" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[20px] text-[#ffd7a5]">tune</span>
-            <span class="font-medium">커스텀 LoRA 화풍</span>
-          </div>
-          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ffd7a5]/60 text-[#523200] font-semibold">학습</span>
-        </a>
-        <a href="/archive" data-route="/archive" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+        <a href="/calendar" data-route="/calendar" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
           <div class="flex items-center gap-2.5">
             <span class="material-symbols-outlined text-[20px] text-[#fe5e7f]">calendar_month</span>
-            <span class="font-medium">내 웹툰 다이어리</span>
+            <span class="font-medium">일정관리 & 다이어리</span>
           </div>
           <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold">캘린더</span>
         </a>
@@ -454,17 +467,17 @@ const NAVIGATION_HTML_AND_SCRIPT = `
           </div>
           <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#9cf6fe]/40 text-[#004d57] font-semibold">API</span>
         </a>
-        <a href="/book" data-route="/book" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+        <a href="/grants" data-route="/grants" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
           <div class="flex items-center gap-2.5">
             <span class="material-symbols-outlined text-[20px] text-[#ffd7a5]">menu_book</span>
-            <span class="font-medium">단행본 만화책 주문</span>
+            <span class="font-medium">단행본</span>
           </div>
           <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ffd7a5]/60 text-[#523200] font-semibold">실물인쇄</span>
         </a>
-        <a href="/pricing" data-route="/pricing" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+        <a href="/profile" data-route="/profile" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
           <div class="flex items-center gap-2.5">
             <span class="material-symbols-outlined text-[20px] text-[#fea7a7]">loyalty</span>
-            <span class="font-medium">멤버십 & 요금제</span>
+            <span class="font-medium">프로필 & 멤버십 요금제</span>
           </div>
           <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ccffc0] text-[#134418] font-bold">PRO</span>
         </a>
@@ -584,21 +597,21 @@ const NAVIGATION_HTML_AND_SCRIPT = `
     <div>
       <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">캐릭터 & 보관함</span>
       <div class="grid grid-cols-2 gap-2 mt-1.5">
-        <a href="/character" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+        <a href="/mentor" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
           <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">face</span>
-          <span class="text-xs font-semibold text-slate-800">고정 캐릭터</span>
+          <span class="text-xs font-semibold text-slate-800">멘토 & 캐릭터</span>
+        </a>
+        <a href="/ai-analysis" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#ffd7a5] text-[20px]">tune</span>
+          <span class="text-xs font-semibold text-slate-800">AI 분석 & LoRA</span>
         </a>
         <a href="/dual-persona" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
           <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">add_photo_alternate</span>
           <span class="text-xs font-semibold text-slate-800">사진+화풍 결합</span>
         </a>
-        <a href="/custom-style" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#ffd7a5] text-[20px]">tune</span>
-          <span class="text-xs font-semibold text-slate-800">LoRA 화풍</span>
-        </a>
-        <a href="/archive" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+        <a href="/calendar" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
           <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">calendar_month</span>
-          <span class="text-xs font-semibold text-slate-800">내 캘린더</span>
+          <span class="text-xs font-semibold text-slate-800">일정 & 다이어리</span>
         </a>
         <a href="/feed" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
           <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">explore</span>
@@ -619,13 +632,13 @@ const NAVIGATION_HTML_AND_SCRIPT = `
           <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">share</span>
           <span class="text-xs font-semibold text-slate-800">인스타 발행</span>
         </a>
-        <a href="/book" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+        <a href="/grants" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
           <span class="material-symbols-outlined text-[#ffd7a5] text-[20px]">menu_book</span>
-          <span class="text-xs font-semibold text-slate-800">단행본 주문</span>
+          <span class="text-xs font-semibold text-slate-800">단행본</span>
         </a>
-        <a href="/pricing" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+        <a href="/profile" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
           <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">loyalty</span>
-          <span class="text-xs font-semibold text-slate-800">멤버십 요금제</span>
+          <span class="text-xs font-semibold text-slate-800">프로필 & 멤버십</span>
         </a>
       </div>
     </div>
@@ -636,29 +649,42 @@ const NAVIGATION_HTML_AND_SCRIPT = `
 (function() {
   const PATH_MAP = {
     'studio': '/studio',
+    'dashboard': '/studio',
+    'home': '/studio',
+    'mentor': '/mentor',
+    'mentor-matching': '/mentor',
+    'character': '/mentor',
+    'character-studio': '/mentor',
+    'character-settings': '/mentor',
+    'character-vault': '/mentor',
+    'persona-lock': '/mentor',
+    'calendar': '/calendar',
+    'schedule': '/calendar',
+    'archive': '/calendar',
+    'my-archive': '/calendar',
+    'grants': '/grants',
+    'support': '/grants',
+    'book': '/grants',
+    'book-publish': '/grants',
+    'profile': '/profile',
+    'my-profile': '/profile',
+    'pricing': '/profile',
+    'pricing-and-membership': '/profile',
+    'ai-analysis': '/ai-analysis',
+    'analysis': '/ai-analysis',
+    'custom-style': '/ai-analysis',
+    'lora': '/ai-analysis',
     'feed': '/feed',
     'feed-and-explore': '/feed',
-    'my-archive': '/archive',
-    'archive': '/archive',
-    'character-studio': '/character',
-    'character-settings': '/character',
-    'character-vault': '/character',
-    'character': '/character',
     'style-gallery': '/styles',
     'styles': '/styles',
-    'pricing': '/pricing',
-    'pricing-and-membership': '/pricing',
     'instagram_publish': '/instagram',
     'instagram-sync': '/instagram',
     'instagram': '/instagram',
-    'book-publish': '/book',
-    'book': '/book',
     'editor': '/editor',
     'editor-4cut': '/editor',
     'editor-8cut': '/editor/8cut',
     'dual-persona': '/dual-persona',
-    'custom-style': '/custom-style',
-    'lora': '/custom-style',
     'motion': '/motion'
   };
 
@@ -668,8 +694,8 @@ const NAVIGATION_HTML_AND_SCRIPT = `
   function highlightActive() {
     // Desktop Nav Highlight
     document.querySelectorAll('.pc-nav-item').forEach(el => {
-      const route = el.getAttribute('data-route');
-      if (route && (currentPath === route || (route === '/studio' && currentPath === '/'))) {
+      const route = el.getAttribute('data-route') || el.getAttribute('href');
+      if (route && (currentPath === route || (route === '/studio' && currentPath === '/') || (route === '/mentor' && currentPath === '/character') || (route === '/calendar' && currentPath === '/archive') || (route === '/grants' && currentPath === '/book') || (route === '/profile' && currentPath === '/pricing') || (route === '/ai-analysis' && currentPath === '/custom-style'))) {
         el.classList.add('nav-active-item');
       } else {
         el.classList.remove('nav-active-item');
@@ -678,7 +704,7 @@ const NAVIGATION_HTML_AND_SCRIPT = `
 
     // Mobile Dock Highlight
     document.querySelectorAll('.mobile-nav-tab').forEach(el => {
-      const route = el.getAttribute('data-route');
+      const route = el.getAttribute('data-route') || el.getAttribute('href');
       if (route && (currentPath === route || (route === '/studio' && currentPath === '/'))) {
         el.classList.add('text-[#fe5e7f]', 'font-bold');
         el.classList.remove('text-slate-600');
@@ -686,11 +712,37 @@ const NAVIGATION_HTML_AND_SCRIPT = `
     });
   }
 
-  // Intercept click on data-path and internal navigation
+  // Intercept click on data-path, data-route, and internal navigation
   document.addEventListener('click', function(e) {
-    const target = e.target.closest('[data-path], a[href^="#"], button');
+    const target = e.target.closest('[data-path], [data-route], a, button');
     if (!target) return;
 
+    // Do NOT intercept if it's the AI generation action button in Studio
+    if (target.id === 'generate-button' || target.closest('#generate-button')) {
+      return; // Handled by studio's async AI generation logic
+    }
+    // Do NOT intercept load draft button or close toast
+    if (target.id === 'load-draft-btn' || target.id === 'draft-toast-close' || target.closest('#load-draft-btn') || target.closest('#draft-toast-close')) {
+      return;
+    }
+    // Do NOT intercept clear button
+    if (target.id === 'clear-btn' || target.closest('#clear-btn')) {
+      return;
+    }
+    // Do NOT intercept mobile drawer controls
+    if (target.id === 'mobile-all-screens-btn' || target.closest('#mobile-all-screens-btn') ||
+        target.id === 'mobile-drawer-close' || target.closest('#mobile-drawer-close')) {
+      return;
+    }
+    // Do NOT intercept editor tools or style selection chips without href
+    if ((target.classList.contains('style-card') && !target.hasAttribute('href') && !target.hasAttribute('data-path')) ||
+        target.classList.contains('cut-tab') ||
+        target.classList.contains('quick-chip') ||
+        target.classList.contains('layout-toggle')) {
+      return;
+    }
+
+    // 1. data-path routing
     const dataPath = target.getAttribute('data-path');
     if (dataPath && PATH_MAP[dataPath]) {
       e.preventDefault();
@@ -698,18 +750,29 @@ const NAVIGATION_HTML_AND_SCRIPT = `
       return;
     }
 
-    // Intercept back buttons
-    const text = (target.textContent || '').trim();
-    if (text.includes('홈으로') || text.includes('스튜디오로') || text.includes('스튜디오 홈')) {
+    // 2. data-route routing
+    const dataRoute = target.getAttribute('data-route');
+    if (dataRoute) {
       e.preventDefault();
-      window.location.href = '/studio';
+      window.location.href = dataRoute;
       return;
     }
 
-    // Intercept generation action in Studio (only if not the async generate button)
-    if (target.id === 'generate-button' || target.closest('#generate-button')) {
-      return; // Handled by studio's async AI generation logic
+    // 3. Intercept back buttons & return-to-home actions
+    const text = (target.textContent || '').trim();
+    const hasBackIcon = target.querySelector('.material-symbols-outlined') && 
+      (target.querySelector('.material-symbols-outlined').textContent.trim() === 'arrow_back' ||
+       target.querySelector('.material-symbols-outlined').textContent.trim() === 'arrow_back_ios');
+    
+    if (hasBackIcon || text.includes('홈으로') || text.includes('스튜디오로') || text.includes('스튜디오 홈') || text.includes('이전 화면으로 돌아가기') || text === '뒤로가기' || text.includes('메인으로')) {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/studio') {
+        e.preventDefault();
+        window.location.href = '/studio';
+        return;
+      }
     }
+
+    // 4. Intercept generation action in Studio if it is a link
     if (text.includes('생성하기') || text.includes('웹툰 생성') || text.includes('만들기')) {
       if (target.tagName.toLowerCase() === 'a' && (window.location.pathname.includes('/studio') || window.location.pathname === '/')) {
         e.preventDefault();
@@ -721,7 +784,7 @@ const NAVIGATION_HTML_AND_SCRIPT = `
       }
     }
 
-    // Intercept 8-cut vs 4-cut toggle buttons in editors
+    // 5. Intercept 8-cut vs 4-cut toggle buttons in editors
     if (target.id === 'btn-format-8cut') {
       e.preventDefault();
       window.location.href = '/editor/8cut';
@@ -731,6 +794,67 @@ const NAVIGATION_HTML_AND_SCRIPT = `
       e.preventDefault();
       window.location.href = '/editor';
       return;
+    }
+
+    // 6. Handle <a> tags with empty or hash href
+    if (target.tagName.toLowerCase() === 'a') {
+      const href = target.getAttribute('href');
+      if (href && href.startsWith('/') && !href.startsWith('//')) {
+        // Direct browser navigation
+        return;
+      }
+      if (!href || href === '#' || href === '' || href.startsWith('javascript:')) {
+        if (text.includes('만들기') || text.includes('Studio') || text.includes('일기 쓰기') || text.includes('홈')) {
+          e.preventDefault();
+          window.location.href = '/studio';
+          return;
+        }
+        if (text.includes('멘토') || text.includes('캐릭터') || text.includes('Character') || text.includes('페르소나')) {
+          e.preventDefault();
+          window.location.href = '/mentor';
+          return;
+        }
+        if (text.includes('일정') || text.includes('다이어리') || text.includes('아카이브') || text.includes('Archive') || text.includes('캘린더')) {
+          e.preventDefault();
+          window.location.href = '/calendar';
+          return;
+        }
+        if (text.includes('정부지원') || text.includes('지원사업') || text.includes('출판') || text.includes('단행본') || text.includes('Book')) {
+          e.preventDefault();
+          window.location.href = '/grants';
+          return;
+        }
+        if (text.includes('AI 분석') || text.includes('분석') || text.includes('LoRA') || text.includes('화풍 커스텀')) {
+          e.preventDefault();
+          window.location.href = '/ai-analysis';
+          return;
+        }
+        if (text.includes('프로필') || text.includes('요금제') || text.includes('멤버십') || text.includes('Pricing') || text.includes('Profile')) {
+          e.preventDefault();
+          window.location.href = '/profile';
+          return;
+        }
+        if (text.includes('피드') || text.includes('탐색') || text.includes('Feed')) {
+          e.preventDefault();
+          window.location.href = '/feed';
+          return;
+        }
+        if (text.includes('화풍') || text.includes('스타일') || text.includes('Style')) {
+          e.preventDefault();
+          window.location.href = '/styles';
+          return;
+        }
+        if (text.includes('인스타') || text.includes('Instagram')) {
+          e.preventDefault();
+          window.location.href = '/instagram';
+          return;
+        }
+        if (text.includes('에디터') || text.includes('4컷') || text.includes('8컷') || text.includes('캔버스')) {
+          e.preventDefault();
+          window.location.href = '/editor';
+          return;
+        }
+      }
     }
   }, true);
 
