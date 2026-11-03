@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","secondary-fixed-dim":"#9ecfd8","secondary":"#36656e","surface-container-lowest":"#ffffff","on-surface-variant":"#3c494c","surface-container":"#e9eff1","on-primary-fixed":"#001f24","inverse-primary":"#3ed9f0","on-error":"#ffffff","outline-variant":"#bbc9cc","outline":"#6c797c","on-secondary-fixed":"#001f24","on-primary-container":"#005965","inverse-on-surface":"#ecf2f4","on-tertiary-fixed-variant":"#5b3678","primary-container":"#39d6ed","on-tertiary":"#ffffff","surface-container-highest":"#dee3e5","primary-fixed-dim":"#3ed9f0","secondary-container":"#baebf5","on-secondary":"#ffffff","on-primary-fixed-variant":"#004e59","on-secondary-fixed-variant":"#1b4d56","surface-bright":"#f5fafc","primary":"#006875","error":"#ba1a1a","surface-tint":"#006875","primary-fixed":"#9defff","surface-container-low":"#eff4f7","background":"#f5fafc","on-surface":"#171d1e","tertiary-fixed-dim":"#e1b6ff","surface-container-high":"#e3e9eb","on-background":"#171d1e","tertiary-fixed":"#f2daff","on-primary":"#ffffff","tertiary-container":"#dfb3ff","surface":"#f5fafc","on-secondary-container":"#3c6b74","secondary-fixed":"#baebf5","on-error-container":"#93000a","on-tertiary-fixed":"#2c044a","surface-dim":"#d5dbdd","on-tertiary-container":"#664083","surface-variant":"#dee3e5","tertiary":"#744e92","inverse-surface":"#2b3133"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"space-xl":"2.25rem","margin":"1rem","margin-tablet":"1.5rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter-desktop":"1.5rem","space-md":"1rem","gutter":"1.25rem","space-xs":"0.25rem","margin-desktop":"2.5rem"},fontFamily:{"headline-lg-mobile":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"label-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"label-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"headline-lg-mobile":["24px",{lineHeight:"32px",fontWeight:"700"}],"display-hero":["48px",{lineHeight:"56px",fontWeight:"800"}],"display-hero-mobile":["32px",{lineHeight:"40px",fontWeight:"800"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",fontWeight:"500"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"700"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-bright/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop max-w-7xl mx-auto flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm tracking-tight" data-path="studio-create" href="#"><span class="flex items-center justify-center w-8 h-8 rounded bg-primary-container text-on-primary-container"><span class="material-symbols-outlined text-[20px]">auto_stories</span></span><span>ToonLog</span></a><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-secondary-container text-on-secondary-container font-label-lg rounded-full"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-secondary-container text-on-secondary-container font-label-lg rounded-full" data-path="studio-create" href="#">만들기 Studio</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="feed-explore" href="#">피드 &amp; 탐색</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="my-webtoon-diary" href="#">내 웹툰 다이어리</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="membership-pricing" href="#">요금제 &amp; 멤버십</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span>오늘 무료 1회 생성 가능</span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="hidden md:flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface">소라 작가님</span><span class="font-label-sm text-label-sm text-tertiary font-semibold">Pro Creator</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-gutter-desktop py-space-lg flex flex-col gap-space-lg">
+<!-- TOP RENDERING STATUS BANNER (Level 2 Card) -->
+<div class="w-full bg-surface-container-lowest/90 backdrop-blur-xl rounded-lg p-space-lg shadow-xl relative overflow-hidden">
+<!-- Ambient Lighting Backdrops -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-tertiary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Status & Meta Information -->
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>AI 실시간 렌더링 진행 중</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>남은 시간 약 5초 (총 소요 약 18초)</span>
+</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>SeedLock™ 일치율 99.8%</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-sm flex-wrap mt-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">비 오는 날의 슈크림 붕어빵</h1>
+<span class="font-label-md text-label-md text-tertiary font-bold">에피소드 #05</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1 italic">
+            “비 오는 날 퇴근길, 비에 젖은 길모퉁이 붕어빵 트럭에서 슈크림 3개를 샀다. 품에 안은 따뜻한 봉투에서 달콤한 김이 피어올랐다...”
+          </p>
+<div class="flex flex-wrap items-center gap-space-sm font-label-sm text-label-sm text-outline mt-1">
+<span class="flex items-center gap-1 text-primary font-medium">
+<span class="material-symbols-outlined text-[15px]">palette</span>
+              소라의 몽환 수채화 믹스 v1 (LoRA v2.4)
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[15px]">high_density</span>
+              4K 무손실 업스케일러 대기 중
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant font-medium">1:1 Square (1080x1080px)</span>
+</div>
+</div>
+<!-- Overall Progress Ring & Metric -->
+<div class="flex items-center gap-space-md self-start lg:self-center bg-surface-container-low px-space-md py-space-sm rounded-lg">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<!-- Inline Progress SVG -->
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 64 64">
+<circle class="text-surface-container-highest" cx="32" cy="32" fill="none" r="28" stroke="currentColor" stroke-width="5"></circle>
+<circle class="text-primary" cx="32" cy="32" fill="none" r="28" stroke="currentColor" stroke-dasharray="175.9" stroke-dashoffset="49.2" stroke-linecap="round" stroke-width="5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-primary font-bold leading-none">72%</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Step 3 of 4</span>
+<span class="font-body-sm text-body-sm text-secondary">수채화 디테일 채색 중</span>
+<span class="font-label-sm text-label-sm text-outline">초당 14.8 샘플링 스텝</span>
+</div>
+</div>
+</div>
+<!-- Linear Progress Bar -->
+<div class="w-full bg-surface-container-highest h-2 rounded-full mt-space-md overflow-hidden relative">
+<div class="bg-gradient-to-r from-primary via-primary-container to-tertiary h-full rounded-full transition-all duration-700 w-[72%] relative" id="global-progress">
+<div class="absolute inset-0 bg-surface-container-lowest/30 animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- MAIN TWO-COLUMN STUDIO WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT: 4-CUT LIVE CANVAS GRID (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Canvas Grid Header Toolbar -->
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">view_quilt</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">실시간 4컷 스트립 캔버스</h2>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">2x2 Grid View</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
+<span class="text-outline flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> 자동 대사 정렬 ON
+            </span>
+</div>
+</div>
+<!-- 4-Cut Panels Grid (2x2) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- CUT 1: COMPLETED (100%) -->
+<div class="group relative bg-surface-container-lowest rounded-lg p-space-sm shadow-md flex flex-col gap-space-xs transition-all hover:shadow-xl">
+<!-- Cut Header Badge -->
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md font-bold text-primary flex items-center gap-1">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[11px]">1</span>
+                퇴근길 골목길과 우산
+              </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary">check_circle</span>
+<span>완료 100%</span>
+</span>
+</div>
+<!-- Image Canvas -->
+<div class="relative w-full aspect-square rounded overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Beautiful gentle Korean webtoon watercolor illustration of young woman named Sora with short bob hair and round brown glasses, holding a clear transparent umbrella in a cozy rainy evening alleyway. Soft cyan, teal, and warm incandescent lamplight reflections on wet asphalt. Dreamy hand-painted watercolor textures with soft pastel bleeds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd0CxskVeohbXuS-AToyu83Q6BpY-d8abwvhEaOOrNDT4AXpoVH3v3LJuLtzJp1I3C-EUS1c9Ej0-Bm532IKZyHPWMeHfCEo1NL-TFxX-9F3obqsThTyd-ttHP6iwu-CnKZ1idejK2AU9Hcc53NdDNi4gJSz3nkrxq2f941U3EGzzva7XZIGAOKfSpDbTiK9ohkqz0t4OCMsa8qJdAjaD2-rrH0CmPGO1HE3xzwySq"/>
+<!-- Comic Dialogue Bubble Overlay -->
+<div class="absolute top-4 left-4 max-w-[78%] bg-surface-container-lowest/95 backdrop-blur-md rounded px-space-sm py-1.5 shadow-md">
+<p class="font-headline-sm text-[13px] text-on-surface leading-tight font-semibold">
+                  “오늘따라 비 냄새가 유난히 다정하게 느껴졌다.”
+                </p>
+<div class="absolute -bottom-1.5 left-4 w-3 h-3 bg-surface-container-lowest/95 rotate-45"></div>
+</div>
+<!-- Floating Panel Actions on hover -->
+<div class="absolute bottom-3 right-3 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-full shadow-lg">
+<button class="w-7 h-7 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="미리보기 확대">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</button>
+<button class="w-7 h-7 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="말풍선 편집">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+</div>
+</div>
+<!-- Sub-label -->
+<div class="flex items-center justify-between px-1 text-outline font-label-sm text-label-sm">
+<span>Scene 1/4 • 구도: 와이드 미디엄 샷</span>
+<span class="text-secondary font-medium">3.8s 렌더링 완료</span>
+</div>
+</div>
+<!-- CUT 2: COMPLETED (100%) -->
+<div class="group relative bg-surface-container-lowest rounded-lg p-space-sm shadow-md flex flex-col gap-space-xs transition-all hover:shadow-xl">
+<!-- Cut Header Badge -->
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md font-bold text-primary flex items-center gap-1">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[11px]">2</span>
+                김이 모락모락 붕어빵 트럭
+              </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary">check_circle</span>
+<span>완료 100%</span>
+</span>
+</div>
+<!-- Image Canvas -->
+<div class="relative w-full aspect-square rounded overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Dreamy Korean webtoon watercolor painting of a warm glowing street food fish-shaped pastry bungeoppang cart under a red awning on a dark rainy street corner. Steam rising in billowy swirls against the glowing golden tungsten lights. Detailed watercolor paper texture, charming artistic brush strokes in warm amber, cyan, and deep indigo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfgpkEOnScGEv7v37Y5zJF6lnjp9ngyqgSbGH3lw_1VO-5WFPlGgCZ-VLDMtQkrdDEWZE13WzjGEzWhhzgbu2sukuzin-xnI06GO2vHEAcwwpAmYTF1xs75cCoSYeoZVHF7Gpq6bqltm0Ak3ImN4jikFtbtgkNF83_3lLhHFAWtdnlZNxBzle-heaxNP3hC2yX0zNugXwYYiaGIn9uJ4l8MnKeG1VUcvH8j5XSXfJi"/>
+<!-- Comic Dialogue Bubble Overlay -->
+<div class="absolute top-4 right-4 max-w-[80%] bg-surface-container-lowest/95 backdrop-blur-md rounded px-space-sm py-1.5 shadow-md">
+<p class="font-headline-sm text-[13px] text-on-surface leading-tight font-semibold">
+                  “골목 끝 붉은 포장마차... 슈크림 3개의 유혹!”
+                </p>
+<div class="absolute -bottom-1.5 right-6 w-3 h-3 bg-surface-container-lowest/95 rotate-45"></div>
+</div>
+<!-- Floating Panel Actions on hover -->
+<div class="absolute bottom-3 right-3 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-full shadow-lg">
+<button class="w-7 h-7 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="미리보기 확대">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</button>
+<button class="w-7 h-7 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="말풍선 편집">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</button>
+</div>
+</div>
+<!-- Sub-label -->
+<div class="flex items-center justify-between px-1 text-outline font-label-sm text-label-sm">
+<span>Scene 2/4 • 구도: 클로즈 포커스 앤 스팀</span>
+<span class="text-secondary font-medium">4.1s 렌더링 완료</span>
+</div>
+</div>
+<!-- CUT 3: IN PROGRESS (78%) -->
+<div class="relative bg-surface-container-lowest rounded-lg p-space-sm shadow-xl flex flex-col gap-space-xs ring-2 ring-primary-container">
+<!-- Cut Header Badge -->
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md font-bold text-primary flex items-center gap-1">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-[11px] animate-pulse">3</span>
+                품 안의 따뜻한 봉투
+              </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold animate-pulse">
+<span class="material-symbols-outlined text-[13px] animate-spin">progress_activity</span>
+<span>실시간 채색 중 78%</span>
+</span>
+</div>
+<!-- Image Canvas with Scanning & Shimmer Effects -->
+<div class="relative w-full aspect-square rounded overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover filter contrast-[1.05]" data-alt="Soft luminous Korean watercolor webtoon of the female protagonist Sora hugging a warm brown paper bakery bag close to her knit sweater chest while smiling tenderly under the raindrops. Wet rain streaks on glass, ambient cyan street reflections, glowing golden aura radiating from the warm treat bag. Expressive emotive manga art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClMrvRmDYuFdPFyfPrA9YYvJCqf9Z8AusLfcEjZfzOyXrbjNJLm_eWOXHICxeE6DeD1VKFhwu7trpEKZyGSU2RldZ_skRE0AdbjLRxsUF_ZNgDms6dV9y_DHjwCkmbcEAgRcIK__thWis3zLERbQpXJ4a7ZBxUqUqvjnVuRGhwYp2GjTiadeiMODhP4F2Rb4bdSP7eESka-gKRIW2mhWFCSCgMZ-9lL-vh2A7ZCxIB"/>
+<!-- Shimmer Scanline Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-container/20 to-transparent animate-pulse pointer-events-none"></div>
+<!-- Animated Laser/Brushing Scan Bar -->
+<div class="absolute inset-x-0 top-1/2 h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent shadow-[0_0_12px_#39d6ed] pointer-events-none"></div>
+<!-- Status HUD Overlay -->
+<div class="absolute bottom-3 inset-x-3 bg-surface-container-lowest/90 backdrop-blur-md rounded p-space-xs flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] animate-spin">brush</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">수채화 번짐 텍스처 합성 중</span>
+<span class="font-label-sm text-[10px] text-outline">Denoising Step 22/28 • Prompt Alignment High</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">78%</span>
+</div>
+</div>
+<!-- Sub-label -->
+<div class="flex items-center justify-between px-1 text-outline font-label-sm text-label-sm">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+                LoRA 가중치 브러시 실시간 적용
+              </span>
+<span>약 1.8초 남음</span>
+</div>
+</div>
+<!-- CUT 4: SKETCH / QUEUED (15%) -->
+<div class="relative bg-surface-container-lowest rounded-lg p-space-sm shadow-sm flex flex-col gap-space-xs">
+<!-- Cut Header Badge -->
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md font-bold text-on-surface-variant flex items-center gap-1">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-[11px]">4</span>
+                붕어빵 한 입 베어문 행복
+              </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">hourglass_empty</span>
+<span>스케치 단계 15%</span>
+</span>
+</div>
+<!-- Sketch / Wireframe Canvas -->
+<div class="relative w-full aspect-square rounded overflow-hidden bg-surface-container-low flex items-center justify-center">
+<img class="w-full h-full object-cover filter grayscale contrast-75 opacity-70" data-alt="Delicate monochromatic graphite pencil sketch transitioning into watercolor concept art for webtoon panel. Young woman taking a joyful bite of a custard pastry with eyes closed happily, little steam clouds rising. Subtle architectural guidelines and comic crosshatching lines visible, clean Korean webtoon layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpoP6nQmiVTo3sLZCwymW5nuAMv9QMGQhoKRT2-ZlYJHBCgygS7w6sf6Fzm_T_GTOfC9sv4qGocuDre1a7LhNNKmovQC6ZTSFqx1uqyRW-EoPCEGLrN6chhtwjsAjSmYvBWZly4QWCQzp8_0L5qui-CzF3v-IzOGPeEYSPvketyVDnLa1Tp0xg0PNd0w-uZ4erXk1d69z3xSm54i-IuD4F5lYjKRHWrFw7CZZ470YQ"/>
+<!-- Subtle Wireframe / Grid Pattern -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent flex flex-col items-center justify-end p-space-sm text-center">
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm shadow-sm mb-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">draw</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">표정 감정선 &amp; 대사 레이아웃 계산 중</span>
+</div>
+</div>
+</div>
+<!-- Sub-label -->
+<div class="flex items-center justify-between px-1 text-outline font-label-sm text-label-sm">
+<span>Scene 4/4 • 결말 감정 하이라이트</span>
+<span class="text-outline">Cut 3 완료 즉시 렌더 시작</span>
+</div>
+</div>
+</div>
+<!-- Realtime Rendering Tips Callout -->
+<div class="w-full bg-secondary-container/40 rounded p-space-sm flex items-center gap-space-sm text-on-secondary-container">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">tips_and_updates</span>
+<p class="font-body-sm text-body-sm leading-snug">
+<strong>AI 창작 가이드:</strong> 렌더링 완료 후 제공되는 <span class="text-primary font-semibold">스튜디오 에디터</span>에서 캐릭터의 표정 강도 변경, 말풍선 폰트 교체 및 대사 커스텀 재작성이 자유롭게 가능합니다.
+          </p>
+</div>
+</div>
+<!-- RIGHT: PIPELINE INSPECTOR & AI LOGS (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Real-time Generation Pipeline Tracker Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">생성 파이프라인 실시간 로그</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-mono font-bold">14.2s ELAPSED</span>
+</div>
+<!-- Step Progression List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Step 1 (Done) -->
+<div class="flex items-start gap-space-sm p-space-xs rounded hover:bg-surface-container-low transition-colors">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">1. 일상 텍스트 감성 분석 및 4단계 씬 분할</span>
+<span class="font-body-sm text-body-sm text-outline">소라 작가 일기 감정 지수: 따뜻함 92%, 아늑함 88% (0.8s)</span>
+</div>
+</div>
+<!-- Step 2 (Done) -->
+<div class="flex items-start gap-space-sm p-space-xs rounded hover:bg-surface-container-low transition-colors">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">2. SeedLock™ 캐릭터 일관성 바인딩</span>
+<span class="font-body-sm text-body-sm text-outline">소라(단발머리·브라운 뿔테·니트) 외형 벡터 고정 (1.2s)</span>
+</div>
+</div>
+<!-- Step 3 (Active) -->
+<div class="flex items-start gap-space-sm p-space-xs rounded bg-surface-container-low ring-1 ring-primary/20">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5 animate-pulse">
+<span class="material-symbols-outlined text-[15px] animate-spin">sync</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold">3. 수채화 LoRA 가중치 텍스처링</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">78%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">종이 질감 번짐 필터 &amp; 광원 섀도우 맵 베이킹 중...</span>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[78%] rounded-full animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Step 4 (Waiting) -->
+<div class="flex items-start gap-space-sm p-space-xs rounded opacity-60">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">pending</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">4. 말풍선 폰트 배치 및 4K 무손실 패키징</span>
+<span class="font-body-sm text-body-sm text-outline">대기 중 (Cut 4 렌더링 직후 즉시 결합)</span>
+</div>
+</div>
+</div>
+<!-- Cloud Hardware Telemetry Pill -->
+<div class="mt-space-xs pt-space-sm border-t border-surface-container-highest/40 flex flex-col gap-1.5">
+<span class="font-label-sm text-[11px] text-outline font-semibold uppercase tracking-wider">Cloud Engine Diagnostics</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[11px]">NVIDIA H100 Tensor</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono text-[11px]">Carat Engine v2.0</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-mono text-[11px]">FP16 Turbo Mode</span>
+</div>
+</div>
+</div>
+<!-- Character Consistency Quick Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h4 class="font-label-md text-label-md text-on-surface font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">face_6</span>
+              등록된 페르소나 적용 상태
+            </h4>
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">소라 (Sora)</span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-xs rounded">
+<div class="w-12 h-12 rounded overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Profile avatar concept art portrait of female character Sora with chestnut brown bob haircut, cute vintage round glasses, smiling softly against a light watercolor cyan backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8jlPt_b6u238CTOl-3uMEANPJoPxMskSMD4etsdC9J0vCBHFG5PEXO26xbnVInM6OEP_bCw79vbWBpYxS3l9DfM1nV2vGhIgIA_I3qEDEW2FEn8_U_S32AAkgaAWlYOKSdr85D46MWopZDyGp_unda89ttmWTjqvzy58lY_-kpUgx6jMbbBMwIywVsLN_6pKRjGGNJgXy5Sb9_w8k--QXSHjfZue7yp9AGZGbuS37"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">단발머리 • 둥근 뿔테 안경</span>
+<span class="font-body-sm text-body-sm text-secondary">웹툰 24편 일관성 유지 기록 보유</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-1">
+<span>얼굴 앵글 가중치: 1.0 (최적화)</span>
+<span class="text-primary font-medium">일탈 방지 락 활성</span>
+</div>
+</div>
+<!-- Quick Share Preview Info -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-md flex flex-col gap-space-xs">
+<h4 class="font-label-md text-label-md text-on-surface font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">share</span>
+            완료 후 내보내기 형식
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            인스타그램 4컷 릴스/캐러셀 규격 자동 최적화 및 ToonLog 공용 피드 게시 준비가 함께 진행됩니다.
+          </p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">#인스타툰</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">#퇴근길</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">#일상툰</span>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM FLOATING ACTION DOCK (Level 3 Glass Bar) -->
+<div class="sticky bottom-6 w-full max-w-4xl mx-auto z-40">
+<div class="bg-surface-container-lowest/95 backdrop-blur-2xl rounded-full p-space-xs px-space-md shadow-[0_20px_40px_-15px_rgba(0,104,117,0.18)] flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Left: Background Switch & Notification Toggle -->
+<div class="flex items-center gap-space-md">
+<a class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg shadow-sm" data-path="feed-explore" href="#">
+<span class="material-symbols-outlined text-[18px]">layers</span>
+<span>백그라운드로 전환하고 피드 둘러보기</span>
+</a>
+<label class="hidden sm:inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface-variant select-none">
+<input checked="" class="accent-primary w-4 h-4 rounded cursor-pointer" type="checkbox"/>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">notifications_active</span>
+              완료 시 데스크톱 알림 받기
+            </span>
+</label>
+</div>
+<!-- Right: Cancel & Fast Priority Button -->
+<div class="flex items-center gap-space-xs ml-auto">
+<button class="px-space-md py-space-xs rounded-full text-outline hover:text-error hover:bg-error-container/40 transition-colors font-label-md text-label-md" id="cancel-btn">
+            생성 취소
+          </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-md hover:shadow-lg transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>터보 가속 렌더 (H100)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side Micro-Interaction Script for Simulation -->
+<script>
+    (function() {
+      // Simulate slight progress animation increase for realistic immersion
+      let currentProgress = 72;
+      const progressBar = document.getElementById('global-progress');
+      const timer = setInterval(() => {
+        if (currentProgress < 96) {
+          currentProgress += 1;
+          if (progressBar) {
+            progressBar.style.width = currentProgress + '%';
+          }
+        } else {
+          clearInterval(timer);
+        }
+      }, 700);
+
+      // Cancel button micro-interaction
+      const cancelBtn = document.getElementById('cancel-btn');
+      if (cancelBtn) {
+        cancelBtn.addEventListener('click', () => {
+          if (confirm('만화 생성을 중단하시겠습니까? (현재 소모된 크레딧은 반환됩니다)')) {
+            window.location.hash = 'studio-create';
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low"><div class="max-w-7xl mx-auto px-gutter-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ToonLog AI</span><span class="font-body-sm text-body-sm text-outline">일상 다이어리를 감성 4컷 그래픽 스토리로 기록하는 공간</span></div><div class="flex items-center gap-space-lg font-label-sm text-label-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">이용약관</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">개인정보처리방침</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">창작자 가이드</a><span class="text-outline">© 2025 ToonLog AI. All rights reserved.</span></div></div></footer></body></html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#baebf5","on-tertiary":"#ffffff","secondary-container":"#baebf5","background":"#f5fafc","surface-container":"#e9eff1","on-tertiary-fixed-variant":"#5b3678","on-error":"#ffffff","primary-fixed":"#9defff","surface-variant":"#dee3e5","on-secondary-container":"#3c6b74","inverse-surface":"#2b3133","surface-container-lowest":"#ffffff","inverse-on-surface":"#ecf2f4","on-error-container":"#93000a","surface":"#f5fafc","surface-container-highest":"#dee3e5","surface-container-low":"#eff4f7","on-primary-container":"#005965","on-secondary":"#ffffff","error":"#ba1a1a","surface-container-high":"#e3e9eb","surface-bright":"#f5fafc","inverse-primary":"#3ed9f0","on-primary":"#ffffff","on-secondary-fixed-variant":"#1b4d56","primary-container":"#39d6ed","secondary-fixed-dim":"#9ecfd8","tertiary-fixed":"#f2daff","tertiary-container":"#dfb3ff","outline":"#6c797c","on-secondary-fixed":"#001f24","secondary":"#36656e","tertiary-fixed-dim":"#e1b6ff","primary":"#006875","on-background":"#171d1e","on-tertiary-fixed":"#2c044a","on-primary-fixed-variant":"#004e59","on-primary-fixed":"#001f24","surface-tint":"#006875","outline-variant":"#bbc9cc","surface-dim":"#d5dbdd","error-container":"#ffdad6","on-surface-variant":"#3c494c","on-surface":"#171d1e","tertiary":"#744e92","primary-fixed-dim":"#3ed9f0","on-tertiary-container":"#664083"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-md":"1rem","gutter-desktop":"1.5rem","space-xl":"2.25rem","margin-desktop":"2.5rem","margin":"1rem","margin-tablet":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter":"1.25rem"},"fontFamily":{"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","fontWeight":"800"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","fontWeight":"800"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop mx-auto flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs font-headline-md text-headline-md text-primary tracking-tight" data-path="dashboard" href="#"><span class="text-primary font-bold">ToonLog</span><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider">BETA</span></a><a class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors ml-space-sm pl-space-sm border-l border-outline-variant/40" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">arrow_back</span><span class="font-label-md text-label-md hidden sm:inline">스튜디오 홈</span></a></div><nav class="hidden xl:flex items-center gap-space-xs p-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="studio" href="#">만들기 (Studio)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="feed" href="#">피드 &amp; 탐색 (Feed)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-archive" href="#">내 웹툰 다이어리 (My Archive)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pricing" href="#">요금제 &amp; 멤버십 (Pricing)</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-xs rounded-full shadow-[0_0_16px_rgba(2,194,217,0.12)]"><span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span><span class="font-label-sm text-label-sm text-on-surface-variant">오늘 무료 <strong class="text-primary font-bold">1/1</strong> 생성</span></div><button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs border-l border-outline-variant/40"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(2,194,217,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">소라 작가님</span><span class="font-label-sm text-label-sm text-tertiary leading-tight">Pro Creator</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Orbs -->
+<div class="relative w-full overflow-hidden pb-16">
+<div class="pointer-events-none absolute -top-24 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl"></div>
+<div class="pointer-events-none absolute top-48 right-0 w-80 h-80 rounded-full bg-secondary-fixed/30 blur-3xl"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+<!-- Breadcrumb & Top Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all font-label-md text-label-md" data-path="studio" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>이전 화면으로 돌아가기</span>
+</a>
+<span class="text-outline-variant font-label-sm">/</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>SeedLock™ Engine v3.2</span>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">동기화 활성 상태: 일상 로그 실시간 반영 중</span>
+</div>
+</div>
+<!-- Header Title Section -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Consistent Persona Studio</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-secondary">웹툰 일관성 마스터 프로필</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">나만의 고정 캐릭터 설정 <span class="text-primary font-headline-lg text-headline-lg">(AI Seed &amp; Persona Lock)</span></h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">매일 작성하는 4컷 일기에서 동일한 얼굴형, 헤어스타일, 시그니처 안경, 감성 톤을 100% 변함없이 유지하여 나만의 웹툰 오리지널리티를 보장합니다.</p>
+</div>
+<!-- Slot Picker Mini Strip -->
+<div class="flex items-center p-1.5 rounded-2xl bg-surface-container shadow-sm self-start lg:self-end">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>슬롯 1: 소라 (본캐)</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px]">사용 중</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">pets</span>
+<span>슬롯 2: 태일이 (반려견)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-tertiary hover:bg-tertiary-fixed/30 font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span class="hidden sm:inline">+ 조연 추가</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[9px] font-bold">PRO</span>
+</button>
+</div>
+</div>
+<!-- 1. Active Persona Banner & Sync Status -->
+<div class="rounded-3xl bg-surface-container-lowest p-6 shadow-md relative overflow-hidden">
+<div class="pointer-events-none absolute top-0 right-0 w-96 h-full bg-gradient-to-l from-secondary-fixed/40 via-transparent to-transparent"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+<div class="flex items-center gap-5">
+<div class="relative">
+<div class="w-20 h-20 rounded-2xl overflow-hidden shadow-md bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up vibrant digital manhwa style character portrait of an Asian female illustrator with cute round tortoiseshell glasses, soft natural brown bob cut hair, smiling gently with subtle warm peach blush on her cheeks, pastel cyan studio light background, high consistency manhwa key art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAaZoY6Wy4dP5pe56whrrpM67F8vSBDPFhPscQZZnMW9oKntzfbHz9FBJTKqFh8SYKDDDjXOKtZf-QiyUDy6ZrH1bDXg0CV5PnNF3VqS5jnZyFgBwUVsZi3j3LcVvwmV0B8KLLM7-13MauIU8BRXO4RlhHMDFWRtyPQheGSeOKPOUD-opRv8rmFYtXkORd1CV2fA56AP5F7Vk7L3MrAKTTwdA9nbGJncrjRkPIsdHz"/>
+</div>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">소라 작가님</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold tracking-wide">대표 페르소나 #01</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">key</span>
+                  SEED-2024-8849-SORA
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">sync</span>
+<span>웹툰 일기 생성 시 <strong class="text-on-surface font-semibold">100% 캐릭터 일관성 자동 적용 중</strong> (오늘의 기록 14편 누적 반영 완료)</span>
+</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="px-3.5 py-2 rounded-2xl bg-surface-container-low flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-on-surface-variant">일관성 점수</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold leading-none">99.8% 매칭</span>
+</div>
+</div>
+<button class="px-4 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" id="copy-seed-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>시드 복사</span>
+</button>
+<button class="px-4 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>이력 보기</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 2. 3-Panel Visual Configuration Studio Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Panel 1: Photo & Base Persona Input (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-5">
+<div class="rounded-3xl bg-surface-container-lowest p-6 shadow-sm flex flex-col h-full">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-label-sm text-label-sm font-bold">1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">베이스 원본 설정</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary">실제 사진 or 프리셋</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">본인의 일상 셀카를 업로드하면 AI가 특징점을 추출하여 만화풍 벡터 키-포인트로 변환합니다.</p>
+<!-- Drag and Drop Dropzone -->
+<div class="rounded-2xl bg-surface-container-low p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-all group relative overflow-hidden">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform mb-3">
+<span class="material-symbols-outlined text-primary text-[28px]">add_a_photo</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors">실제 사진 업로드 &amp; 화풍 변환</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">PNG, JPG 최대 15MB • 정면 또는 반측면 권장</p>
+<div class="mt-4 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>원클릭 AI 3D/웹툰화 자동 실행</span>
+</div>
+<input accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+<!-- Preset Archetypes Selection -->
+<div class="mt-5 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">기본 캐릭터 프리셋에서 시작</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4개 중 선택</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Preset 1 (Active) -->
+<div class="p-2 rounded-2xl bg-surface-container-high shadow-inner flex items-center gap-2.5 cursor-pointer">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Square digital manhwa avatar of short-haired Korean young woman in warm pastel tone, smiling gently, modern webtoon style, soft cyan palette background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPb5pXUnnBIfFQzmdn1KV719UZ9mJsxT6DpY7mLN9Ef5X0nR9Q5XTKUEGdiQjuvKKQf-eC6XwExgz4kKTGAHS0o64EVDVKWU7AwObt8uvdQo0okJJCwB6WFP3kEGIDxtsPeKPpu5JMnGv0sMqL3eqPCA1G7mUwyRUnDwgUCiYmzZpSBWBlpcTfGTIvkSjd-31GRd420z_ywffOuxWXlrvhEP3lQSX3a97ECxkTTud1"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate font-semibold">내추럴 소라</span>
+<span class="font-label-sm text-label-sm text-primary">현재 적용</span>
+</div>
+</div>
+<!-- Preset 2 -->
+<div class="p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex items-center gap-2.5 cursor-pointer transition-colors">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Square digital manhwa avatar of long straight dark haired cheerful female character, modern clean studio manhwa style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8XMbjgfoEslHLqJs2YeCDVQwTr1ldvxPpc5cCoR-6jhN0DjznOk1joAOuOKR1Om5SIP1Z-m8U40EiqigA2FxlOk28NeHLNEjalbpASvrnUJneZ-XDrgSHUQI-b-s0jq4oDHhrZyMKbP7fwNudgWqzJ20L9gOpFehU9rSaeZRGlVJktJP0XOtTXYPPZrd4pCV84VhIOAiNTwcUlsjkD606lRNKSu9i6EY1fPqJKSfy"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">발랄 지우</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">긴 생머리 톤</span>
+</div>
+</div>
+<!-- Preset 3 -->
+<div class="p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex items-center gap-2.5 cursor-pointer transition-colors">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Square digital manhwa avatar of wavy wavy bob cute girl with cozy glasses and playful expression, clean webtoon graphic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIaBenSk9RAq5d93HkoP9yUJ7S4NK1k7_vngaQf6Wg3XorqBjkAbOr2kDicHlmGsafuwDtTWTDNmYTKCK4Q5ZfbB-dvdlwHyTLvOmTqafZy14Qm6HO5FBQvOJQnOEzYrphezW4ydoP8BHubsHfOPMUnp-RI7VK9QaZKvptfYWL5h0wmoe-agbuh0e0iKOCBsbQPWTJlzJ6STy2GA6IGUbRzpscK2IeXGEnS2FqrUTT"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">히피 채원</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">자유로운 컬</span>
+</div>
+</div>
+<!-- Preset 4 -->
+<div class="p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex items-center gap-2.5 cursor-pointer transition-colors">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Square digital manhwa avatar of sleek low ponytail professional chic woman, calm studio manhwa art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1L5ZiA2n7GIoq1zJdj4-Dmv74rjGzzHx2S53I6aSH8opTkXayNkgFfgD1eafD1TTn5GuhRheBKN7je6wPjxBnYIgIkbAxEkp0kQnKjIc6A2rOYlNB8Y4-NNO3clufYdRtBpC3HJJogXX2JLbBhhHpEM4RMfvfbxuK5MVsqvcKfdJy9sqDoiZM7_StQUh3Vp5OGyk08TG8pRA8ox_IIbv25KKRx6kdcqWkOfd9AnY7"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">모던 민서</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">포니테일 오피스</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Face Consistency Warning Tip -->
+<div class="mt-auto pt-4">
+<div class="p-3 rounded-2xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">tips_and_updates</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">얼굴 비율과 눈동자 하이라이트 위치는 ToonLog 페이스 넷(FaceNet)에 암호화되어 보관됩니다.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel 2: Detailed Appearance Attributes (Fine-tuning) (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-5">
+<div class="rounded-3xl bg-surface-container-lowest p-6 shadow-sm flex flex-col h-full space-y-5">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">외형 디테일 미세조정</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">파라미터 락</span>
+</div>
+<!-- Hair Section -->
+<div class="space-y-2.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">face_3</span>헤어 스타일</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">단발 보브컷 선택됨</span>
+</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-xl bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 shadow-sm" type="button">
+<span>단발 보브컷</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors" type="button">
+                  긴 생머리
+                </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors" type="button">
+                  히피 웨이브펌
+                </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors" type="button">
+                  로우 포니테일
+                </button>
+</div>
+<!-- Hair Color Swatches -->
+<div class="pt-1 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">헤어 컬러 팔레트</span>
+<div class="flex items-center gap-2">
+<button class="w-6 h-6 rounded-full bg-[#4a3525] shadow-sm transform scale-110 flex items-center justify-center" title="내추럴 브라운" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</button>
+<button class="w-6 h-6 rounded-full bg-[#1c1c1e] shadow-sm hover:scale-105 transition-transform" title="딥 블랙" type="button"></button>
+<button class="w-6 h-6 rounded-full bg-[#a39480] shadow-sm hover:scale-105 transition-transform" title="애쉬 베이지" type="button"></button>
+<button class="w-6 h-6 rounded-full bg-[#2e1d15] shadow-sm hover:scale-105 transition-transform" title="다크 초코" type="button"></button>
+</div>
+</div>
+</div>
+<!-- Face & Signature Features (Toggles) -->
+<div class="space-y-2.5 pt-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>아이덴티티 시그니처 특징</span>
+</label>
+<div class="space-y-2">
+<!-- Toggle 1: Glasses -->
+<div class="p-3 rounded-2xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">eyeglasses</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">둥근 뿔테 안경 (시그니처)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">매 컷 착용 필수 고정</span>
+</div>
+</div>
+<button class="w-11 h-6 rounded-full bg-primary p-0.5 flex items-center justify-end transition-colors" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary shadow-sm"></span>
+</button>
+</div>
+<!-- Toggle 2: Peach Blush -->
+<div class="p-3 rounded-2xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px]">mood</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">볼터치 생기 홍조</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">코랄 핑크 수채화 감성</span>
+</div>
+</div>
+<button class="w-11 h-6 rounded-full bg-primary p-0.5 flex items-center justify-end transition-colors" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary shadow-sm"></span>
+</button>
+</div>
+<!-- Feature 3: Eye Color -->
+<div class="p-3 rounded-2xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">lens</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">맑은 초롱초롱 브라운 눈동자</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">만화풍 특유 하이라이트</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">기본 적용</span>
+</div>
+</div>
+</div>
+<!-- Signature Outfit -->
+<div class="space-y-2.5 pt-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">apparel</span>대표 의상 (Signature Outfit)</span>
+<span class="font-label-sm text-label-sm text-secondary">자동 매칭</span>
+</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="p-2.5 rounded-2xl bg-primary-fixed text-on-primary-fixed-variant flex flex-col items-center text-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px] mb-1">checkroom</span>
+<span class="font-label-sm text-label-sm font-bold">데일리 캐주얼</span>
+<span class="text-[10px] text-on-primary-fixed-variant/80 mt-0.5 leading-tight">오버핏 니트</span>
+</button>
+<button class="p-2.5 rounded-2xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] mb-1">work</span>
+<span class="font-label-sm text-label-sm">오피스 룩</span>
+<span class="text-[10px] text-on-surface-variant mt-0.5 leading-tight">셔츠+슬랙스</span>
+</button>
+<button class="p-2.5 rounded-2xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] mb-1">bed</span>
+<span class="font-label-sm text-label-sm">파자마 홈웨어</span>
+<span class="text-[10px] text-on-surface-variant mt-0.5 leading-tight">체크 잠옷</span>
+</button>
+</div>
+</div>
+<!-- Personality & Tone Chips -->
+<div class="space-y-2 pt-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">sentiment_satisfied</span>
+<span>캐릭터 성향 &amp; 분위기 태그</span>
+</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">#차분하지만_허당미</span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">#따뜻한_힐링_톤</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">#커피러버</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">#리얼_직장인_공감</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel 3: Live AI Sheet Multi-Angle & Expression Consistency Preview (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-5">
+<div class="rounded-3xl bg-surface-container-lowest p-6 shadow-sm flex flex-col h-full space-y-4">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">일관성 다각도 표정 시트</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">auto_awesome</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">다양한 감정 변화에도 동일한 페르소나 특징점이 유지되는지 실시간으로 검증된 4-그리드 시트입니다.</p>
+<!-- Guarantee Badge Banner -->
+<div class="p-3 rounded-2xl bg-secondary-container text-on-secondary-container flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">verified</span>
+<span class="font-label-sm text-label-sm leading-tight font-medium">표정이 180도 달라져도 <strong>ToonLog SeedLock™</strong>으로 100% 동일 인물 유지</span>
+</div>
+<!-- Real-time 4-grid character sheet -->
+<div class="grid grid-cols-2 gap-3 flex-1">
+<!-- Expression 1: Neutral Smile -->
+<div class="group relative rounded-2xl bg-surface-container-low overflow-hidden flex flex-col p-2.5 hover:shadow-md transition-shadow">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Manhwa style character sheet expression panel of young woman with brown bob hair and round glasses, gentle pleasant default smile, calm relaxed mood, pastel studio lighting, perfect facial consistency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmqD0_Cq7p9yJ4u2dX4sPSQvz0FdXrrk9EpOYr31xdKVJThmPHz3Hfq7P4urlEtYjh9JksJquORZ52iLs1FLi-FWhDPCtr2eg2XsorCBxdzNQ7pxkTIN-sKa81h2id-toyp7bgQimdwuAyu5JrNSHDbnO7MHOqx78ViP9oHe-cWBQP_ZeU4hzeO_f691tov9-kfMyZ2XhdJsM2wLYl8UdmTbdCh7P3Bbd9Xfet3_ih"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur font-label-sm text-[10px] text-primary font-bold">컷 01</span>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">1) 기본 미소 (Smile)</span>
+<span class="material-symbols-outlined text-primary text-[14px]">sentiment_satisfied</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] truncate">일상적인 대화 및 인트로</span>
+</div>
+<!-- Expression 2: Exhausted Monday -->
+<div class="group relative rounded-2xl bg-surface-container-low overflow-hidden flex flex-col p-2.5 hover:shadow-md transition-shadow">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Manhwa style character sheet expression panel of the same young woman with brown bob hair and round glasses, exhausted tired Monday mood, dark circles, funny weary expression, consistent anime face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHwBNNKDke4QVE2pBNK3UpYKoQT79ABfQwJ7ePubQ-oa_xp5zOqznA2xLwehpp5j9LLPgQTF7bCgst9s_RKvzoO-VRkoMGDwMLMIzaMFzTCX3pJb6hAlyzO1PCpepHCzLMS8ER8bP9oV4xOJIv2Oj3JS6xoccs6Zoxya9mT3YPieadWymuYLII163rm-el8gVftdoUgW75mPU0946mQNP7WqfIknrnbNYl9qIWAp6q"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur font-label-sm text-[10px] text-primary font-bold">컷 02</span>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">2) 피곤/퇴근길 월요병</span>
+<span class="material-symbols-outlined text-secondary text-[14px]">sentiment_very_dissatisfied</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] truncate">야근 &amp; 지하철 지옥철 공감</span>
+</div>
+<!-- Expression 3: Heart-fluttering / Puppy encounter -->
+<div class="group relative rounded-2xl bg-surface-container-low overflow-hidden flex flex-col p-2.5 hover:shadow-md transition-shadow">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Manhwa style character sheet expression panel of the same woman with glasses and bob cut hair, heart-fluttering eyes, joyful blushing excitement from petting a golden puppy, high manhwa quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqItGerJBSdYOFIAwW2g7LRVtpbkHG8eaQhtA2Hs7uuIwzlOGajFhp2LlsURehdNTne3UvamBh5tQDSpP3mjgOEcv4usksYBSKbVFuZzVlLj1pIn6X6QDw2KZpT21XMzspBunOoJRuI_1lbysQ5_bG_ToKBUglgeOz7_9DgI0iXbQhgH04JAqqGCHAJr4RSGoSmDi2xFvQnH2gy0qSI9gi9ue2Y7FyrJziq-FVeZ4y"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur font-label-sm text-[10px] text-tertiary font-bold">컷 03</span>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">3) 강아지 만남 심쿵</span>
+<span class="material-symbols-outlined text-tertiary text-[14px]">favorite</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] truncate">감동 &amp; 힐링 모먼트 컷</span>
+</div>
+<!-- Expression 4: Delicious Bliss / Bungeoppang -->
+<div class="group relative rounded-2xl bg-surface-container-low overflow-hidden flex flex-col p-2.5 hover:shadow-md transition-shadow">
+<div class="aspect-square rounded-xl overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Manhwa style character sheet expression panel of the same character holding warm fish pastry snack bungeoppang, blissful sparkles, delicious food ecstasy expression, identical hair and glasses features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGW8Ha2_z_eRL9g2wfIRvxqHQjsg7pqyiDT_5ap-P16Vn5zBc8Vu6FVeTNusUliPdok5EHTGEDK3E9F4T7BhP0heKU-e4kvMCMlrSONsdlPxSuPbuXS30IivicL0tKyZUXORWei7H0l6ajLuZe93_j5pujzzl0LXdFqCNq0Oq999h-CXioqOXM3790VMW7I5fkWm3D78gUXP5zFTl_hOr3gGTKUlfSpy3e5VDFIChM"/>
+<span class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur font-label-sm text-[10px] text-primary font-bold">컷 04</span>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">4) 붕어빵 먹방 감동</span>
+<span class="material-symbols-outlined text-primary text-[14px]">restaurant</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] truncate">소확행 겨울 간식 먹방</span>
+</div>
+</div>
+<!-- Regenerate Sheet Button -->
+<button class="w-full py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+<span>표정 시트 다시 렌더링</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3. Persona History & Vector Map Sparkline Showcase -->
+<div class="rounded-3xl bg-surface-container-lowest p-6 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">페르소나 임베딩 안정성 모니터링</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">지난 14일간 생성된 4컷 만화 패널 56개에서의 얼굴 특징점 드리프트(Drift) 추이</p>
+</div>
+<div class="flex items-center gap-4 text-right">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">특징 손실률</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">0.02% (초안정)</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">안경 렌더링 유지율</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">100.0%</span>
+</div>
+</div>
+</div>
+<!-- SVG Inline Chart (Vector Consistency Sparkline) -->
+<div class="w-full h-24 bg-surface-container-low rounded-2xl p-3 flex items-center">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 800 100">
+<defs>
+<lineargradient id="gradient-area" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#39d6ed" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#39d6ed" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area under curve -->
+<path d="M 0 60 Q 100 55, 200 58 T 400 52 T 600 50 T 800 48 L 800 100 L 0 100 Z" fill="url(#gradient-area)"></path>
+<!-- Line path -->
+<path d="M 0 60 Q 100 55, 200 58 T 400 52 T 600 50 T 800 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<!-- Data Points -->
+<circle cx="200" cy="58" fill="#006875" r="4"></circle>
+<circle cx="400" cy="52" fill="#006875" r="4"></circle>
+<circle cx="600" cy="50" fill="#006875" r="4"></circle>
+<circle cx="800" cy="48" fill="#39d6ed" r="5"></circle>
+</svg>
+</div>
+<div class="flex justify-between items-center text-[11px] font-label-sm text-on-surface-variant mt-2 px-1">
+<span>11월 01일 (첫 번째 일기)</span>
+<span>11월 07일 (헤어스타일 락 적용)</span>
+<span>11월 14일 (오늘: 최적화 완료)</span>
+</div>
+</div>
+<!-- 4. Sticky Bottom Action Control Bar -->
+<div class="sticky bottom-6 z-30 rounded-3xl bg-surface/90 backdrop-blur-2xl p-4 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<div class="w-10 h-10 rounded-2xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant shrink-0">
+<span class="material-symbols-outlined text-[22px]">lock_person</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md text-on-surface font-semibold">소라 작가님 대표 페르소나 설정 완료 대기</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">변경 사항을 저장하면 내일 아침 생성될 일기에도 즉시 반영됩니다.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="px-5 py-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg flex items-center gap-2 transition-all" id="preview-test-panel-btn" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">science</span>
+<span>테스트 1컷 생성해보기</span>
+</button>
+<button class="px-7 py-3 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-lg text-label-lg flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" id="save-sync-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+<span>현재 설정 캐릭터로 저장 &amp; 동기화</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for Save and Copy Seed
+  document.getElementById('copy-seed-btn')?.addEventListener('click', function() {
+    navigator.clipboard?.writeText('SEED-2024-8849-SORA');
+    const span = this.querySelector('span:last-child');
+    const originalText = span.textContent;
+    span.textContent = '복사 완료!';
+    setTimeout(() => {
+      span.textContent = originalText;
+    }, 1800);
+  });
+
+  document.getElementById('save-sync-btn')?.addEventListener('click', function() {
+    const btn = this;
+    const originalHtml = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>동기화 중...</span>';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>저장 및 동기화 성공!</span>';
+      btn.classList.add('bg-primary');
+      setTimeout(() => {
+        btn.innerHTML = originalHtml;
+        btn.disabled = false;
+      }, 2000);
+    }, 1200);
+  });
+
+  document.getElementById('preview-test-panel-btn')?.addEventListener('click', function() {
+    alert('새로운 테스트 컷 생성을 시작합니다. SeedLock™ 파라미터가 적용된 1컷 프롬프트 엔진이 구동됩니다.');
+  });
+</script><div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto" id="supporting-persona-modal" role="dialog"><div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-3xl shadow-2xl overflow-hidden my-8 border border-outline-variant/30 flex flex-col"><div class="relative p-6 bg-gradient-to-r from-surface-container-high/60 via-surface-container-low to-secondary-fixed/20 border-b border-outline-variant/30 flex items-start justify-between"><div class="space-y-1.5"><div class="flex items-center gap-2 flex-wrap"><span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">workspace_premium</span>PRO 전용 • 슬롯 3 추가</span><span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[11px] font-mono">SeedLock™ Sub-Persona</span></div><h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">새로운 조연 캐릭터 추가 <span class="text-primary font-bold">(Supporting Character Seed)</span></h2><p class="font-body-sm text-body-sm text-on-surface-variant max-w-lg leading-relaxed">일상툰에 자주 등장하는 반려동물, 친구, 직장 동료, 연인 등의 외형을 고정하여 매 컷마다 100% 일관된 조연으로 자동 등장시킵니다.</p></div><button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors shrink-0" onclick="document.getElementById('supporting-persona-modal').style.display='none'" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="p-6 space-y-6 max-h-[72vh] overflow-y-auto"><div class="space-y-2"><label class="font-label-md text-label-md text-on-surface flex items-center justify-between"><span>1. 조연 캐릭터 유형 (카테고리)</span><span class="font-label-sm text-label-sm text-primary">유형에 따른 AI 전용 모델 매칭</span></label><div class="grid grid-cols-2 sm:grid-cols-4 gap-2"><button class="p-3 rounded-2xl bg-primary-fixed text-on-primary-fixed-variant flex flex-col items-center justify-center gap-1 shadow-sm border-2 border-primary" type="button"><span class="text-xl">🐶</span><span class="font-label-md text-label-md font-bold">반려동물</span><span class="text-[10px] text-on-primary-fixed-variant/80">강아지 / 고양이</span></button><button class="p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center justify-center gap-1 border border-transparent transition-all" type="button"><span class="text-xl">🧑‍🤝‍🧑</span><span class="font-label-md text-label-md font-medium">친구 / 지인</span><span class="text-[10px] text-on-surface-variant/80">소꿉친구 / 메이트</span></button><button class="p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center justify-center gap-1 border border-transparent transition-all" type="button"><span class="text-xl">💼</span><span class="font-label-md text-label-md font-medium">직장 동료</span><span class="text-[10px] text-on-surface-variant/80">팀원 / 멘토 / 상사</span></button><button class="p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex flex-col items-center justify-center gap-1 border border-transparent transition-all" type="button"><span class="text-xl">💖</span><span class="font-label-md text-label-md font-medium">연인 / 가족</span><span class="text-[10px] text-on-surface-variant/80">룸메이트 / 가족</span></button></div></div><div class="space-y-3"><div class="flex flex-col sm:flex-row gap-3"><div class="flex-1 space-y-1.5"><label class="font-label-md text-label-md text-on-surface">캐릭터 이름 / 호칭</label><div class="relative flex items-center"><span class="material-symbols-outlined text-outline absolute left-3 text-[18px]">badge</span><input class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-on-surface text-body-md focus:outline-none focus:border-primary" placeholder="예) 댕댕이 몽이 (골든 리트리버)" type="text" value="댕댕이 몽이 (골든 리트리버)"/></div></div><div class="flex-1 space-y-1.5"><label class="font-label-md text-label-md text-on-surface">역할 및 성격 태그</label><div class="relative flex items-center"><span class="material-symbols-outlined text-outline absolute left-3 text-[18px]">sell</span><input class="w-full pl-9 pr-3 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-on-surface text-body-md focus:outline-none focus:border-primary" placeholder="#퇴근메이트 #폭풍애교 #장난꾸러기" type="text" value="#퇴근메이트 #폭풍애교 #장난꾸러기"/></div></div></div></div><div class="space-y-3"><label class="font-label-md text-label-md text-on-surface flex items-center justify-between"><span>2. 비주얼 등록 옵션</span><span class="font-label-sm text-label-sm text-secondary">사진 추출 또는 프리셋 선택</span></label><div class="grid grid-cols-1 md:grid-cols-2 gap-3"><div class="p-4 rounded-2xl bg-surface-container-low border border-dashed border-outline-variant hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center cursor-pointer group"><div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform mb-2"><span class="material-symbols-outlined text-primary text-[22px]">cloud_upload</span></div><span class="font-label-md text-label-md text-on-surface font-semibold">실제 사진 업로드하여 웹툰화</span><p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">반려동물 사진 1장으로 AI가 만화풍 3D 벡터를 자동 추출합니다</p></div><div class="p-4 rounded-2xl bg-primary-fixed/20 border-2 border-primary flex flex-col justify-between"><div class="flex items-center justify-between mb-2"><span class="font-label-md text-label-md text-on-surface font-bold">추천 인기 프리셋에서 선택</span><span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[10px]">선택 모드</span></div><div class="grid grid-cols-4 gap-2"><div class="p-1.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center cursor-pointer border-2 border-primary"><div class="w-10 h-10 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-lg">🦮</div><span class="text-[10px] font-label-sm text-primary font-bold mt-1 truncate">리트리버</span></div><div class="p-1.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container shadow-sm flex flex-col items-center cursor-pointer border border-transparent transition-colors"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-lg">🐱</div><span class="text-[10px] font-label-sm text-on-surface-variant mt-1 truncate">치즈냥이</span></div><div class="p-1.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container shadow-sm flex flex-col items-center cursor-pointer border border-transparent transition-colors"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-lg">👔</div><span class="text-[10px] font-label-sm text-on-surface-variant mt-1 truncate">김대리</span></div><div class="p-1.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container shadow-sm flex flex-col items-center cursor-pointer border border-transparent transition-colors"><div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-lg">👧</div><span class="text-[10px] font-label-sm text-on-surface-variant mt-1 truncate">단짝수진</span></div></div></div></div></div><div class="space-y-3"><label class="font-label-md text-label-md text-on-surface flex items-center justify-between"><span>3. 조연 캐릭터 시그니처 디테일</span><span class="font-label-sm text-label-sm text-on-surface-variant">매 컷 고정 잠금</span></label><div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5"><div class="p-3 rounded-2xl bg-surface-container-low flex flex-col gap-1.5"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">palette</span>털 색상 / 헤어 톤</span><div class="flex items-center gap-1.5"><span class="w-4 h-4 rounded-full bg-[#d4a373] border border-white"></span><span class="font-label-md text-label-md text-on-surface font-semibold">골든 크림 베이지</span></div></div><div class="p-3 rounded-2xl bg-surface-container-low flex flex-col gap-1.5"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">checkroom</span>고정 착용 아이템</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">loyalty</span><span class="font-label-md text-label-md text-on-surface font-semibold">하늘색 삼각 스카프</span></div></div><div class="p-3 rounded-2xl bg-surface-container-low flex flex-col gap-1.5"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">mood</span>대표 표정 / 무드</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-tertiary text-[16px]">sentiment_very_satisfied</span><span class="font-label-md text-label-md text-on-surface font-semibold">항상 해맑은 미소</span></div></div></div></div><div class="p-3.5 rounded-2xl bg-secondary-container/60 border border-outline-variant/30 flex items-start gap-2.5"><span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">info</span><p class="font-body-sm text-body-sm text-on-secondary-container leading-relaxed">조연 캐릭터가 등록되면, 일기 작성 시 <strong class="text-primary font-semibold">'몽이와 산책', '동료와 회식'</strong> 등의 키워드를 입력할 때마다 해당 비주얼 Seed가 자동으로 배경 및 상호작용 컷에 소환됩니다.</p></div></div><div class="p-5 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-end gap-3"><button class="px-5 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="document.getElementById('supporting-persona-modal').style.display='none'" type="button">취소</button><button class="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" type="button"><span class="material-symbols-outlined text-[18px]">person_add</span><span>조연 캐릭터 저장 및 동기화 (+슬롯 활성화)</span></button></div></div></div></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.02)] mt-auto"><div class="w-full px-gutter-desktop mx-auto py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col md:flex-row items-center gap-space-md text-center md:text-left"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">ToonLog</span><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 ToonLog Inc. 일상을 4컷 만화 예술로 기록하는 AI 스토리그래픽 스튜디오.</p></div><div class="flex items-center gap-space-md font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">이용약관</a><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">개인정보처리방침</a><a class="hover:text-on-surface transition-colors" data-path="creator-guide" href="#">창작자 가이드</a><a class="hover:text-on-surface transition-colors" data-path="customer-center" href="#">고객지원센터</a></div></div></footer></body></html>

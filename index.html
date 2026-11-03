@@ -1,0 +1,1316 @@
+<!DOCTYPE html><html class="" lang="ko"><head>
+  <title>ToonLog (툰로그) - AI 4-Cut Webtoon Diary</title>
+  <meta name="description" content="소소한 일상 텍스트를 AI 기반 4컷 일상 웹툰으로 변환해주는 크리에이티브 AI 플랫폼">
+  <meta property="og:title" content="ToonLog (툰로그) - AI 4-Cut Webtoon Diary">
+  <meta property="og:description" content="소소한 일상 텍스트를 AI 기반 4컷 일상 웹툰으로 변환해주는 크리에이티브 AI 플랫폼"><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode: "class", theme: {extend: {colors: {"on-error-container": "#93000a", "on-primary": "#ffffff", "tertiary-fixed": "#f2daff", "on-surface": "#161d1e", "tertiary-container": "#dfb3ff", "on-error": "#ffffff", "tertiary-fixed-dim": "#e1b6ff", "primary-fixed-dim": "#3dd9f0", "surface-container-low": "#eef5f6", "on-tertiary-container": "#664083", "on-secondary-container": "#3c6b74", secondary: "#35656e", "on-secondary-fixed": "#001f24", "on-primary-fixed-variant": "#004f59", "surface-container-high": "#e3e9eb", "secondary-fixed": "#baebf5", "on-secondary": "#ffffff", "on-background": "#161d1e", "primary-container": "#39d6ed", "inverse-primary": "#3dd9f0", "on-surface-variant": "#3c494c", "surface-bright": "#f4fafc", "surface-tint": "#006875", "surface-dim": "#d5dbdd", "secondary-fixed-dim": "#9ecfd8", "error-container": "#ffdad6", error: "#ba1a1a", "primary-fixed": "#9defff", tertiary: "#744e92", "on-primary-fixed": "#001f24", "on-tertiary-fixed": "#2c044a", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#5b3678", "outline-variant": "#bbc9cc", "on-secondary-fixed-variant": "#1b4d55", "surface-container": "#e9eff0", outline: "#6c797c", "inverse-on-surface": "#ecf2f3", "on-primary-container": "#005965", primary: "#006875", "inverse-surface": "#2b3233", surface: "#f4fafc", background: "#f4fafc", "surface-container-highest": "#dde4e5", "secondary-container": "#baebf5", "surface-variant": "#dde4e5"}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}, spacing: {"space-xs": "0.25rem", gutter: "1.25rem", "margin-desktop": "2.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", margin: "1rem", "space-md": "1rem", "space-xl": "2.25rem", "gutter-desktop": "1.5rem", "space-lg": "1.5rem"}, fontFamily: {"headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"], "display-hero-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], "body-lg": ["16px", {lineHeight: "26px", fontWeight: "400"}], "label-lg": ["14px", {lineHeight: "20px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", fontWeight: "500"}], "display-hero-mobile": ["32px", {lineHeight: "40px", fontWeight: "800"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "700"}], "display-hero": ["48px", {lineHeight: "56px", fontWeight: "800"}], "body-sm": ["12px", {lineHeight: "18px", fontWeight: "400"}], "body-md": ["14px", {lineHeight: "22px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "600"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "700"}]}}}};</script>
+<style id="toonlog-palette-theme">
+  :root {
+    --tl-coral: #fe5e7f;      /* 1. Vibrant Coral Pink (Primary Brand) */
+    --tl-blush: #fea7a7;      /* 2. Soft Peach Blush (Secondary Accent) */
+    --tl-apricot: #ffd7a5;    /* 3. Warm Peach Cream (Tertiary & Highlights) */
+    --tl-mint: #ccffc0;       /* 4. Pastel Spring Mint (Success & Badges) */
+    --tl-cyan: #9cf6fe;       /* 5. Airy Sky Cyan (Container & Glow) */
+    
+    --tl-bg-warm: #fffcfb;
+    --tl-surface-card: #ffffff;
+    --tl-border-soft: #fde6dc;
+  }
+
+  /* Layout adaptation: PC has fixed left nav, Mobile has bottom nav */
+  @media (min-width: 768px) {
+    body {
+      padding-left: 17rem !important;
+      padding-bottom: 1.5rem !important;
+    }
+    header.fixed, .fixed.top-0 {
+      left: 17rem !important;
+      width: calc(100% - 17rem) !important;
+    }
+    /* Hide old duplicate sidebars from prototype files so there's only one unified left bar */
+    body > aside:not(#toonlog-pc-sidebar) {
+      display: none !important;
+    }
+    body > div.pl-64, body > div.pl-72 {
+      padding-left: 0 !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    body {
+      padding-left: 0 !important;
+      padding-bottom: 5.5rem !important;
+    }
+    header.fixed, .fixed.top-0 {
+      left: 0 !important;
+      width: 100% !important;
+    }
+    body > aside:not(#toonlog-pc-sidebar) {
+      display: none !important;
+    }
+    body > div.pl-64, body > div.pl-72 {
+      padding-left: 0 !important;
+    }
+  }
+
+  /* Color Palette Harmony Overrides */
+  .bg-primary {
+    background-color: var(--tl-coral) !important;
+    color: #ffffff !important;
+  }
+  .text-primary {
+    color: var(--tl-coral) !important;
+  }
+  .border-primary {
+    border-color: var(--tl-coral) !important;
+  }
+  .hover\:bg-primary:hover {
+    background-color: #e6496b !important;
+  }
+
+  /* Primary Container & Cyan Accents */
+  .bg-primary-container, .bg-primary-container\/20, .bg-primary-container\/30 {
+    background-color: var(--tl-cyan) !important;
+    color: #01434c !important;
+  }
+  .text-on-primary-container, .text-primary-container {
+    color: #01434c !important;
+  }
+  .hover\:bg-primary-container:hover {
+    background-color: #8bebf6 !important;
+  }
+
+  /* Secondary Accents (Blush & Mint) */
+  .bg-secondary-container, .bg-secondary-container\/25, .bg-secondary-container\/40 {
+    background-color: var(--tl-mint) !important;
+    color: #104316 !important;
+  }
+  .text-on-secondary-container {
+    color: #104316 !important;
+  }
+  .bg-secondary {
+    background-color: var(--tl-blush) !important;
+    color: #3b1019 !important;
+  }
+
+  /* Tertiary Accents (Warm Apricot) */
+  .bg-tertiary-container, .bg-tertiary-container\/15, .bg-tertiary-container\/30 {
+    background-color: var(--tl-apricot) !important;
+    color: #593500 !important;
+  }
+  .text-tertiary {
+    color: #d97816 !important;
+  }
+  .text-on-tertiary-container {
+    color: #593500 !important;
+  }
+
+  /* Atmospheric gradients with the 5 palette colors */
+  .from-primary-container {
+    --tw-gradient-from: var(--tl-cyan) var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: rgb(156 246 254 / 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  .to-primary {
+    --tw-gradient-to: var(--tl-coral) var(--tw-gradient-to-position) !important;
+  }
+  
+  /* Brand Logo & Accent gradient */
+  .toonlog-logo-gradient {
+    background: linear-gradient(135deg, var(--tl-coral) 0%, var(--tl-blush) 35%, var(--tl-apricot) 70%, var(--tl-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .toonlog-palette-strip {
+    background: linear-gradient(to right, #fe5e7f 0%, #fe5e7f 20%, #fea7a7 20%, #fea7a7 40%, #ffd7a5 40%, #ffd7a5 60%, #ccffc0 60%, #ccffc0 80%, #9cf6fe 80%, #9cf6fe 100%);
+  }
+
+  /* Soft glowing shadow with coral tint */
+  .shadow-palette-glow {
+    box-shadow: 0 4px 20px -2px rgba(254, 94, 127, 0.22);
+  }
+
+  /* Active Sidebar Item */
+  .nav-active-item {
+    background: linear-gradient(135deg, rgba(254, 94, 127, 0.15), rgba(156, 246, 254, 0.2)) !important;
+    color: #fe5e7f !important;
+    font-weight: 700 !important;
+    border-left: 4px solid #fe5e7f !important;
+  }
+</style>
+
+</head><body class="bg-surface font-body-md text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 w-full z-50 bg-surface-dim/85 backdrop-blur-2xl shadow-[0_20px_40px_-15px_rgba(124,58,237,0.18)]"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-gutter"><a class="flex items-center gap-space-sm group" data-path="feed" href="#"><img alt="ToonLog Logo" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlidjpZVzi4ZSaqqhs49KAy4h-wwy3Ph_IOcLqXzXAtYkoe0pgCpXCghZ2OqJ6p9opntpJnxix6mjrgDwADjZfRar705k3lNAPNmtFu7FhHp6VzsE0s2fF0A3MKcKSSy9JdZysLNA14_GYTln-t5gi0fCVLUz2YkrBwRsBJHglsIW7F_gl6wlQ8E2olJ4LuzxWQVke8BW6g6MEEF_z8omw90M0l9p4EeWm_40bOIh3"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Toon<span class="text-primary">Log</span></span><span class="px-space-xs py-0.5 rounded-full bg-primary-container/30 text-primary font-label-sm text-label-sm tracking-widest font-bold shadow-[0_0_12px_rgba(124,58,237,0.4)]">BETA</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-DEFAULT shadow-[0_0_16px_rgba(124,58,237,0.3)]"><a aria-current="page" class="px-space-md py-space-sm transition-colors duration-200 bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-DEFAULT shadow-[0_0_16px_rgba(124,58,237,0.3)]" data-path="studio" href="#">만들기 (Studio)</a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors duration-200 flex items-center gap-1" data-path="character-studio" href="#" title="고정 캐릭터 생성 &amp; 커스텀 설정"><span class="material-symbols-outlined text-[16px] text-primary">face</span><span class="">캐릭터 설정</span></a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors duration-200" data-path="feed" href="#">피드 &amp; 탐색 (Feed)</a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors duration-200" data-path="my-archive" href="#">내 웹툰 다이어리 (My Archive)</a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors duration-200 flex items-center gap-1" data-path="book-publish" href="#" title="실물 단행본 책 출판 주문"><span class="material-symbols-outlined text-[16px] text-tertiary">auto_stories</span><span class="">단행본 제작</span></a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors duration-200" data-path="pricing" href="#">요금제 &amp; 멤버십 (Pricing)</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high shadow-inner"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">오늘 무료 생성</span><span class="font-label-sm text-label-sm font-bold text-tertiary">1/1회 남음</span></div><a class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-[0_0_24px_rgba(124,58,237,0.35)] hover:brightness-110 active:scale-95 transition-all duration-150" data-path="studio" href="#"><span class="material-symbols-outlined text-[18px]">stylus_note</span><span class="">+ 오늘 일기 쓰기</span></a><button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpZ96hsN26f5FwrDGADnhDyO_loMndTfK_gQxOhWkNOVf_6uXj2GgzdzBbQrqPTDfBGSnv2uEu6eqEzu_B8mGE-_9ZOH3dmppvTAANFZzBncnb3Hrt4B5j7NIBPXdQKJr0vzL3RT6WGjIQx7aXQ9riN_NoanuGT-qJ447Vn4gdQYs5KEBy4oI7YLUjLyjxuA-troRp4qaL9aOgshR-V4u-9cqK0KvyZujHUwIsyPg7"><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-dim"></span></div><button class="hidden sm:flex items-center gap-space-xs text-left group" type="button"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold group-hover:text-primary transition-colors">소라 작가님</span><span class="font-label-sm text-[10px] leading-tight text-on-surface-variant">Pro Creator</span></div><span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-on-surface transition-colors">expand_more</span></button></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-5rem)]"><div class="flex flex-col w-full">
+<!-- Dynamic Creative Studio Background Glows -->
+<div class="relative w-full overflow-hidden px-gutter md:px-margin-desktop py-space-lg flex flex-col items-center">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-primary-container/20 rounded-full blur-[130px] pointer-events-none"></div>
+<div class="absolute top-96 -right-24 w-96 h-96 bg-secondary-container/25 rounded-full blur-[110px] pointer-events-none"></div>
+<div class="absolute top-72 -left-20 w-80 h-80 bg-tertiary-container/15 rounded-full blur-[90px] pointer-events-none"></div>
+<!-- Top Badge & Header Section -->
+<div class="w-full max-w-4xl flex flex-col items-center text-center relative z-10 space-y-space-md mb-space-lg">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-md">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wider uppercase">AI Webtoon Studio 2.0</span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Carat Style Expressive Engine</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-[40px] md:leading-[48px] text-on-surface tracking-tight font-extrabold max-w-2xl">당신의 소소한 일상, 이야기가 웹툰이 됩니다 ✍️</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">텍스트 한 줄만 적으면 AI가 분량에 맞춰 4컷부터 최대 8컷까지 장면 분할, 그림체, 말풍선 대사까지 자동으로 완성합니다.</p>
+<!-- Daily Free Quota Capsule Bar -->
+<div class="w-full max-w-xl flex items-center justify-between px-space-md py-space-xs rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-lg">
+<div class="flex items-center gap-space-xs text-left">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">auto_awesome</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">오늘의 무료 1회 생성 혜택 적용 중</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">매일 자정 리셋 • 고해상도 웹툰 지원</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-highest/70 px-space-sm py-1 rounded-DEFAULT">
+<span class="material-symbols-outlined text-[15px] text-tertiary">schedule</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary tracking-wide tabular-nums" id="countdown-timer">14:31:56 남음</span>
+</div>
+</div><div class="w-full max-w-xl flex items-center justify-center gap-space-sm flex-wrap pt-space-xs"><a class="flex items-center gap-1.5 px-space-md py-1 rounded-full bg-surface-container-high/80 hover:bg-surface-bright text-on-surface text-label-sm font-label-sm shadow-sm transition-all" data-path="character-studio" href="#"><span class="material-symbols-outlined text-[16px] text-primary">face</span><span class="">고정 캐릭터 스튜디오</span></a><a class="flex items-center gap-1.5 px-space-md py-1 rounded-full bg-surface-container-high/80 hover:bg-surface-bright text-on-surface text-label-sm font-label-sm shadow-sm transition-all" data-path="instagram-sync" href="#"><span class="material-symbols-outlined text-[16px] text-tertiary">share</span><span class="">인스타그램 연동 발행</span></a><a class="flex items-center gap-1.5 px-space-md py-1 rounded-full bg-surface-container-high/80 hover:bg-surface-bright text-on-surface text-label-sm font-label-sm shadow-sm transition-all" data-path="book-publish" href="#"><span class="material-symbols-outlined text-[16px] text-secondary">menu_book</span><span class="">실물 웹툰북 출판 주문</span></a></div>
+</div>
+<!-- Main Workspace Bento Card -->
+<div class="w-full max-w-4xl relative z-10 bg-surface-container/70 backdrop-blur-2xl rounded-lg p-space-md md:p-space-lg shadow-[0_24px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col gap-space-lg">
+<!-- Prompt & Diary Storyboard Input Container -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs"><label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-space-xs font-semibold" for="diary-input"><span class="material-symbols-outlined text-[18px] text-primary">edit_note</span>오늘 있었던 일을 솔직하게 적어보세요</label><div class="flex items-center gap-2"><button id="load-draft-btn" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high/90 hover:bg-secondary-container/25 text-on-surface hover:text-primary font-label-sm text-[11px] font-medium transition-all duration-200 border border-outline-variant/30 active:scale-95 group" type="button" title="이전에 임시저장된 일기 내용을 불러옵니다" onclick="(function(){ const t = document.getElementById('diary-input'); const counter = document.getElementById('char-counter'); const toast = document.getElementById('draft-toast'); const draftText = '오늘 출근길에 강아지가 발등 위로 쏙 다가와서 인사했는데 심장이 녹아내릴 뻔했다... 너무 사랑스러운 눈빛으로 날 올려다보는데 월요병이 순식간에 치료되는 기분이었다.'; if (t) { t.value = draftText; t.dispatchEvent(new Event('input')); t.focus(); } if (counter) { counter.textContent = '94 / 400자'; counter.classList.add('text-primary'); counter.classList.remove('text-outline'); } if (toast) { toast.classList.remove('hidden'); toast.classList.add('flex'); } })()"><span class="material-symbols-outlined text-[15px] text-primary group-hover:scale-105 transition-transform">history_edu</span><span class="">최근 임시저장 불러오기</span><span class="px-1.5 py-0.2 rounded-full bg-primary-container/30 text-on-primary-container text-[10px] font-bold">오늘 08:42</span></button><span class="font-label-sm text-label-sm text-outline text-primary" id="char-counter" data-stitch-orig-opacity="0">94 / 400자</span></div></div>
+<div class="relative w-full rounded-DEFAULT bg-surface-container-lowest/80 p-space-md focus-within:shadow-[0_0_24px_rgba(124,58,237,0.35)] transition-all duration-300">
+<textarea class="w-full bg-transparent resize-none outline-none font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant leading-relaxed" id="diary-input" maxlength="400" placeholder="예: 오늘 출근길에 강아지가 발등 위로 쓱 다가와서 인사했는데 심장이 녹아내릴 뻔했다..." rows="4">오늘 출근길에 강아지가 발등 위로 쏙 다가와서 인사했는데 심장이 녹아내릴 뻔했다... 너무 사랑스러운 눈빛으로 날 올려다보는데 월요병이 순식간에 치료되는 기분이었다.</textarea>
+<!-- Integrated Micro Quick Tag Bar -->
+<div class="pt-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline font-medium mr-1">추천 상황:</span>
+<button class="quick-chip px-2.5 py-1 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" data-text="월요일 퇴근길 지하철에서 만난 귀여운 강아지가 내 발등에 기댔다. 피로가 사르르 녹아내렸다." type="button">
+                #월요병_퇴근길
+              </button>
+<button class="quick-chip px-2.5 py-1 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" data-text="카페에서 화이트 셔츠 입은 날 아이스 라떼를 왈칵 쏟아버렸다. 하지만 바리스타님이 조용히 휴지를 챙겨주셨다." type="button">
+                #카페에서_쏟은_라떼
+              </button>
+<button class="quick-chip px-2.5 py-1 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" data-text="창가 햇살 아래서 고양이가 배를 드러내고 골골송을 부르며 스르륵 낮잠에 빠져들었다." type="button">
+                #고양이와_낮잠
+              </button>
+<button class="quick-chip px-2.5 py-1 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" data-text="다이어트 3일차, 밤 11시에 에어프라이어 감자튀김의 바삭한 유혹을 이기지 못하고 전부 먹어치웠다." type="button">
+                #다이어트_실패기
+              </button>
+</div>
+<button class="text-outline hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1 transition-colors" id="clear-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+              다시 쓰기
+            </button>
+</div>
+</div><div id="draft-toast" class="items-center justify-between px-space-md py-1.5 rounded-DEFAULT bg-secondary-container/25 border border-primary/20 text-on-surface text-label-sm font-label-sm transition-all animate-in fade-in flex"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">verified</span><span class="">✨ <strong>최근 임시저장 내용 적용됨 (오늘 08:42)</strong> • '출근길 강아지' 에피소드가 준비되었습니다. 아래 생성 버튼을 눌러 테스트해보세요!</span></div><button id="draft-toast-close" class="text-outline hover:text-on-surface transition-colors flex items-center" type="button" onclick="document.getElementById('draft-toast').classList.add('hidden'); document.getElementById('draft-toast').classList.remove('flex');"><span class="material-symbols-outlined text-[16px]">close</span></button></div>
+</div>
+<!-- Controls & Customization Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Style Preset Selector (7 cols) -->
+<div class="md:col-span-7 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">palette</span>
+              그림체 스타일 프리셋
+            </span>
+<span class="font-label-sm text-label-sm text-primary">인기 순</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5" id="style-presets">
+<!-- Preset 1 (Active Default) -->
+<button class="style-card group relative p-space-sm rounded-DEFAULT text-left transition-all duration-200 flex flex-col gap-2 bg-surface-container-low" data-style="insta" type="button">
+<div class="w-full h-16 rounded-md overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Warm pastel digital daily comic style character with round friendly face, soft peach cheeks, cozy studio lighting, minimalist thick outlines, Korean webtoon aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ZI2hI5d-YOJ-MPe8fiCXqqCDQ0eece-bee-HMd2sxRqhFyvs4ND0OOfCBctqtOklrMqh0xKpZGlsS-VkctaUoRqjKwJ2msmueI1N53yy65djWucLg4g2NPtm7ou_mlem2IVtl_YiBkPVzzMGyqowJil-nD-TqfdWQdPNu7Q0796nzD8o1BIVdDTQnTrxFg2opdlnrAUq5VSDOSvQHyuJS7aIqWlsT5Sft3ILkrnH">
+
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">인스타 일상툰</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant line-clamp-1">파스텔 동글이 &amp; 공감</div>
+</div>
+</button>
+<!-- Preset 2 -->
+<button class="style-card group relative p-space-sm rounded-DEFAULT bg-surface-container-low hover:bg-surface-container-high text-left transition-all duration-200 flex flex-col gap-2" data-style="romance" type="button">
+<div class="w-full h-16 rounded-md overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Korean romance manhwa illustration with sparkling eyes, delicate flowing hair, soft rose and violet lighting, elegant shoujo aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAGS1JapJzGE-Q-knjvkZRvjWGMKjkc6ItFsOcwkJm1bkRXSMVvozTCvHAjcNDkVN0v_uLwWYxXJ1L411AgZL3ykWMlnMWyTqR7CUmMA8SqVgEFtQEKJwItXLREWR-QbiSDD4APcwWmlecxrisqbod86O6zfLW_V12vzfprBl2bqyMozfFd1Omal_VNJ8ri2bQCAhL1mt_TEqOgQlIyESjnM8yGEQduPzGVWSw_dz7">
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">순정 로맨스풍</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant line-clamp-1">반짝이는 눈망울 감성</div>
+</div>
+</button>
+<!-- Preset 3 -->
+<button class="style-card group relative p-space-sm rounded-DEFAULT bg-surface-container-low hover:bg-surface-container-high text-left transition-all duration-200 flex flex-col gap-2" data-style="comic" type="button">
+<div class="w-full h-16 rounded-md overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Exaggerated funny cartoon face with huge eyes, expressive sweat drop, bold black outlines, comedic gag webtoon style with vibrant yellow and orange accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYv4p_e23AqxWBTIVIzazCLBDB724Ezb4-QftO4E-zcbr7G2ZcELUUVz0oZUF0wnRV5L-WhOKp9mLdrtu4LNO2QlG9GjXE5pmxlwqn4vlWhDszEcXHp0wAx2X06DUXutOwvWwoQvpWLp_N--FjViWV4LJGyfA54IqyPOo2662OO2Ph5Z2yk7eJBvtYNy3gGwB6SUWTRIzpwZHcJ2ttYV8jI-2WhMqlvj774kxcd6Sp">
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">코믹 개그 4컷</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant line-clamp-1">극적인 리액션과 반전</div>
+</div>
+</button>
+<!-- Preset 4 -->
+<button class="style-card group relative p-space-sm rounded-DEFAULT hover:bg-surface-container-high text-left transition-all duration-200 flex flex-col gap-2 ring-2 ring-primary-container shadow-[0_0_20px_rgba(124,58,237,0.3)] bg-surface-container-highest/90" data-style="retro" type="button">
+<div class="w-full h-16 rounded-md overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Classic retro vintage manga panel with screen tones, monochrome black and white ink hatching, 90s vintage anime print textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJSRkxlCWomX8VoaAG2EdCk9fzXg42kAfysom4x6DMtUUMcrK0mldPdBC0offzQk-Opgt-Mifqo7fAYNKM3r8aCUkiIhfkywr_iohRoKvVfvtJ1jOt1E4eGkxmpBifuSdfZU2e5eoX18D_YaLUWUOXXIaCo8tDLxN_aJTIzG1vhjjpgmpsU50bLBc3gkuSxaSUjgOwEnOMV1CZ2QxRwG9gbLUic7WYhbL1HEkDNxnT">
+<span class="absolute top-1 right-1 px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-[10px] font-bold">선택됨</span></div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">레트로 흑백 만화</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant line-clamp-1">스크린톤 90년대 감성</div>
+</div>
+</button>
+<!-- Preset 5 -->
+<button class="style-card group relative p-space-sm rounded-DEFAULT hover:bg-surface-container-high text-left transition-all duration-200 flex flex-col gap-2 bg-surface-container-low" data-style="ghibli" type="button">
+<div class="w-full h-16 rounded-md overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Lush watercolor animation background with fluffy summer clouds, warm golden hour sunlight, Ghibli inspired nostalgic pastoral dreamscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr4ZWkcN_qR9SSYTcgxk1qB8CBzMAGyhYMTzHqP9yhLmNgxI8OKVbGo5_QfvbYxjrxfY2Y6upoNdwuQFIa2L65vDhWnQI-Q7Ij_JEERql8I_wSeZ9t1vWrr74yOBkthk_3hejUU-gjnmPmYHjHbqaCDXyoGm8H-7TYH4GzUqW8mpRlHA3GpjOXNXg8a-lsvlP7_RwM1keywh_Mmp-pwSiciZ8Netm3Erna88I_Iyj4">
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">지브리 수채화</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant line-clamp-1">몽환적인 수채 힐링</div>
+</div>
+</button>
+<!-- Custom / Preset 6 -->
+<a class="style-card group relative p-space-sm rounded-DEFAULT hover:bg-surface-container-high text-left transition-all duration-200 flex flex-col gap-2 ring-1 ring-primary/30 hover:ring-2 hover:ring-primary-container cursor-pointer block bg-surface-container-low" data-path="character-studio" data-style="pixel" href="#" title="고정 캐릭터 생성 &amp; 커스텀 설정 스튜디오로 이동"><div class="w-full h-16 rounded-md overflow-hidden relative bg-surface-container flex items-center justify-center bg-gradient-to-tr from-surface-container-highest to-surface-bright group-hover:scale-105 transition-transform duration-300"><span class="material-symbols-outlined text-[28px] text-primary">add_circle</span></div><div><div class="font-label-md text-label-md text-on-surface font-bold flex items-center justify-between"><span class="">화풍 커스텀 +</span><span class="material-symbols-outlined text-[16px] text-primary group-hover:translate-x-0.5 transition-transform">arrow_forward</span></div><div class="font-label-sm text-[11px] text-primary font-medium line-clamp-1">고정 캐릭터 생성 &amp; 커스텀 설정 →</div></div></a>
+</div>
+</div>
+<!-- Format & Tone Controls (5 cols) -->
+<div class="md:col-span-5 flex flex-col justify-between gap-space-md">
+<!-- Cut Count Selector -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">view_stream</span>
+              만화 연출 분량
+            </span>
+<div class="flex flex-col gap-1.5"><div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-1 rounded-DEFAULT bg-surface-container-lowest"><button class="cut-tab py-2 px-1 rounded-DEFAULT bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-sm transition-all text-center" type="button">4컷 일상툰<span class="block text-[10px] opacity-80">기본/숏폼</span></button><button class="cut-tab py-2 px-1 rounded-DEFAULT hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all text-center" type="button">6컷 스토리<span class="block text-[10px] text-outline">심층 일기</span></button><button class="cut-tab py-2 px-1 rounded-DEFAULT hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all text-center" type="button">8컷 롱폼<span class="block text-[10px] text-outline">풍부한 에피소드</span></button><button class="cut-tab py-2 px-1 rounded-DEFAULT hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all text-center" type="button">1컷 일러<span class="block text-[10px] text-outline">숏폼 다이어리</span></button></div><div class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high/80 text-on-surface-variant text-[11px] font-label-sm"><span class="material-symbols-outlined text-[14px] text-primary">info</span><span class="">이야기 소재나 글자수가 많을 땐 8컷으로 더욱 디테일하고 풍성한 장면 연출을 지원합니다.</span></div></div>
+</div>
+<!-- Tone & Mood Selector -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">sentiment_satisfied</span>
+              스토리 톤앤매너
+            </span>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 px-3 py-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="accent-primary-container" name="tone" type="radio" value="healing">
+<span class="font-label-sm text-label-sm text-on-surface">따뜻하고 힐링</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input class="accent-primary-container" name="tone" type="radio" value="comic">
+<span class="font-label-sm text-label-sm text-on-surface">유쾌하고 코믹</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input class="accent-primary-container" name="tone" type="radio" value="calm">
+<span class="font-label-sm text-label-sm text-on-surface">잔잔한 공감</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container-high cursor-pointer transition-colors">
+<input class="accent-primary-container" name="tone" type="radio" value="dramatic">
+<span class="font-label-sm text-label-sm text-on-surface">극적인 과장</span>
+</label>
+</div>
+</div>
+<!-- Auto-Speech bubble Switch Option -->
+<div class="flex items-center justify-between px-space-sm py-2 rounded-DEFAULT bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">chat_bubble</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">자동 대사 및 말풍선 생성</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-9 h-5 bg-surface-bright peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Main Creation CTA Section -->
+<div class="w-full pt-space-xs flex flex-col items-center">
+<button class="w-full md:w-3/4 py-4 px-space-lg rounded-full bg-gradient-to-r from-primary-container via-[#6366f1] to-secondary-container text-on-primary-container font-headline-sm text-headline-sm flex items-center justify-center gap-space-sm shadow-[0_0_36px_rgba(124,58,237,0.5)] hover:shadow-[0_0_50px_rgba(124,58,237,0.7)] hover:brightness-110 active:scale-[0.99] transition-all duration-200" id="generate-button" type="button" onclick="(function(){ const btn = document.getElementById('generate-button'); const state = document.getElementById('generating-state'); const bar = document.getElementById('progress-bar-fill'); const pct = document.getElementById('progress-percent'); const stepTxt = document.getElementById('rendering-step-text'); const liveModal = document.getElementById('live-rendering-direct-overlay'); const successModal = document.getElementById('generation-success-modal'); if (liveModal) { liveModal.classList.remove('hidden'); liveModal.classList.add('flex'); } if (state) { state.classList.remove('hidden'); state.classList.add('flex'); } if (btn) { btn.innerHTML = '&lt;span class=&quot;material-symbols-outlined text-[24px] animate-spin-slow&quot;&gt;sync&lt;/span&gt;&lt;span&gt;⚡ AI 렌더링 파이프라인 (SCREEN_47) 연결 중...&lt;/span&gt;'; } let p = 15; const interval = setInterval(() =&gt; { p += 20; if (p &gt;= 100) { p = 100; clearInterval(interval); if (bar) bar.style.width = '100%'; if (pct) pct.textContent = '100%'; if (stepTxt) stepTxt.textContent = '완료! 뷰어 및 에디터 화면(SCREEN_3) 준비 완료'; setTimeout(() =&gt; { if (state) { state.classList.add('hidden'); state.classList.remove('flex'); } if (successModal) { successModal.classList.remove('hidden'); successModal.classList.add('flex'); successModal.scrollIntoView({ behavior: 'smooth', block: 'center' }); } if (btn) { btn.innerHTML = '&lt;span class=&quot;material-symbols-outlined text-[24px]&quot;&gt;auto_awesome&lt;/span&gt;&lt;span&gt;✨ AI 맞춤 웹툰 생성 완료! (다시 생성하기)&lt;/span&gt;&lt;span class=&quot;material-symbols-outlined text-[22px]&quot;&gt;arrow_forward&lt;/span&gt;'; } }, 600); } else { if (bar) bar.style.width = p + '%'; if (pct) pct.textContent = p + '%'; if (stepTxt) { if (p &lt;= 35) stepTxt.textContent = 'SeedLock 캐릭터 페이스 일관성 앵커링 중...'; else if (p &lt;= 70) stepTxt.textContent = '4컷 실시간 GPU 가속 웹툰 프레임 렌더링 중...'; else stepTxt.textContent = '대사 말풍선 자동 안착 및 후처리 보정 중...'; } } }, 300); })()"><span class="material-symbols-outlined text-[24px] animate-spin-slow">auto_awesome</span><span class="">AI 맞춤 웹툰 생성하기 (4컷~8컷 자동 구성)</span><span class="material-symbols-outlined text-[22px]">arrow_forward</span></button>
+<!-- Generation Progress Bar Modal / Area (Hidden initially) -->
+<div id="live-rendering-direct-overlay" class="hidden w-full max-w-xl mt-space-md p-space-md rounded-2xl bg-surface-container-lowest/95 backdrop-blur-2xl border border-primary/30 flex-col gap-space-sm text-left shadow-[0_24px_60px_-15px_rgba(0,0,0,0.5)] animate-in fade-in"><div class="flex items-center justify-between pb-2 border-b border-surface-container-high"><div class="flex items-center gap-2"><span class="w-9 h-9 rounded-full bg-primary-container/30 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[22px] animate-spin-slow">motion_photos_on</span></span><div><div class="flex items-center gap-1.5"><h4 class="font-label-lg text-label-lg font-bold text-on-surface">⚡ 실시간 AI 렌더링 스튜디오 (SCREEN_47)</h4><span class="px-1.5 py-0.2 rounded-full bg-primary text-on-primary font-label-sm text-[10px] font-bold animate-pulse">LIVE</span></div><span class="font-label-sm text-[11px] text-outline">4컷 콘티 생성 및 실시간 GPU 렌더링 파이프라인 가동</span></div></div><button type="button" class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container transition-colors" onclick="document.getElementById('live-rendering-direct-overlay').classList.add('hidden'); document.getElementById('live-rendering-direct-overlay').classList.remove('flex');"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-2 rounded-xl bg-surface-container-low text-center text-label-sm font-label-sm"><div class="p-1.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[18px] text-primary">face</span><span class="font-semibold text-[11px] text-on-surface">1. SeedLock 고정</span><span class="text-[10px] text-primary font-bold">완료 ✓</span></div><div class="p-1.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[18px] text-primary">auto_stories</span><span class="font-semibold text-[11px] text-on-surface">2. 컷별 콘티</span><span class="text-[10px] text-primary font-bold">완료 ✓</span></div><div class="p-1.5 rounded-lg bg-primary-container/20 border border-primary/30 flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[18px] text-primary animate-pulse">palette</span><span class="font-semibold text-[11px] text-primary">3. 4컷 작화</span><span class="text-[10px] text-primary font-bold">실시간 렌더링 중</span></div><div class="p-1.5 rounded-lg bg-surface-container-lowest/60 flex flex-col items-center gap-1 opacity-70"><span class="material-symbols-outlined text-[18px] text-outline">chat</span><span class="font-semibold text-[11px] text-on-surface-variant">4. 대사/말풍선</span><span class="text-[10px] text-outline">대기 중</span></div></div><div class="flex items-center justify-between pt-1 gap-2"><button type="button" onclick="(function(){ const t = document.getElementById('subscreen-toast'); const tt = document.getElementById('subscreen-toast-title'); const td = document.getElementById('subscreen-toast-desc'); if (tt) tt.textContent = '⚡ 실시간 AI 렌더링 화면 (SCREEN_47)'; if (td) td.textContent = '실시간 GPU 렌더링 전용 스튜디오 뷰로 즉시 이동합니다...'; if (t) { t.classList.remove('hidden', 'translate-y-2'); t.classList.add('flex', 'translate-y-0'); } setTimeout(() =&gt; { t.classList.add('hidden', 'translate-y-2'); t.classList.remove('flex', 'translate-y-0'); }, 4000); })()" class="w-full py-2 px-space-md rounded-DEFAULT bg-primary hover:bg-primary/90 text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center gap-1.5 shadow-md transition-all"><span class="material-symbols-outlined text-[18px]">play_circle</span><span class="">⚡ 실시간 렌더링 화면으로 바로 이동 (SCREEN_47)</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></button></div></div><div class="hidden w-full max-w-md mt-space-md p-space-md rounded-DEFAULT bg-surface-container-lowest/90 backdrop-blur-md flex flex-col gap-space-xs text-center shadow-2xl" id="generating-state"><div class="flex items-center justify-between font-label-sm text-label-sm"><span class="text-primary font-bold flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span><span class="">실시간 AI 렌더링 진행 중 (SCREEN_47 연결)</span></span><span class="text-primary font-extrabold tabular-nums" id="progress-percent">25%</span></div><div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-primary-container transition-all duration-300 w-1/4" id="progress-bar-fill"></div></div><p class="font-label-sm text-[12px] text-on-surface font-medium" id="rendering-step-text">SeedLock 캐릭터 추출 및 4컷 콘티 분할 중...</p><div class="flex items-center justify-between pt-1 border-t border-outline-variant/30 text-[11px] text-on-surface-variant"><span class="flex items-center gap-1 text-primary font-semibold"><span class="material-symbols-outlined text-[15px]">memory</span>Carat GPU Engine 가속</span><button type="button" onclick="(function(){ const t = document.getElementById('subscreen-toast'); const tt = document.getElementById('subscreen-toast-title'); const td = document.getElementById('subscreen-toast-desc'); if (tt) tt.textContent = '⚡ 실시간 AI 렌더링 스튜디오 (SCREEN_47)'; if (td) td.textContent = 'GPU 파이프라인 실시간 생성 화면으로 전환합니다...'; if (t) { t.classList.remove('hidden', 'translate-y-2'); t.classList.add('flex', 'translate-y-0'); } })()" class="text-primary hover:text-on-surface font-bold flex items-center gap-0.5 underline">SCREEN_47 즉시 보기 →</button></div></div><div id="generation-success-modal" class="hidden w-full max-w-lg mt-space-md p-space-md rounded-2xl bg-surface-container-lowest/95 backdrop-blur-2xl border border-primary/30 flex flex-col gap-space-sm text-left shadow-[0_24px_60px_-15px_rgba(0,0,0,0.5)] animate-in fade-in"><div class="flex items-center justify-between pb-2 border-b border-surface-container-high"><div class="flex items-center gap-2"><span class="w-8 h-8 rounded-full bg-primary-container/30 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">check_circle</span></span><div><h4 class="font-label-lg text-label-lg font-bold text-on-surface">🎨 웹툰 생성 완료! (4컷 콘티 &amp; 작화 완료)</h4><span class="font-label-sm text-[11px] text-outline">에피소드: '출근길의 작은 힐링견' • 레트로 흑백 만화 풍</span></div></div><button id="close-success-modal-btn" type="button" class="text-outline hover:text-on-surface p-1 rounded-full hover:bg-surface-container transition-colors" onclick="document.getElementById('generation-success-modal').classList.add('hidden'); document.getElementById('generation-success-modal').classList.remove('flex');"><span class="material-symbols-outlined text-[18px]">close</span></button></div><p class="font-body-sm text-[12px] leading-relaxed text-on-surface-variant bg-surface-container-low p-space-sm rounded-DEFAULT">'출근길 강아지와 눈 마주침 &amp; 심쿵 힐링' 4컷 분할과 말풍선 대사 작성이 완료되었습니다! 원하는 화면으로 바로 이동해 결과를 확인해보세요.</p><div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1"><button type="button" onclick="(function(){ const t = document.getElementById('subscreen-toast'); const tt = document.getElementById('subscreen-toast-title'); const td = document.getElementById('subscreen-toast-desc'); if (tt) tt.textContent = '⚡ 실시간 AI 렌더링 화면 (SCREEN_47)'; if (td) td.textContent = 'AI 렌더링 스튜디오(SCREEN_47)로 바로 이동합니다...'; if (t) { t.classList.remove('hidden', 'translate-y-2'); t.classList.add('flex', 'translate-y-0'); } setTimeout(() =&gt; { t.classList.add('hidden', 'translate-y-2'); t.classList.remove('flex', 'translate-y-0'); }, 4000); })()" class="p-2.5 rounded-DEFAULT bg-primary text-on-primary hover:bg-primary/90 font-label-sm text-label-sm font-bold flex items-center justify-between shadow-md transition-all group ring-2 ring-primary-container"><span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">motion_photos_on</span><span class="">⚡ 실시간 렌더링 화면으로 바로 이동 (SCREEN_47)</span></span><span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span></button><button type="button" onclick="(function(){ const t = document.getElementById('subscreen-toast'); const tt = document.getElementById('subscreen-toast-title'); const td = document.getElementById('subscreen-toast-desc'); if (tt) tt.textContent = '📖 웹툰 뷰어 &amp; 8컷 에디터 (SCREEN_3)'; if (td) td.textContent = '완성된 4컷 만화 감상 및 말풍선/표정 리터칭 에디터로 즉시 이동합니다...'; if (t) { t.classList.remove('hidden', 'translate-y-2'); t.classList.add('flex', 'translate-y-0'); } setTimeout(() =&gt; { t.classList.add('hidden', 'translate-y-2'); t.classList.remove('flex', 'translate-y-0'); }, 4000); })()" class="p-2.5 rounded-DEFAULT bg-primary-container text-on-primary-container hover:bg-inverse-primary font-label-sm text-label-sm font-bold flex items-center justify-between shadow-sm transition-all group"><span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="">뷰어 &amp; 에디터에서 열기 (SCREEN_3)</span></span><span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span></button></div></div>
+<p class="font-label-sm text-[11px] text-outline mt-space-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+          생성된 웹툰의 모든 저작권은 작성자 본인에게 귀속되며 상업적 이용 및 인스타그램 공유가 가능합니다.
+        </p>
+</div>
+</div>
+<!-- Feed / Recent Community Showcase Section -->
+<div class="w-full max-w-6xl mt-space-xl flex flex-col gap-space-md">
+<!-- Section Title Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm px-space-xs">
+<div>
+<div class="inline-flex items-center gap-1.5 text-secondary font-label-md text-label-md font-semibold mb-1">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+            오늘의 실시간 트렌드
+          </div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">
+            실시간 인기 일상 웹툰 피드
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            다른 작가님들이 오늘의 순간을 기록한 재치 넘치는 4컷 만화들을 만나보세요.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-bright transition-colors" type="button">
+            전체 피드 둘러보기 →
+          </button>
+</div>
+</div>
+<!-- Feed Grid Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Showcase Card 1 -->
+<div class="group relative rounded-DEFAULT bg-surface-container/60 hover:bg-surface-container/90 backdrop-blur-xl p-space-sm flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(124,58,237,0.2)]">
+<div class="relative w-full aspect-square rounded-DEFAULT overflow-hidden bg-surface-container-lowest">
+<!-- 2x2 Mini 4-Cut Preview -->
+<div class="grid grid-cols-2 grid-rows-2 w-full h-full gap-0.5 p-1 bg-surface-dim">
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="First panel of 4-cut webtoon: A sleepy young worker holding an iced coffee in morning subway car, cute pastel style with speech bubble." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_5EO1s1guMfamrWd9jcNbm18xTd4_A-vytQW3I72dfsdTXe1RoEQVZ8_k60SHylXjGf0rz55R9THsdB11V2dRVdnNLEu_uT1nEksnFkexbEnpm_e-45miOhVLDbpD-mF9cyFFuFiZFugQaewBt8qjhp_QJ1ooZdsb2bSsZFT42dG89Xx70ufyYBmtU-3v-JF5r_2PhPldNJKuKYKOVZ1Iab5mL0jMrMkXDTdc7y56">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">1</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Second panel of 4-cut webtoon: The subway doors open and a fluffy golden puppy peeks out happily, vibrant comic expressions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ67IY_MU_kLGzUDsf8SnasJyaSRVlHyrBM5FK4-0YCd35XJxbtMe-oZ3w4tFm_kknOQRUcig9ie7pcE2vY6t1LfF8Lb4cD840-y0CpOLeALXmM9i8N3k6oJNxODIfb6GAuGrEpObIb6Xa0Dsnnd4XbqDLMkQLWXfQqAVa6moOIv7iEGwkNF_VKEZ1zsDMumR5T0ZQ7gzbGgQ_iw-G5h4PZtuwB1_4PifgEArRHCT9">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">2</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Third panel of 4-cut webtoon: Puppy waddles closer and rests paws softly over commuter sneakers with sparkles and blushing cheeks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhoaZoaPyn4sMC3OZR6T9ym3R16LGRxKrezKb9Ci1J18_IodtX-Gq0jgL3BQ8zeGwFa2IGZ34HJPkexfF2nIcMkxmSWCSrEhffuqMMoRIzTPZfEPlN7fCEFAfnKRAvZrXUrF9WXdAyluHvfljT30n7gj6x53RTMVDuTLFexID7kljjHXCM6_11dOb7O2Mr3lZxyPN4X6JytuQh7Og08pwxQJxX1-g5Ak2DE_ZlBfFI">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">3</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Fourth panel of 4-cut webtoon: Person melting into happy puddle of joy with comic heart explosion around them, happy ending." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcDY0WABkM6EA0msVJ2fZiO1txnS9VrizqB3P6-MI_43KS8qCOIoLPVGK_DPLhI46yNkJlDUVfuhp-q4GEiiK_GiAqQxe7V0q1emeJiLvH0t20zSMaWWY1mh2C1TSzGWlYaNkhyeRLVy5II0EeH414l0T9FbZqDLGjQDnxXXOyMV2gTGivITvkCLV89XV3aoyFpJFrgN5Pi2SRFxZoWqjCBdiDG3GYSVJ9thvolc8Z">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">4</span>
+</div>
+</div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-dim/80 backdrop-blur-md font-label-sm text-[10px] text-tertiary-fixed font-bold">
+              인스타 일상툰
+            </div>
+</div>
+<div class="pt-space-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-[10px]">
+                  민
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[100px]">민지작가</span>
+</div>
+<span class="font-label-sm text-[10px] text-outline">12분 전</span>
+</div>
+<!-- Original Diary Prompt Excerpt Tooltip -->
+<div class="px-2.5 py-1.5 rounded-DEFAULT bg-surface-container-lowest/70 text-on-surface-variant font-body-sm text-[11px] leading-tight line-clamp-2" title="출근길 지옥철에서 천사같은 골든리트리버가 발등을 핥아줬다. 오늘 야근도 버틸 수 있어...">
+              "출근길 지옥철에서 천사같은 강아지가 발등을 툭 쳐줬다..."
+            </div>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+<span class="font-bold">1.4k</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+<span class="">89</span>
+</div>
+<button class="text-primary hover:text-on-surface text-[12px] font-semibold flex items-center" type="button">
+                크게 보기
+              </button>
+</div>
+</div>
+</div>
+<!-- Showcase Card 2 -->
+<div class="group relative rounded-DEFAULT bg-surface-container/60 hover:bg-surface-container/90 backdrop-blur-xl p-space-sm flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(124,58,237,0.2)]">
+<div class="relative w-full aspect-square rounded-DEFAULT overflow-hidden bg-surface-container-lowest">
+<div class="grid grid-cols-2 grid-rows-2 w-full h-full gap-0.5 p-1 bg-surface-dim">
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="First panel gag comedy comic: Gym enthusiast confidently measuring fresh salad container on digital kitchen scale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe8bDtnqHOXCFVuvSX9fGWhZL53AGG2MT_sydUDIATb_kvn_hbEGFYnkRGGbpcQLJTq65vELLDaNQ5cGFCq0HLsultAD5YHsgcDQ3zZz0YYyzn7gNjkhgaDvKoGrlvKosZ9pI9Qj2crDdWo7L0gCLkMmlgeLvqGIA07KEhP8K-qZiUf9R5d_Dwef6YTyxKDN_jYEOkmkjwUW6KEhrMkL0BGGUsaVomOAxrbckoYgpi">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">1</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Second panel gag comedy comic: Night clock strikes 11:30 PM with eerie tempting glowing air fryer light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3MN1GJmf5Dpxt1sh0T54SQ-V3X7JKGb_q6ZcOQqA3OqyPbnax0DQQsYzDIWBVftboaHziFqsp8EIauVlk2g9UuYpaX7HVHmrWCVLbuPnmFAk-RuwRFGWi9KC--aMxIf8tO9vTtS9LDrPpNLVc0sfa80Jt3UEWDt2YDZ2Ot6N8TRZw8NTom9COeMeKH-2OqzGaEu849qG892aSv-ML3imRQ3eLo9VffRRlU4Qa-N93">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">2</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Third panel gag comedy comic: Frenzied bite into golden french fries with intense manga lightning speed lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2uosdbqSNPXlhDIOe7vDukfKDJfWkSFbRMRbtmtf60D6sKjzjW5ysGdVit8M2Sp32L9lmlcLv0Vm1fJQqHyM1CTJMcuH1EDaTjYhWBheSTg1KUP2mrtgPkk7D2I7dEBepQlXhXnWbjIH4Z9mk4prrUjVzZfPWE5mt-O9pIP82d_-TCD0TCCSEdEzVmTkSLrRFCU2GcAtVcQDwRPQUyc-2GG-AG7Uya_XFGe0X5YTQ">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">3</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Fourth panel gag comedy comic: Tears of guilt next to empty air fryer basket, hilarious comic defeat pose." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSm8XCcuafkUSDmIh_7qLHufFkWQm91LjO1wXYsWk9sQ7dU_QWfg51tZrFCxxGgNijXSwh9RgERzs5sQHDda0OgOsUC_fBjqSABLV6IIhiHRjGnVD5GveLVyiKSyMkhZUVjVtor3ydZ-7o1ks0kQvt5hEAe08XgL_P8EmBaNGUKkdulRQ0DDqSdR5JQDD7HLEUXQJTfsImpTlxcMeBxl32emvAa3ggQLVOJeJpxBmP">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">4</span>
+</div>
+</div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-dim/80 backdrop-blur-md font-label-sm text-[10px] text-tertiary font-bold">
+              코믹 개그 4컷
+            </div>
+</div>
+<div class="pt-space-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-[10px]">
+                  헬
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[100px]">다이어터호소인</span>
+</div>
+<span class="font-label-sm text-[10px] text-outline">35분 전</span>
+</div>
+<div class="px-2.5 py-1.5 rounded-DEFAULT bg-surface-container-lowest/70 text-on-surface-variant font-body-sm text-[11px] leading-tight line-clamp-2">
+              "샐러드 먹고 뿌듯했는데 에프 감튀 냄새에 영혼을 팔았다..."
+            </div>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+<span class="font-bold">2.1k</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+<span class="">142</span>
+</div>
+<button class="text-primary hover:text-on-surface text-[12px] font-semibold flex items-center" type="button">
+                크게 보기
+              </button>
+</div>
+</div>
+</div>
+<!-- Showcase Card 3 -->
+<div class="group relative rounded-DEFAULT bg-surface-container/60 hover:bg-surface-container/90 backdrop-blur-xl p-space-sm flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(124,58,237,0.2)]">
+<div class="relative w-full aspect-square rounded-DEFAULT overflow-hidden bg-surface-container-lowest">
+<div class="grid grid-cols-2 grid-rows-2 w-full h-full gap-0.5 p-1 bg-surface-dim">
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="First panel watercolor webtoon: Rain drops falling against coffee shop window with cozy soft bokeh lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFlkjqxfxKcA8TQjBRlcOQqmdCMBGG4DN3scHPmNx-nbqth-46G3SsItngZ8QP7KccYXZTQCqsPEJuxpqRImJuyoRdDIb3CNtJy67CBmP-rH0Zku2jcRVKO5xf4EWDcfaTzqgZ8X0LigXQOsBhs6fWF6mO6Hgqu4GGac0Z4YPkloEuu-XQozHHxwl8kpM9ETq14LwW0dK9IOfbynH--oR6oDlgl4SaOl4TU6y9hKQD">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">1</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Second panel watercolor webtoon: A person sketching into a leather journal next to steaming warm mug." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf83rlkqo2gGgd9SPJWfG4xh96o0Er2CcOFCGnSzplLomwaJmXxNbs2x7lvTkibwj4k86udot5-EQNG4jTyhjVIYkdLATKLRftAaP2NXMMzjB7MWqCvu6wL0GJAWaTJO1lT4J5HcUEl5k29d-rNRojh-wUK1D-OuhKCPTRxIpa1O_sPtLcmO7NFk_LueJutEzrUtZpUZxpn8V9ZNVJMfjpWj0_DQMHOnB0ub9Tz8gy">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">2</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Third panel watercolor webtoon: The barista brings over a free cinnamon cookie with a sweet doodle napkin." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1N49AKbgZ--28k1_HhViwbzH_yPALMmorIUl70ip0iApT8-tEL19ZpOn8vFXblXlqi0I97WXhzprVnN3UlvLvTVIelkOD8GEXmSVZEbyrqohHKcmYcwKoZLtNVr_hCyZc8biRZlAiVNqDeiUwnh31yQXekMXDOBOVbMrh_HzKK4kE9r0P4ja9KI-m0YHEH6bFx51Gqidh1B07iveqvUnIQ6haMPhOlyZ_IlQx3FoT">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">3</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Fourth panel watercolor webtoon: Gentle genuine smile while looking at rainy street, peaceful Ghibli aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3bORZRi5h-T8KmEwti5P0nPPsf98OKCooi3I68iPehVYKmESukmnMdnMLg5Jzy8rxit2w5PRuW0ZRlyZAwq3FZ3v_nn7bCrUMjyiJrObsJgSnCRtBOPSjVGAc4jeArFUW7mCbkgDOh7JF7SCdmwuIY-YWrWAfbiLo9I8b95GBkZO3kUP2M4L9RPuw2j_eHG0Yn47SOrnjmvHOyxQqDuCSEmW9zDsauQ55sC5_3tzk">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">4</span>
+</div>
+</div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-dim/80 backdrop-blur-md font-label-sm text-[10px] text-secondary font-bold">
+              지브리 수채화
+            </div>
+</div>
+<div class="pt-space-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-[10px]">
+                  단
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[100px]">단추로그</span>
+</div>
+<span class="font-label-sm text-[10px] text-outline">1시간 전</span>
+</div>
+<div class="px-2.5 py-1.5 rounded-DEFAULT bg-surface-container-lowest/70 text-on-surface-variant font-body-sm text-[11px] leading-tight line-clamp-2">
+              "비 오는 날 혼자 카페에 있었는데, 서비스로 받은 쿠키 하나에 마음이 몽글해졌다."
+            </div>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+<span class="font-bold">980</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+<span class="">45</span>
+</div>
+<button class="text-primary hover:text-on-surface text-[12px] font-semibold flex items-center" type="button">
+                크게 보기
+              </button>
+</div>
+</div>
+</div>
+<!-- Showcase Card 4 -->
+<div class="group relative rounded-DEFAULT bg-surface-container/60 hover:bg-surface-container/90 backdrop-blur-xl p-space-sm flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-10px_rgba(124,58,237,0.2)]">
+<div class="relative w-full aspect-square rounded-DEFAULT overflow-hidden bg-surface-container-lowest">
+<div class="grid grid-cols-2 grid-rows-2 w-full h-full gap-0.5 p-1 bg-surface-dim">
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="First panel romance manhwa: Late night office library, protagonist searching through high shelves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8XzcQT1Te2Bn3TC_5xM8L_mOgwcc4_CbfSxKOFRS93hFhU8o0q9kOHNSll5yLVhYxBAK8vee-dV0o0TyyW2eF2ih3DMZEUES-p_QAtcddcUM6I6-FMEen_RJ6ZMEKy7Bq9yqFHspEArvkW5KtqHKEZVgzXTLeiHxJZVj3129Np3mjxnQ50wR-dE9NLhtVcvTVlQrpQbzmbW5o-ElhxDdJlF5K7Sb4V42ITGQ8x8ib">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">1</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Second panel romance manhwa: Hand touches another hand reaching for the exact same document folder, dramatic manga speed focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr0cZl-JxdDHTAk9SG7AY1o8zi48EstmdDL-0Xn_bSblspVvLXjEHniymp3QUg2XatdB2363CEgw4VZriy0m45Zq7oRfbgknC75Y-gtzGQcCWVkqwFmQT1Tzl-mfzi8W9D4ec9CkmrzCU_1A_sOKMBAauz90IXDImdZ2BsUD-0D9f3vUy8j1S5FiYpeNlLaBgXKPSpIt8HoMTiVpta6avajZB_TnDekfJJGC9gHrJC">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">2</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Third panel romance manhwa: Handsome coworker turns around with gentle surprised smile and sparkling soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpzasTKcSbLXWbVWTIZwH8mUSATwCzK5B64u2xWaERq30wOGM_APmsTpHiajDEE1_WV_bBokcVLtOtXCcBwIL8FZq65RqdMT2BBoPwJB9Y2ErrKAggDwqRhbuy91qN1EPvxKf3wVw2D-UzeYn-GdfAQqBlR8xrc6W7vtthTSF9hjNMpRC8R0KbvgIIy46nf75KibQy6Us6TVHfGeb8Y78Ey440IC0zg8XKDBJSXkcz">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">3</span>
+</div>
+<div class="overflow-hidden rounded-sm relative">
+<img class="w-full h-full object-cover" data-alt="Fourth panel romance manhwa: Flustered heart palpitations illustration with pink cherry blossoms floating across office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzgpLuWbAJ1-zwqmahkt2c5lWCF3iLFUhXh9BPPCWpwECCrAKEfpqz5bwW_Eph_-JNqMwlkIWwEOQI8jcaXmBfwToPybzkM_iTo6Zso3CEZnU4NLj81-VAv7Rw4DNrOA_qvQu5oVp7ACO-PP5srTIkh6y4lJnFl9PKcIzZbHZQQaV42_Wm5NUDjRc4_LUDCIfj0CyOKgeIL4EtnUPUuVT3XRBbA7IzZiyR1Bkf2Xoh">
+<span class="absolute top-1 left-1 px-1 rounded bg-black/60 text-white font-label-sm text-[9px]">4</span>
+</div>
+</div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-dim/80 backdrop-blur-md font-label-sm text-[10px] text-primary-fixed font-bold">
+              순정 로맨스풍
+            </div>
+</div>
+<div class="pt-space-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-[10px]">
+                  유
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate max-w-[100px]">유라의일상</span>
+</div>
+<span class="font-label-sm text-[10px] text-outline">2시간 전</span>
+</div>
+<div class="px-2.5 py-1.5 rounded-DEFAULT bg-surface-container-lowest/70 text-on-surface-variant font-body-sm text-[11px] leading-tight line-clamp-2">
+              "회의실에서 서류 집다가 팀장님이랑 손 닿았는데 심장 멎는 줄 알았잖아..."
+            </div>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+<span class="font-bold">3.8k</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+<span class="">218</span>
+</div>
+<button class="text-primary hover:text-on-surface text-[12px] font-semibold flex items-center" type="button">
+                크게 보기
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Floating Creation Quick Dock (Mobile / Ergonomic shortcut) -->
+<div class="hidden" id="draft-loader-handler" data-initialized="true"></div><div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-surface-dim/90 backdrop-blur-2xl px-space-md py-space-xs rounded-full shadow-[0_16px_36px_-8px_rgba(124,58,237,0.35)] flex items-center gap-space-md border border-white/5">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm font-semibold">준비 완료</span>
+</div>
+<div class="h-4 w-px bg-surface-bright"></div>
+<button class="px-space-md py-1.5 rounded-full bg-primary-container hover:bg-inverse-primary text-on-primary-container font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm transition-all" id="dock-action-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+        작성창으로 이동
+      </button>
+</div>
+</div>
+<script>
+    (function initToonLogStudio() {
+      // Character count tracker
+      const textarea = document.getElementById('diary-input');
+      const counter = document.getElementById('char-counter');
+      const clearBtn = document.getElementById('clear-btn');
+      const generateBtn = document.getElementById('generate-button');
+      const generatingState = document.getElementById('generating-state');
+      const progressPercent = document.getElementById('progress-percent');
+      const progressBarFill = document.getElementById('progress-bar-fill');
+      const dockBtn = document.getElementById('dock-action-btn');
+
+      if (textarea && counter) {
+        textarea.addEventListener('input', () => {
+          const count = textarea.value.length;
+          counter.textContent = count + ' / 400자';
+          if (count > 0) {
+            counter.classList.add('text-primary');
+            counter.classList.remove('text-outline');
+          } else {
+            counter.classList.remove('text-primary');
+            counter.classList.add('text-outline');
+          }
+        });
+      }
+
+      if (clearBtn && textarea && counter) {
+        clearBtn.addEventListener('click', () => {
+          textarea.value = '';
+          counter.textContent = '0 / 400자';
+          textarea.focus();
+        });
+      }
+
+      // Quick Chips Insertion
+      const chips = document.querySelectorAll('.quick-chip');
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const text = chip.getAttribute('data-text');
+          if (textarea && text) {
+            textarea.value = text;
+            textarea.dispatchEvent(new Event('input'));
+            textarea.focus();
+          }
+        });
+      });
+
+      // Style Preset Cards Selection
+      const styleCards = document.querySelectorAll('.style-card');
+      styleCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          styleCards.forEach((c) => {
+            c.classList.remove('ring-2', 'ring-primary-container', 'shadow-[0_0_20px_rgba(124,58,237,0.3)]', 'bg-surface-container-highest/90');
+            c.classList.add('bg-surface-container-low');
+            const badge = c.querySelector('.absolute.top-1.right-1');
+            if (badge) badge.remove();
+          });
+          card.classList.add('ring-2', 'ring-primary-container', 'shadow-[0_0_20px_rgba(124,58,237,0.3)]', 'bg-surface-container-highest/90');
+          card.classList.remove('bg-surface-container-low');
+
+          const previewWrap = card.querySelector('.relative.bg-surface-container');
+          if (previewWrap && !card.querySelector('.absolute.top-1.right-1')) {
+            const span = document.createElement('span');
+            span.className = 'absolute top-1 right-1 px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-[10px] font-bold';
+            span.textContent = '선택됨';
+            previewWrap.appendChild(span);
+          }
+        });
+      });
+
+      // Cut Count Selector
+      const cutTabs = document.querySelectorAll('.cut-tab');
+      cutTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          cutTabs.forEach((t) => {
+            t.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+            t.classList.add('hover:bg-surface-container-high', 'text-on-surface-variant');
+          });
+          tab.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+          tab.classList.remove('hover:bg-surface-container-high', 'text-on-surface-variant');
+        });
+      });
+
+      // Mock Generation Simulation
+      if (generateBtn && generatingState) {
+        generateBtn.addEventListener('click', () => {
+          if (!textarea.value.trim()) {
+            textarea.value = '오늘 날씨가 너무 좋아서 산책 나갔다가 길고양이가 다가와서 발등에 턱을 괴고 누웠다. 너무 힐링되는 하루였다!';
+            textarea.dispatchEvent(new Event('input'));
+          }
+
+          generatingState.classList.remove('hidden');
+          generateBtn.disabled = true;
+          generateBtn.classList.add('opacity-70', 'pointer-events-none');
+
+          let progress = 10;
+          const interval = setInterval(() => {
+            progress += Math.floor(Math.random() * 15) + 5;
+            if (progress >= 100) {
+              progress = 100;
+              clearInterval(interval);
+              setTimeout(() => {
+                alert('🎉 4컷 일상툰이 성공적으로 완성되었습니다! 마이 아카이브에 자동 저장되었습니다.');
+                generatingState.classList.add('hidden');
+                generateBtn.disabled = false;
+                generateBtn.classList.remove('opacity-70', 'pointer-events-none');
+              }, 600);
+            }
+            if (progressPercent) progressPercent.textContent = progress + '%';
+            if (progressBarFill) progressBarFill.style.width = progress + '%';
+          }, 250);
+        });
+      }
+
+      // Dock shortcut scroll
+      if (dockBtn && textarea) {
+        dockBtn.addEventListener('click', () => {
+          textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          textarea.focus();
+        });
+      }
+
+      // Live countdown decrementer
+      const timerElement = document.getElementById('countdown-timer');
+      let totalSeconds = 14 * 3600 + 32 * 60 + 5;
+      setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+          const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+          const seconds = String(totalSeconds % 60).padStart(2, '0');
+          if (timerElement) {
+            timerElement.textContent = hours + ':' + minutes + ':' + seconds + ' 남음';
+          }
+        }
+      }, 1000);
+    })();
+  </script>
+</div><!-- Sub-Screen Hub Drawer & Interactive Navigation Widget --><div id="subscreen-hub-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"><div id="subscreen-toast" class="hidden items-center gap-2 px-space-md py-space-sm rounded-xl bg-surface-dim/95 text-on-surface shadow-[0_20px_40px_-10px_rgba(124,58,237,0.4)] backdrop-blur-2xl border border-primary/20 transition-all duration-300 transform translate-y-2"><span class="material-symbols-outlined text-primary text-[20px]">explore</span><div class="flex flex-col text-left"><span id="subscreen-toast-title" class="font-label-md text-label-md font-bold text-on-surface">서브화면 이동 안내</span><span id="subscreen-toast-desc" class="font-label-sm text-[11px] text-on-surface-variant">해당 서브 스튜디오로 연결 중입니다...</span></div></div><div id="subscreen-drawer" class="hidden w-80 rounded-2xl bg-surface-container-lowest/95 backdrop-blur-2xl p-space-md shadow-[0_24px_60px_-15px_rgba(0,0,0,0.5)] border border-outline-variant/30 flex-col gap-space-sm transition-all duration-300 animate-in fade-in"><div class="flex items-center justify-between pb-2 border-b border-surface-container-high"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[20px]">apps</span><span class="font-label-lg text-label-lg font-bold text-on-surface">서브화면 허브 (Sub-Screen Hub)</span></div><button id="close-hub-btn" class="text-outline hover:text-on-surface transition-colors p-1 rounded-full hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button></div><p class="font-body-sm text-[11px] text-on-surface-variant">실시간 AI 렌더링(SCREEN_47)을 비롯한 9개 핵심 서브화면으로 즉시 이동하고 작업할 수 있습니다.</p><div class="flex flex-col gap-1.5 max-h-[380px] overflow-y-auto pr-1"><a href="#" data-target-name="⚡ AI 실시간 렌더링 화면 (SCREEN_47)" data-target-desc="4컷 실시간 GPU 가속 렌더링 파이프라인 및 SeedLock 화면으로 즉시 전환합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-primary-container/20 hover:bg-primary-container/30 border border-primary/30 ring-1 ring-primary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px] animate-pulse">motion_photos_on</span><div><div class="flex items-center gap-1.5"><div class="font-label-sm text-label-sm font-bold text-primary group-hover:text-on-primary-container transition-colors">⚡ 실시간 AI 렌더링 (SCREEN_47)</div><span class="px-1.5 py-0.2 rounded-full bg-primary text-on-primary text-[9px] font-bold animate-pulse">LIVE</span></div><div class="font-label-sm text-[10px] text-on-surface-variant">GPU 렌더링 파이프라인 &amp; 진행 모달</div></div></div><span class="material-symbols-outlined text-[16px] text-primary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="24종 화풍 라이브러리 &amp; 커스텀 학습" data-target-desc="24종 화풍 프리셋 탐색 및 LoRA 스타일 커스텀 학습 스튜디오로 이동합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-primary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">palette</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-primary transition-colors">🎨 24종 화풍 라이브러리 &amp; 학습</div><div class="font-label-sm text-[10px] text-outline">수채화, 레트로, 인스타 등 24종</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="고정 캐릭터 &amp; 조연 생성 스튜디오" data-target-desc="주인공 얼굴 고정 앵커링 및 조연 캐릭터 일관성 생성 화면으로 이동합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-primary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">face</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-primary transition-colors">👤 고정 캐릭터 &amp; 조연 생성</div><div class="font-label-sm text-[10px] text-outline">주인공 및 친구 캐릭터 페이스 고정</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="사진·손그림 듀얼 스튜디오 &amp; 튜닝 모달" data-target-desc="내 갤러리 일상 사진 및 손그림 콘티를 AI 웹툰으로 변환합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-primary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-[18px]">add_a_photo</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-tertiary transition-colors">📸 사진·손그림 듀얼 스튜디오</div><div class="font-label-sm text-[10px] text-outline">실제 사진 배경화 &amp; 러프 콘티 반영</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-tertiary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="웹툰 뷰어 &amp; 8컷 대사 에디터" data-target-desc="생성된 4~8컷 컷별 말풍선 위치 수정 및 표정 재수정 뷰어로 이동합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-primary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">auto_stories</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-primary transition-colors">📖 웹툰 뷰어 &amp; 8컷 에디터</div><div class="font-label-sm text-[10px] text-outline">컷 편집, 말풍선 재배치 &amp; 리터칭</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="단행본 실물 만화책 출판 주문" data-target-desc="일기 웹툰을 양장 하드커버 실물 책과 특전 굿즈로 주문 제작합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-secondary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[18px]">menu_book</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-secondary transition-colors">📦 단행본 만화책 주문 &amp; 출판</div><div class="font-label-sm text-[10px] text-outline">하드커버 실물 출판 및 스티커 특전</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-secondary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="인스타그램 자동 연동 &amp; 카드뉴스 발행" data-target-desc="인스타 계정 연동 및 1:1 정방형 릴스 카드뉴스 즉시 예약 발행 화면입니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-tertiary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-[18px]">share</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-tertiary transition-colors">📱 인스타그램 자동 연동 발행</div><div class="font-label-sm text-[10px] text-outline">캐러셀 최적화 &amp; 캡션 자동작성</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-tertiary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="마이 아카이브 캘린더 다이어리" data-target-desc="매일 기록한 툰일기 월간 캘린더 보기 및 감정 통계 아카이브로 이동합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-primary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">calendar_month</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-primary transition-colors">📅 마이 아카이브 캘린더</div><div class="font-label-sm text-[10px] text-outline">날짜별 웹툰 보관함 &amp; 무드 분석</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a><a href="#" data-target-name="크리에이터 멤버십 &amp; 요금제 플랜" data-target-desc="무제한 4K 화질 생성 및 상업적 라이선스 혜택 요금제로 이동합니다" class="subscreen-nav-link flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low hover:bg-surface-container hover:ring-1 hover:ring-primary/40 transition-all text-left group"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">diamond</span><div><div class="font-label-sm text-label-sm font-semibold text-on-surface group-hover:text-primary transition-colors">💎 크리에이터 요금제 &amp; 혜택</div><div class="font-label-sm text-[10px] text-outline">프로 작가 플랜 &amp; 무제한 혜택</div></div></div><span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary group-hover:translate-x-0.5 transition-all">arrow_forward</span></a></div></div><button id="toggle-hub-btn" class="px-space-md py-2.5 rounded-full bg-gradient-to-r from-primary via-secondary to-tertiary text-white font-label-md text-label-md font-bold shadow-[0_0_24px_rgba(124,58,237,0.45)] hover:shadow-[0_0_36px_rgba(124,58,237,0.65)] hover:brightness-110 active:scale-95 transition-all duration-200 flex items-center gap-2" type="button"><span class="material-symbols-outlined text-[20px] animate-spin-slow">hub</span><span class="">서브화면 퀵 네비 허브</span><span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/20 text-[10px] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping"></span><span class="">9개 화면 (⚡렌더링 포함)</span></span></button></div></main><footer class="w-full bg-surface-container-lowest py-space-xl mt-auto shadow-[0_-1px_12px_rgba(0,0,0,0.2)]"><div class="w-full px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-lg text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm text-on-surface">Toon<span class="text-primary">Log</span></span><span class="text-outline">|</span><span class="">일상을 네 컷 만화로 기록하는 AI 스토리 스튜디오</span></div><div class="flex items-center gap-space-lg font-label-md text-label-md"><a class="hover:text-on-surface transition-colors" href="#">이용약관</a><a class="hover:text-on-surface transition-colors" href="#">개인정보처리방침</a><a class="hover:text-on-surface transition-colors" href="#">제작 가이드</a><a class="hover:text-on-surface transition-colors" href="#">고객지원</a></div><div class="font-label-sm text-label-sm text-outline">© 2025 ToonLog Inc. All rights reserved.</div></div></footer>
+
+
+
+
+
+<script>
+  (function initSubScreenRouting() {
+    const toast = document.getElementById('subscreen-toast');
+    const toastTitle = document.getElementById('subscreen-toast-title');
+    const toastDesc = document.getElementById('subscreen-toast-desc');
+    const hubDrawer = document.getElementById('subscreen-drawer');
+    const toggleHubBtn = document.getElementById('toggle-hub-btn');
+    const closeHubBtn = document.getElementById('close-hub-btn');
+
+    let toastTimeout;
+    function showSubScreenNotice(title, desc) {
+      if (!toast) return;
+      if (toastTitle) toastTitle.textContent = title;
+      if (toastDesc) toastDesc.textContent = desc;
+      toast.classList.remove('hidden', 'translate-y-2');
+      toast.classList.add('flex', 'translate-y-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('hidden', 'translate-y-2');
+        toast.classList.remove('flex', 'translate-y-0');
+      }, 3500);
+    }
+
+    if (toggleHubBtn && hubDrawer) {
+      toggleHubBtn.addEventListener('click', () => {
+        hubDrawer.classList.toggle('hidden');
+        hubDrawer.classList.toggle('flex');
+      });
+    }
+    if (closeHubBtn && hubDrawer) {
+      closeHubBtn.addEventListener('click', () => {
+        hubDrawer.classList.add('hidden');
+        hubDrawer.classList.remove('flex');
+      });
+    }
+
+    document.querySelectorAll('.subscreen-nav-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const name = link.getAttribute('data-target-name');
+        const desc = link.getAttribute('data-target-desc');
+        showSubScreenNotice(name, desc);
+        if (hubDrawer) {
+          hubDrawer.classList.add('hidden');
+          hubDrawer.classList.remove('flex');
+        }
+      });
+    });
+
+    // Top banner action chips
+    const characterStudioLinks = document.querySelectorAll('[data-path="character-studio"]');
+    characterStudioLinks.forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSubScreenNotice('고정 캐릭터 스튜디오', '주인공 얼굴 고정 및 일관된 캐릭터 화풍 설정 화면으로 이동합니다.');
+      });
+    });
+
+    const instagramLinks = document.querySelectorAll('[data-path="instagram-sync"]');
+    instagramLinks.forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSubScreenNotice('인스타그램 연동 & 즉시 발행', '인스타그램 계정 연동 및 카드뉴스/릴스 자동 발행 관리 화면으로 이동합니다.');
+      });
+    });
+
+    const bookPublishLinks = document.querySelectorAll('[data-path="book-publish"]');
+    bookPublishLinks.forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSubScreenNotice('실물 웹툰북 단행본 출판', '소장용 하드커버 만화책 인쇄 주문 및 스티커 특전 제작 화면으로 이동합니다.');
+      });
+    });
+
+    const feedLinks = document.querySelectorAll('[data-path="feed"]');
+    feedLinks.forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSubScreenNotice('실시간 웹툰 피드 & 탐색', '전체 작가님들의 일상 웹툰 피드 및 인기 랭킹 화면으로 이동합니다.');
+      });
+    });
+
+    const archiveLinks = document.querySelectorAll('[data-path="my-archive"]');
+    archiveLinks.forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSubScreenNotice('내 웹툰 다이어리 (My Archive)', '월별 캘린더 다이어리 및 보관된 웹툰 관리 화면으로 이동합니다.');
+      });
+    });
+
+    const pricingLinks = document.querySelectorAll('[data-path="pricing"]');
+    pricingLinks.forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSubScreenNotice('요금제 & 멤버십 (Pricing)', '무제한 4K 화질 생성 및 상업적 라이선스 혜택 요금제 화면으로 이동합니다.');
+      });
+    });
+
+    // Feed '크게 보기' buttons
+    document.querySelectorAll('.grid-cols-4 button, .grid-cols-2 button, .grid-cols-1 button').forEach(btn => {
+      if (btn.textContent.includes('크게 보기')) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          showSubScreenNotice('웹툰 뷰어 & 8컷 에디터', '고해상도 컷별 뷰어 및 말풍선/대사 편집 스튜디오로 확대 이동합니다.');
+        });
+      }
+    });
+
+    // '전체 피드 둘러보기 →' button
+    const allFeedBtn = document.querySelector('button:has(.material-symbols-outlined, span) , button');
+    document.querySelectorAll('button').forEach(btn => {
+      if (btn.textContent.includes('전체 피드 둘러보기')) {
+        btn.addEventListener('click', () => {
+          showSubScreenNotice('실시간 웹툰 피드 & 탐색', '모든 카테고리별 인기 일상 웹툰 전체 피드로 이동합니다.');
+        });
+      }
+    });
+  })();
+</script>
+
+
+
+
+<!-- ========================================== -->
+<!-- ToonLog Harmonious Navigation Architecture -->
+<!-- PC: Left Sidebar | Mobile: Bottom Dock     -->
+<!-- ========================================== -->
+
+<!-- 1. PC Left Navigation Bar (Visible on md: and above) -->
+<aside id="toonlog-pc-sidebar" class="hidden md:flex fixed left-0 top-0 bottom-0 w-[17rem] bg-white/95 backdrop-blur-2xl border-r border-[#ffd7a5]/50 shadow-[4px_0_24px_rgba(254,94,127,0.06)] z-[9990] flex-col justify-between overflow-y-auto select-none">
+  <div class="flex flex-col">
+    <!-- Brand Header -->
+    <div class="p-4 border-b border-[#fde8de] bg-gradient-to-b from-[#fff7f5] to-transparent">
+      <a href="/studio" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#fe5e7f] via-[#fea7a7] to-[#ffd7a5] flex items-center justify-center shadow-[0_4px_12px_rgba(254,94,127,0.3)] group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-white text-[22px]">auto_stories</span>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold text-xl tracking-tight text-slate-900">Toon<span class="text-[#fe5e7f]">Log</span></span>
+            <span class="px-1.5 py-0.5 rounded-full bg-[#ccffc0] text-[#134418] text-[10px] font-bold tracking-wider">BETA</span>
+          </div>
+          <span class="text-[11px] text-slate-500 font-medium">AI 4컷 웹툰 다이어리</span>
+        </div>
+      </a>
+      
+      <!-- 5-Color Harmony Palette Strip -->
+      <div class="mt-3 flex flex-col gap-1">
+        <div class="w-full h-1.5 rounded-full toonlog-palette-strip shadow-sm"></div>
+        <div class="flex items-center justify-between text-[10px] text-slate-400 font-semibold px-0.5">
+          <span>Coral</span>
+          <span>Blush</span>
+          <span>Peach</span>
+          <span>Mint</span>
+          <span>Cyan</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Status Pill -->
+    <div class="px-3 pt-3">
+      <div class="p-2.5 rounded-xl bg-gradient-to-r from-[#fff5f3] to-[#f4fdff] border border-[#fde8de] flex items-center justify-between shadow-xs">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#fe5e7f] animate-ping"></span>
+          <span class="text-[12px] font-semibold text-slate-700">무료 생성 혜택</span>
+        </div>
+        <span class="text-[11px] px-2 py-0.5 rounded-full bg-[#fe5e7f] text-white font-bold">1회 남음</span>
+      </div>
+    </div>
+
+    <!-- Navigation Section Group: 핵심 창작 스튜디오 -->
+    <div class="px-3 pt-4">
+      <div class="px-2 pb-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+        <span class="material-symbols-outlined text-[14px] text-[#fe5e7f]">draw</span>
+        <span>스튜디오 & 에디터</span>
+      </div>
+      <nav class="flex flex-col gap-1 text-[13px]" id="pc-nav-links-1">
+        <a href="/studio" data-route="/studio" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fe5e7f]">edit_note</span>
+            <span class="font-medium">홈 & 일기 생성</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#9cf6fe]/40 text-[#004d57] font-semibold">AI스튜디오</span>
+        </a>
+        <a href="/editor" data-route="/editor" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fe5e7f]">dashboard_customize</span>
+            <span class="font-medium">4컷 캔버스 에디터</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ccffc0]/60 text-[#134418] font-semibold">인스타</span>
+        </a>
+        <a href="/editor/8cut" data-route="/editor/8cut" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fea7a7]">view_stream</span>
+            <span class="font-medium">8컷 스크롤 웹툰</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ffd7a5]/60 text-[#523200] font-semibold">세로스크롤</span>
+        </a>
+        <a href="/styles" data-route="/styles" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#ffd7a5]">palette</span>
+            <span class="font-medium">24종 화풍 라이브러리</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#fe5e7f]/15 text-[#fe5e7f] font-bold">24화풍</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Navigation Section Group: 페르소나 & 보관함 -->
+    <div class="px-3 pt-3">
+      <div class="px-2 pb-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+        <span class="material-symbols-outlined text-[14px] text-[#9cf6fe]">account_circle</span>
+        <span>캐릭터 & 아카이브</span>
+      </div>
+      <nav class="flex flex-col gap-1 text-[13px]" id="pc-nav-links-2">
+        <a href="/character" data-route="/character" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fe5e7f]">face</span>
+            <span class="font-medium">고정 캐릭터 (SeedLock™)</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ccffc0]/70 text-[#134418] font-bold">고정</span>
+        </a>
+        <a href="/dual-persona" data-route="/dual-persona" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fea7a7]">add_photo_alternate</span>
+            <span class="font-medium">내 사진 + 화풍 결합</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#9cf6fe]/50 text-[#004d57] font-semibold">듀얼</span>
+        </a>
+        <a href="/custom-style" data-route="/custom-style" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#ffd7a5]">tune</span>
+            <span class="font-medium">커스텀 LoRA 화풍</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ffd7a5]/60 text-[#523200] font-semibold">학습</span>
+        </a>
+        <a href="/archive" data-route="/archive" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fe5e7f]">calendar_month</span>
+            <span class="font-medium">내 웹툰 다이어리</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold">캘린더</span>
+        </a>
+        <a href="/feed" data-route="/feed" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fea7a7]">explore</span>
+            <span class="font-medium">스토리 피드 & 탐색</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-red-100 text-red-600 font-bold">HOT</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Navigation Section Group: 출판 & 퍼블리싱 -->
+    <div class="px-3 pt-3">
+      <div class="px-2 pb-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+        <span class="material-symbols-outlined text-[14px] text-[#ccffc0]">auto_stories</span>
+        <span>출판 & 퍼블리싱</span>
+      </div>
+      <nav class="flex flex-col gap-1 text-[13px]" id="pc-nav-links-3">
+        <a href="/instagram" data-route="/instagram" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fe5e7f]">share</span>
+            <span class="font-medium">인스타그램 자동발행</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#9cf6fe]/40 text-[#004d57] font-semibold">API</span>
+        </a>
+        <a href="/book" data-route="/book" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#ffd7a5]">menu_book</span>
+            <span class="font-medium">단행본 만화책 주문</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ffd7a5]/60 text-[#523200] font-semibold">실물인쇄</span>
+        </a>
+        <a href="/pricing" data-route="/pricing" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#fea7a7]">loyalty</span>
+            <span class="font-medium">멤버십 & 요금제</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-[#ccffc0] text-[#134418] font-bold">PRO</span>
+        </a>
+        <a href="/motion" data-route="/motion" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#9cf6fe]">motion_photos_on</span>
+            <span class="font-medium">모션 & 트랜지션</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-purple-100 text-purple-700 font-semibold">NEW</span>
+        </a>
+        <a href="/design-system" data-route="/design-system" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[20px] text-[#ccffc0]">token</span>
+            <span class="font-medium">디자인 시스템 쇼케이스</span>
+          </div>
+          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-500 font-medium">토큰</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Bottom User Profile Card -->
+  <div class="p-3 border-t border-[#fde8de] bg-gradient-to-t from-[#fff7f5] to-transparent">
+    <div class="p-2.5 rounded-2xl bg-white border border-[#fde8de] flex items-center justify-between shadow-xs">
+      <div class="flex items-center gap-2.5">
+        <div class="relative">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#fe5e7f] to-[#ffd7a5] p-0.5">
+            <img class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpZ96hsN26f5FwrDGADnhDyO_loMndTfK_gQxOhWkNOVf_6uXj2GgzdzBbQrqPTDfBGSnv2uEu6eqEzu_B8mGE-_9ZOH3dmppvTAANFZzBncnb3Hrt4B5j7NIBPXdQKJr0vzL3RT6WGjIQx7aXQ9riN_NoanuGT-qJ447Vn4gdQYs5KEBy4oI7YLUjLyjxuA-troRp4qaL9aOgshR-V4u-9cqK0KvyZujHUwIsyPg7" alt="Profile">
+          </div>
+          <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-[#ccffc0] ring-2 ring-white"></span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[13px] font-bold text-slate-800 leading-tight">소라 작가님</span>
+          <span class="text-[11px] text-[#fe5e7f] font-semibold">Pro Creator</span>
+        </div>
+      </div>
+      <a href="/pricing" class="w-7 h-7 rounded-full bg-[#fff0f3] text-[#fe5e7f] flex items-center justify-center hover:bg-[#fe5e7f] hover:text-white transition-colors" title="요금제 관리">
+        <span class="material-symbols-outlined text-[16px]">settings</span>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<!-- 2. Mobile Bottom Navigation Dock (Visible on mobile < 768px) -->
+<nav id="toonlog-mobile-bottom-dock" class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-2xl border-t border-[#ffd7a5]/60 shadow-[0_-4px_20px_rgba(254,94,127,0.12)] z-[9990] px-2 py-1.5 flex items-center justify-around select-none">
+  <!-- Tab 1: Studio -->
+  <a href="/studio" data-route="/studio" class="mobile-nav-tab flex flex-col items-center justify-center py-1 px-3 rounded-xl text-slate-600 active:scale-95 transition-all">
+    <span class="material-symbols-outlined text-[22px]">edit_note</span>
+    <span class="text-[10px] font-semibold mt-0.5">스튜디오</span>
+  </a>
+
+  <!-- Tab 2: 4-Cut Editor -->
+  <a href="/editor" data-route="/editor" class="mobile-nav-tab flex flex-col items-center justify-center py-1 px-3 rounded-xl text-slate-600 active:scale-95 transition-all">
+    <span class="material-symbols-outlined text-[22px]">dashboard_customize</span>
+    <span class="text-[10px] font-semibold mt-0.5">4컷에디터</span>
+  </a>
+
+  <!-- Tab 3: Style Presets -->
+  <a href="/styles" data-route="/styles" class="mobile-nav-tab flex flex-col items-center justify-center py-1 px-3 rounded-xl text-slate-600 active:scale-95 transition-all">
+    <span class="material-symbols-outlined text-[22px]">palette</span>
+    <span class="text-[10px] font-semibold mt-0.5">화풍24종</span>
+  </a>
+
+  <!-- Tab 4: Archive Calendar -->
+  <a href="/archive" data-route="/archive" class="mobile-nav-tab flex flex-col items-center justify-center py-1 px-3 rounded-xl text-slate-600 active:scale-95 transition-all">
+    <span class="material-symbols-outlined text-[22px]">calendar_month</span>
+    <span class="text-[10px] font-semibold mt-0.5">다이어리</span>
+  </a>
+
+  <!-- Tab 5: All Screens Trigger (Drawer) -->
+  <button id="mobile-all-screens-btn" type="button" class="mobile-nav-tab flex flex-col items-center justify-center py-1 px-3 rounded-xl text-[#fe5e7f] active:scale-95 transition-all">
+    <div class="w-6 h-6 rounded-lg bg-[#fff0f3] flex items-center justify-center text-[#fe5e7f]">
+      <span class="material-symbols-outlined text-[18px]">menu</span>
+    </div>
+    <span class="text-[10px] font-bold mt-0.5 text-[#fe5e7f]">전체메뉴</span>
+  </button>
+</nav>
+
+<!-- 3. Mobile All-Screens Sliding Drawer Modal -->
+<div id="mobile-drawer-backdrop" class="fixed inset-0 bg-black/50 backdrop-blur-xs z-[9995] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+<div id="mobile-screens-drawer" class="fixed bottom-0 left-0 right-0 max-h-[85vh] bg-white rounded-t-3xl shadow-2xl z-[9996] translate-y-full transition-transform duration-300 ease-out flex flex-col md:hidden">
+  <div class="p-4 border-b border-slate-100 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[#fe5e7f] to-[#ffd7a5] flex items-center justify-center text-white">
+        <span class="material-symbols-outlined text-[16px]">apps</span>
+      </div>
+      <div>
+        <h3 class="font-bold text-slate-900 text-sm">ToonLog 전체 화면 이동</h3>
+        <p class="text-[11px] text-slate-500">원하시는 화면으로 바로 이동하세요</p>
+      </div>
+    </div>
+    <button id="mobile-drawer-close" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-900" type="button">
+      <span class="material-symbols-outlined text-[18px]">close</span>
+    </button>
+  </div>
+  
+  <div class="w-full h-1.5 toonlog-palette-strip"></div>
+
+  <div class="p-4 overflow-y-auto space-y-3">
+    <!-- Category 1 -->
+    <div>
+      <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">스튜디오 & 에디터</span>
+      <div class="grid grid-cols-2 gap-2 mt-1.5">
+        <a href="/studio" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">edit_note</span>
+          <span class="text-xs font-semibold text-slate-800">일기 생성 홈</span>
+        </a>
+        <a href="/editor" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">dashboard_customize</span>
+          <span class="text-xs font-semibold text-slate-800">4컷 캔버스</span>
+        </a>
+        <a href="/editor/8cut" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">view_stream</span>
+          <span class="text-xs font-semibold text-slate-800">8컷 스크롤</span>
+        </a>
+        <a href="/styles" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#ffd7a5] text-[20px]">palette</span>
+          <span class="text-xs font-semibold text-slate-800">화풍 24종</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Category 2 -->
+    <div>
+      <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">캐릭터 & 보관함</span>
+      <div class="grid grid-cols-2 gap-2 mt-1.5">
+        <a href="/character" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">face</span>
+          <span class="text-xs font-semibold text-slate-800">고정 캐릭터</span>
+        </a>
+        <a href="/dual-persona" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">add_photo_alternate</span>
+          <span class="text-xs font-semibold text-slate-800">사진+화풍 결합</span>
+        </a>
+        <a href="/custom-style" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#ffd7a5] text-[20px]">tune</span>
+          <span class="text-xs font-semibold text-slate-800">LoRA 화풍</span>
+        </a>
+        <a href="/archive" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">calendar_month</span>
+          <span class="text-xs font-semibold text-slate-800">내 캘린더</span>
+        </a>
+        <a href="/feed" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">explore</span>
+          <span class="text-xs font-semibold text-slate-800">스토리 피드</span>
+        </a>
+        <a href="/motion" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#9cf6fe] text-[20px]">motion_photos_on</span>
+          <span class="text-xs font-semibold text-slate-800">모션 연출</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Category 3 -->
+    <div>
+      <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">출판 & 설정</span>
+      <div class="grid grid-cols-2 gap-2 mt-1.5">
+        <a href="/instagram" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fe5e7f] text-[20px]">share</span>
+          <span class="text-xs font-semibold text-slate-800">인스타 발행</span>
+        </a>
+        <a href="/book" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#ffd7a5] text-[20px]">menu_book</span>
+          <span class="text-xs font-semibold text-slate-800">단행본 주문</span>
+        </a>
+        <a href="/pricing" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">loyalty</span>
+          <span class="text-xs font-semibold text-slate-800">멤버십 요금제</span>
+        </a>
+        <a href="/design-system" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#ccffc0] text-[20px]">token</span>
+          <span class="text-xs font-semibold text-slate-800">디자인 시스템</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const PATH_MAP = {
+    'studio': '/studio',
+    'feed': '/feed',
+    'feed-and-explore': '/feed',
+    'my-archive': '/archive',
+    'archive': '/archive',
+    'character-studio': '/character',
+    'character-settings': '/character',
+    'character-vault': '/character',
+    'character': '/character',
+    'style-gallery': '/styles',
+    'styles': '/styles',
+    'pricing': '/pricing',
+    'pricing-and-membership': '/pricing',
+    'instagram_publish': '/instagram',
+    'instagram-sync': '/instagram',
+    'instagram': '/instagram',
+    'book-publish': '/book',
+    'book': '/book',
+    'design-system-showcase': '/design-system',
+    'design-system': '/design-system',
+    'editor': '/editor',
+    'editor-4cut': '/editor',
+    'editor-8cut': '/editor/8cut',
+    'dual-persona': '/dual-persona',
+    'custom-style': '/custom-style',
+    'lora': '/custom-style',
+    'motion': '/motion'
+  };
+
+  // Mark Active Navigation Links
+  const currentPath = window.location.pathname;
+  
+  function highlightActive() {
+    // Desktop Nav Highlight
+    document.querySelectorAll('.pc-nav-item').forEach(el => {
+      const route = el.getAttribute('data-route');
+      if (route && (currentPath === route || (route === '/studio' && currentPath === '/'))) {
+        el.classList.add('nav-active-item');
+      } else {
+        el.classList.remove('nav-active-item');
+      }
+    });
+
+    // Mobile Dock Highlight
+    document.querySelectorAll('.mobile-nav-tab').forEach(el => {
+      const route = el.getAttribute('data-route');
+      if (route && (currentPath === route || (route === '/studio' && currentPath === '/'))) {
+        el.classList.add('text-[#fe5e7f]', 'font-bold');
+        el.classList.remove('text-slate-600');
+      }
+    });
+  }
+
+  // Intercept click on data-path and internal navigation
+  document.addEventListener('click', function(e) {
+    const target = e.target.closest('[data-path], a[href^="#"], button');
+    if (!target) return;
+
+    const dataPath = target.getAttribute('data-path');
+    if (dataPath && PATH_MAP[dataPath]) {
+      e.preventDefault();
+      window.location.href = PATH_MAP[dataPath];
+      return;
+    }
+
+    // Intercept back buttons
+    const text = (target.textContent || '').trim();
+    if (text.includes('홈으로') || text.includes('스튜디오로') || text.includes('스튜디오 홈')) {
+      e.preventDefault();
+      window.location.href = '/studio';
+      return;
+    }
+
+    // Intercept generation action in Studio
+    if (text.includes('생성하기') || text.includes('웹툰 생성') || text.includes('만들기')) {
+      if (window.location.pathname.includes('/studio') || window.location.pathname === '/') {
+        e.preventDefault();
+        target.classList.add('animate-pulse');
+        setTimeout(() => {
+          window.location.href = '/editor';
+        }, 300);
+        return;
+      }
+    }
+
+    // Intercept 8-cut vs 4-cut toggle buttons in editors
+    if (target.id === 'btn-format-8cut') {
+      e.preventDefault();
+      window.location.href = '/editor/8cut';
+      return;
+    }
+    if (target.id === 'btn-format-4cut') {
+      e.preventDefault();
+      window.location.href = '/editor';
+      return;
+    }
+  }, true);
+
+  // Setup Mobile Drawer
+  window.addEventListener('DOMContentLoaded', function() {
+    highlightActive();
+
+    const openBtn = document.getElementById('mobile-all-screens-btn');
+    const closeBtn = document.getElementById('mobile-drawer-close');
+    const backdrop = document.getElementById('mobile-drawer-backdrop');
+    const drawer = document.getElementById('mobile-screens-drawer');
+
+    function openDrawer() {
+      if (!drawer || !backdrop) return;
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100');
+      drawer.classList.remove('translate-y-full');
+    }
+
+    function closeDrawer() {
+      if (!drawer || !backdrop) return;
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      backdrop.classList.remove('opacity-100');
+      drawer.classList.add('translate-y-full');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (backdrop) backdrop.addEventListener('click', closeDrawer);
+  });
+})();
+</script>
+
+</body></html>

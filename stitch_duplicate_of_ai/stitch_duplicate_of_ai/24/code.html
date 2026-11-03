@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#006875", "secondary-container": "#baebf5", "primary-fixed-dim": "#3ed9f0", "on-error": "#ffffff", "on-secondary-fixed": "#001f24", "on-tertiary-fixed-variant": "#5b3678", "surface-container": "#e9eff1", "on-primary": "#ffffff", "surface-bright": "#f5fafc", "on-secondary": "#ffffff", "surface": "#f5fafc", "on-surface-variant": "#3c494c", "on-primary-fixed-variant": "#004e59", "secondary-fixed-dim": "#9ecfd8", "surface-variant": "#dee3e5", "on-primary-container": "#005965", "tertiary": "#744e92", "inverse-primary": "#3ed9f0", "error-container": "#ffdad6", "secondary-fixed": "#baebf5", "primary-fixed": "#9defff", "on-background": "#171d1e", "background": "#f5fafc", "on-surface": "#171d1e", "error": "#ba1a1a", "on-secondary-fixed-variant": "#1b4d56", "on-error-container": "#93000a", "tertiary-fixed-dim": "#e1b6ff", "surface-container-low": "#eff4f7", "surface-container-lowest": "#ffffff", "surface-container-high": "#e3e9eb", "surface-tint": "#006875", "tertiary-container": "#dfb3ff", "outline-variant": "#bbc9cc", "on-tertiary-container": "#664083", "secondary": "#36656e", "outline": "#6c797c", "inverse-surface": "#2b3133", "surface-dim": "#d5dbdd", "inverse-on-surface": "#ecf2f4", "tertiary-fixed": "#f2daff", "primary-container": "#39d6ed", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#2c044a", "on-primary-fixed": "#001f24", "surface-container-highest": "#dee3e5", "on-secondary-container": "#3c6b74" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter": "1.25rem", "space-xl": "2.25rem", "margin-tablet": "1.5rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "label-lg": ["Inter"], "display-hero": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "display-hero": ["48px", { "lineHeight": "56px", "fontWeight": "800" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="studio" href="#"><div class="w-9 h-9 rounded-DEFAULT bg-primary flex items-center justify-center shadow-[0_0_24px_rgba(2,194,217,0.25)]"><span class="material-symbols-outlined text-on-primary text-[20px]">auto_awesome</span></div><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md tracking-tight text-on-surface">ToonLog</span><span class="px-space-xs py-[2px] bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm tracking-wider uppercase font-bold">BETA</span></div></a></div><nav class="hidden xl:flex items-center gap-space-xs p-space-xs bg-surface-container-low/70 rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full"><a class="px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="studio" href="#">만들기 Studio</a><a class="px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="feed" href="#">피드 &amp; 탐색 Feed</a><a class="px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="my-archive" href="#">내 웹툰 다이어리 My Archive</a><a class="px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="character-settings" href="#">캐릭터 설정</a><a aria-current="page" class="px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-semibold rounded-full" data-path="style-gallery" href="#">화풍 갤러리/스튜디오</a><a class="px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="pricing" href="#">요금제 &amp; 멤버십</a></nav><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface">소라 작가님</span><span class="font-label-sm text-label-sm text-primary font-bold">Pro Creator</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div><div class="w-full bg-surface-container-lowest/80 backdrop-blur-md px-margin-desktop py-space-sm flex items-center justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><a class="inline-flex items-center gap-space-xs text-primary font-label-lg text-label-lg hover:text-on-surface-variant transition-colors group" data-path="studio" href="#"><span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span><span>생성 스튜디오로 돌아가기</span></a><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-tertiary">palette</span>화풍 스타일 갤러리</span><span class="text-outline-variant">•</span><span class="text-primary font-medium">실시간 스타일 반영 모드</span></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow Gradient Layer -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-[500px] h-[350px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -top-20 right-10 w-[420px] h-[280px] bg-tertiary-container/30 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header & Hero Summary Area -->
+<div class="w-full px-margin-desktop pt-space-lg pb-space-md">
+<!-- Breadcrumb & Status Pill Badges -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-space-xs" data-path="studio" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>스튜디오 홈</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">화풍 &amp; 아트워크 스튜디오</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="px-space-sm py-space-xs bg-surface-container-high rounded-full font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>AI Style Engine v3.4</span>
+</div>
+<div class="px-space-sm py-space-xs bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">palette</span>
+<span>총 24개 고해상도 웹툰 화풍 지원</span>
+</div>
+<div class="px-space-sm py-space-xs bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-sm text-label-sm font-bold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">lock_reset</span>
+<span>SeedLock™ 화풍 완벽 고정</span>
+</div>
+</div>
+</div>
+<!-- Main Section Title Block -->
+<div class="max-w-4xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight leading-snug">
+          매일 새로운 무드로 일상을 그리는,<br class="hidden sm:inline"/>
+<span class="text-primary underline decoration-primary-container decoration-4 underline-offset-4">ToonLog 화풍 라이브러리</span>
+</h1>
+<p class="mt-space-xs font-body-lg text-body-lg text-on-surface-variant">
+          인스타 감성 둥글 일상툰부터 네이버·카카오 정통 로판, 레트로 90년대 순정, 지브리 수채화 감성까지.
+          내 일기 원문과 캐릭터를 원하는 화풍으로 즉시 렌더링하세요.
+        </p>
+</div>
+</div>
+</div>
+<!-- Weekly Spotlight Card (Featured Style of the Week) -->
+<section class="w-full px-margin-desktop mb-space-xl">
+<div class="relative overflow-hidden bg-gradient-to-br from-surface-container-lowest via-surface-container-low to-secondary-container/20 rounded-xl p-space-lg shadow-md">
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row gap-space-lg items-center justify-between">
+<!-- Spotlight Info -->
+<div class="flex-1 space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-space-xs bg-tertiary text-on-tertiary rounded-full font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+              이주의 추천 화풍
+            </span>
+<span class="px-space-sm py-space-xs bg-surface-container text-on-surface-variant rounded-full font-label-sm text-label-sm font-medium">
+              소라 작가 추천 픽 ♥
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            포근한 파스텔 수채화 일상 (Ghibli Warm Watercolor)
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            “퇴근길 마주친 작은 강아지” 일상 에세이가 물기를 머금은 맑은 수채화 톤과 부드러운 그린-베이지 광원 레이어로 섬세하게 재해석됩니다.
+          </p>
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs">
+<span class="px-space-sm py-1 bg-surface-container-highest rounded-full text-on-surface font-label-sm text-label-sm">#동화같은빛</span>
+<span class="px-space-sm py-1 bg-surface-container-highest rounded-full text-on-surface font-label-sm text-label-sm">#따뜻한초록</span>
+<span class="px-space-sm py-1 bg-surface-container-highest rounded-full text-on-surface font-label-sm text-label-sm">#힐링수채화</span>
+<span class="px-space-sm py-1 bg-surface-container-highest rounded-full text-on-surface font-label-sm text-label-sm">#SeedLock 99.4%</span>
+</div>
+<div class="pt-space-sm flex flex-wrap items-center gap-space-sm">
+<button class="px-space-lg py-space-sm rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg shadow-md hover:opacity-95 transition-all flex items-center gap-space-xs active:scale-[0.98]" onclick="applyStyle('지브리 수채화 감성', '포근한 파스텔 수채화 일상')">
+<span class="material-symbols-outlined text-[18px]">brush</span>
+<span>이 화풍으로 오늘 일기 그리기</span>
+</button>
+<button class="px-space-md py-space-sm rounded-full bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-variant transition-all flex items-center gap-space-xs" onclick="openTuneDrawer('지브리 수채화 감성')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>스타일 프리셋 조정</span>
+</button>
+</div>
+</div>
+<!-- 4-Cut Side-by-Side Live Showcase -->
+<div class="w-full lg:w-[480px] bg-surface-container-lowest/90 backdrop-blur-md p-space-md rounded-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-primary text-[16px]">view_timeline</span>
+              샘플 4컷 스토리 시각화 미리보기
+            </span>
+<span class="font-label-sm text-label-sm text-primary font-medium">동일 프롬프트 변환</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Cut 1 -->
+<div class="relative aspect-square rounded-DEFAULT overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover" data-alt="A gentle pastel watercolor anime illustration of a tired office worker walking along a quiet Seoul alleyway at sunset, holding a bag, soft golden warm lighting, Ghibli style watercolor textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWnZctpGpQA3FazZ1J5wY0iSAfNQMWDbVFfdEsoqYPfqFTyvcrXvAjWatQBGe3AL7XC8_7CoxjfWR0sbKPhbKQelu5ShvpO80rNkIUGX2pfBusFFm8CVG_cQuWbYaCXXy0AkxO_pL6ZPYb-xnjSoabw8yQL9PR1TRIW7IHAxl2SEyANwuSjOtZZP9j5YzgJUPfssJN4_u13X5P35aNJrVupR8dhvpQkGGdcznoxt1S"/>
+<div class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-label-sm text-on-surface font-semibold shadow-sm">1. 귀가길</div>
+</div>
+<!-- Cut 2 -->
+<div class="relative aspect-square rounded-DEFAULT overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover" data-alt="A close-up watercolor anime frame showing a fluffy little golden puppy peering out curiously from a warm cardboard box under a cozy street lamp, detailed fur, soft brush strokes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5-0SdC9TRAj7FS02FWRpdQSBDtvRUhCEV3UYHi8H-L6GQifj1AdNuOCcyA9p3BqKnTst6cGsAZKCai96fHbEYOTR1-4Jfr9Ur45RF4IUFOpGPHFkVk2mCUvC_JsVjbrhNQYbfeA7m7Dt2dROV9VpNsIwMuTFQueu7M_N5YAp5Szc635P8eJp9ljYHmmUrjuokkHsoiU0p17kh2iER8NYNKFj1bx_Q9R6O4myMU9N8"/>
+<div class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-label-sm text-on-surface font-semibold shadow-sm">2. 만남</div>
+</div>
+<!-- Cut 3 -->
+<div class="relative aspect-square rounded-DEFAULT overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover" data-alt="Warm watercolor frame showing the office worker crouching down with an affectionate smile, extending a gentle hand toward the wagging puppy, warm heart-touching atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdcN5tA8MeQ_8sItztY925MGkdT84zSpL_qy7NiETQTR3Oa3YTKvxq0DUykjcLOTNTuaBBSn34-K4v_--av3KL-0nFtzhCrDKutofOtVjM8obgdbkSyKj1ZXF79r97fZW11TAmavJbf7jDomW02Pbk1oRUh75y9TI2saTdyXPz-G3qSFfWbsqXGubkGYjaAmYpnApaW9tXW3_XmwVEruM6GUpcQkb21N1-XpZMRN8_"/>
+<div class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-label-sm text-on-surface font-semibold shadow-sm">3. 눈맞춤</div>
+</div>
+<!-- Cut 4 -->
+<div class="relative aspect-square rounded-DEFAULT overflow-hidden bg-surface-container group">
+<img class="w-full h-full object-cover" data-alt="Whimsical watercolor illustration of the puppy happily nuzzling the smiling worker's fingertips, floating pastel sparkles, warm emotional healing ending cut." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXRMAYb73NXqz1K5bxqPogoWmAoZip-gAfz-SN2yqJ95VAPwBg1oY_lOT8zfB1c49tlOxIvyEhnayyfjv0MhFKdBQYilPUajUhlnIBHo_nP3r3AJgLPBxduL2J5y9RIoo7VBXwRuibbDP1Lbr3ftlNIE3Nckn_URnYg17cIAN0sImaSBksAHAPoU5DU91jWYSQaf4Z4NRXPRl8hDEIpNT8QbXeZanY7T9OV3NlK2RJ"/>
+<div class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-surface/90 font-label-sm text-label-sm text-on-surface font-semibold shadow-sm">4. 작은 위로</div>
+</div>
+</div>
+<div class="mt-space-xs text-center font-label-sm text-label-sm text-on-surface-variant">
+            대사: “지친 하루 끝에 만난 기적 같은 꼬리 흔들림”
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & Search Controls -->
+<section class="w-full px-margin-desktop mb-space-lg sticky top-20 z-40 bg-surface/95 backdrop-blur-xl py-space-sm shadow-[0_4px_16px_rgba(0,0,0,0.03)]">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-lg">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-11 pr-space-md py-space-sm bg-surface-container-low focus:bg-surface-container-lowest rounded-full font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant outline-none shadow-sm transition-all focus:shadow-md" id="styleSearchInput" oninput="handleStyleSearch(this.value)" placeholder="화풍 이름, 무드 태그 검색 (예: #힐링, #순정, #코믹, #빈티지)..." type="text"/>
+</div>
+<!-- Right Controls: Sort & Filter Toggle -->
+<div class="flex items-center gap-space-sm self-end lg:self-auto">
+<label class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface cursor-pointer select-none font-label-md text-label-md shadow-sm">
+<input class="accent-primary w-4 h-4 rounded" id="proOnlyCheckbox" onchange="toggleProOnly(this.checked)" type="checkbox"/>
+<span>PRO 전용 화풍만 보기</span>
+</label>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md py-space-xs pl-space-md pr-8 rounded-full outline-none cursor-pointer shadow-sm" id="sortSelect" onchange="sortStyles(this.value)">
+<option value="popular">인기순 ↓</option>
+<option value="new">최신순 ↓</option>
+<option value="name">가나다순 ↓</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[16px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Category Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-space-xs mt-space-xs no-scrollbar" id="categoryTabGroup">
+<button class="category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary-container font-semibold transition-all" onclick="filterCategory('all', this)">
+        전체 (24)
+      </button>
+<button class="category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="filterCategory('daily', this)">
+        인기 일상툰 (5)
+      </button>
+<button class="category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="filterCategory('romance', this)">
+        순정 &amp; 로맨스 (4)
+      </button>
+<button class="category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="filterCategory('action', this)">
+        액션 &amp; 소년만화 (4)
+      </button>
+<button class="category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="filterCategory('retro', this)">
+        레트로 &amp; 빈티지 (3)
+      </button>
+<button class="category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="filterCategory('watercolor', this)">
+        감성 수채화/지브리 (4)
+      </button>
+<button class="category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="filterCategory('popart', this)">
+        3D &amp; 픽셀/팝아트 (4)
+      </button>
+</div>
+</section>
+<!-- 24 Art Style Grid Section & Tuning Drawer Container -->
+<section class="w-full px-margin-desktop mb-space-xl relative">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-space-lg" id="styleCardGrid">
+<!-- Card 1 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="daily" data-name="인스타 일상툰" data-pro="false" data-tags="#동글선 #파스텔 #소소한공감">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Charming round-line Korean daily Instagram slice-of-life webtoon scene, a cozy cafe with warm pastel colors, cute chubby character sipping an iced latte, simple outlines, friendly feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAajhVHQavM1_xr1zB-TLUO7JAn2wuOu5xNDiemwTBaxWyjDy7w4g055kA7apzqx7M5sZ33FkqG1KfRlKMs160e9C4lvd-7ZRXEM1UzrpaN9rY3Pza1lAHBAdn0W4Ey439vhkI3fwAtJd6kHFf0PbxcEiAWcS5DKrl9Z1WBCeAsa7RhZs0D7ug9LbctMyIryffemI9Esk6AW6Zf8Y7HTmNLzQNojITFnXTvw5EPBIV7"/>
+<div class="absolute top-space-xs left-space-xs flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface/90 text-primary font-label-sm text-label-sm font-bold shadow-sm">인기 1위</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-1')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">인스타 일상툰</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">v3.4 Cozy</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Insta Daily Cozy</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#동글선</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#파스텔</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#소소한공감</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('인스타 일상툰')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('인스타 일상툰')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="romance" data-name="순정 로맨스풍" data-pro="true" data-tags="#반짝이는눈망울 #섬세한선화 #설렘가득">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Classic delicate Shoujo manga style illustration with sparkling eyes, soft screentone shading, cherry blossom petals drifting, intense romantic glance between characters, high emotional detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxOibUfZ3_VC4zi3t3LDv5qsAfu6gyNBrtltnDbtThiMMcG0fpQhyb7AJcCxZY7z9-uTrVM3Sjihe6POCko1Yh0VRQJRFNE7-yOVgFcijSSuNw94rMLYrdPHC7WJO-l_WwV5EuxfBOMPm_1i_5fKgLszTdkldfL1rg_-KHtUmeRaxkuDlpo4MPitLNv9qxEyAygnrDPJaZ6uvJ9PRJqELAD4wZNyyXSthRINnINiw2"/>
+<div class="absolute top-space-xs left-space-xs flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-2')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">순정 로맨스풍</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">Shoujo-X</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Classic Shoujo Romance</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#반짝이는눈망울</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#섬세한선화</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#설렘가득</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('순정 로맨스풍')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('순정 로맨스풍')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="romance" data-name="K-웹툰 로판" data-pro="true" data-tags="#풀컬러화려함 #영애님톤 #황실로맨스">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Gorgeous Korean webtoon Romance Fantasy style panel, an aristocratic lady with shimmering blonde curls in an ornate ballroom, glittering chandeliers, lush jewel tones, royal fantasy aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwYEslfCksiUF6BTwdNFb1HSg0Jef8rT7fPzFJD6CNRjwSqevhSerMx_cFH-0lMaiagqX-R_2iuePBvBFhw83WdWGqNMAPoFZUdX1yDvdfO8ckW8LbI59vTOg67Cd-Ma_Hu9u36nPM2U5zVdMeGc-z7c0sv5e0lIuZqOuPOBIotiaCjeTAeBetL0QvpPe_r90tHXbJJRuMrmCDFIriMwvuUh_tmVzdEmha_DKu3kHB"/>
+<div class="absolute top-space-xs left-space-xs flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface/90 text-tertiary font-label-sm text-label-sm font-bold shadow-sm">인기급상승</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-3')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">K-웹툰 로판</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Rofan Ultra</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">K-Webtoon Romance Fantasy</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#풀컬러화려함</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#영애님톤</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#황실로맨스</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('K-웹툰 로판')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('K-웹툰 로판')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="watercolor" data-name="지브리 수채화" data-pro="true" data-tags="#동화같은빛 #따뜻한초록 #힐링감성">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Studio Ghibli inspired anime watercolor scene, lush green countryside hills with a small sunlit wooden cottage, gentle floating clouds in a deep azure sky, deeply nostalgic and peaceful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5W5p6NcpipY55GNe6XdBEuB1KMi4ayzCJ-3GMfCsc0bZCB3GYWhfmTDo_uKWPtEppvE6kgzJSrduUdhS9af0O-fhhBDLCidPU_rC_QmP9QvoKjgKQLBQBt4U4H5GMAAxrmeNR_Nmt0TdfqVfvAv_a91H-TUI52JJ9ZbXH-LWbMCW6eoex_ez9Iai2lyjW_KNnNdqq-KudgEh0vIzMdLGXp2hOeJ8Up5M4WqiHYG6r"/>
+<div class="absolute top-space-xs left-space-xs flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+<span class="px-space-xs py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm">베스트</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-4')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">지브리 수채화</h3>
+<span class="font-label-sm text-label-sm text-primary font-mono">Ghibli-Pure</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Ghibli Warm Watercolor</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#동화같은빛</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#따뜻한초록</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#힐링감성</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('지브리 수채화')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('지브리 수채화')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="daily" data-name="코믹 명랑 만화" data-pro="false" data-tags="#극적인표정 #볼드한외곽선 #웃음유발">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dynamic comic slapstick gag cartoon frame, humorous exaggerated shocked character face with speedlines and comical sweat droplets, bold ink outlines, vivid primary color splashes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDoXbBN65i_7nKchPAw5kKgNfnzyww9pSqwY7xkOUTbQG9y0SmIwmsbINhf6u9nz08fZR_awG3CriBPdQQ9_tm3jzX7cBcwUkljQ7D72TYRc-LBso0A5shXULTYfwA0XXHgC5MfnDVaYdjpOlMnG5Ot2qJa0V5xoRI4DdST9NydQTm5Tw-vCo9ShOfskZoZzmQSrgcZI1NvxifuxTv0Qr2dNKFmdRuFW8CcfyhKcml"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-5')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">코믹 명랑 만화</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Slapstick-X</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Comic Slapstick &amp; Gag</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#극적인표정</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#볼드외곽선</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#웃음유발</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('코믹 명랑 만화')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('코믹 명랑 만화')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="retro" data-name="90년대 레트로 흑백 만화" data-pro="false" data-tags="#스크린톤 #고전소년만화 #아날로그">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Retro 1990s black-and-white manga panel with authentic screentones and cross-hatching, classic Shonen hero determination expression, dramatic wind effect, vintage paper texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB89oAtZVJwBSwzIRqAjfYqLnGmsqsxQVnXm-sx0UdJCz3hPBfsFVBMENlBvLtiU2vvLG7-CvNFDWYqbXDVw5gnc9AlHQllZob2Zs7MdFE_l-7heTcNxkBVnooRLseSVFt6OJZNoMkwzZFPcxLX9g54DhrbxTyaQpLX8F3V9i42L09Nxi5CTrDo1PvHVHXwQvLjSdlZJ-nWhBNfOX4VyblOwas0xTCwDeaD5C8qbVdo"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-6')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">90년대 레트로 흑백</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">BW-Screentone</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">90s Retro Screen-tone</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#스크린톤</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#고전소년만화</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#아날로그</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('90년대 레트로 흑백 만화')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('90년대 레트로 흑백 만화')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="daily" data-name="네이버 일상개그 웹툰" data-pro="false" data-tags="#대충그린듯치밀함 #직장인공감 #하이퍼리얼리즘">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Humorous Korean portal webtoon gag style illustration showing a tired office worker slumped at a computer desk with funny deadpan eyes, hyper-relatable comic vibe, minimal clean coloring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYHGp3kMldeLYiaOo1b8-DsiKB9ZbHoNdVoYmEl6X-NcsJlocYfEYk9VokK-MzvYELnS511RTHifYmQpe-asSAOFAiaKlGBEc7g6lTr1_8bk-Hj8tf9al3ISGLT_dm1r_hw9OH1KqNbs8_3N8nl3BYo4OXDQom1fDD8zoVneCR5xmhMH0GSygnVM2e9ugljgXxTWEtU_qjQzrts1fGasA93aP3pz1PDMYMDNUpaD9H"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-7')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">네이버 일상개그 웹툰</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Portal-Gag</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Portal Gag Webtoon</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#직장인공감</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#대충그린듯치밀함</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#생생한리얼</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('네이버 일상개그 웹툰')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('네이버 일상개그 웹툰')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="action" data-name="청춘 학원물 톤" data-pro="true" data-tags="#청량한파랑 #투명한피부 #풋풋한감성">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern Japanese high school youth anime art style, students by a sunlit classroom window with fluttering curtains, brilliant cyan blue sky, transparent skin tones, refreshing summer aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb_mwYfgY-1KnMP5sbLGhBbL9r7Oq21rkRq-B_Xpdx5rjKIzxElylgykVizAoSoZrgJ4FaxoD8jhVcaTz6A6jnc1FQBm3gYh6ebJG1Epq0LJQKNAebHB3cpUqRpjqHOIJ__CtDGMxl0SUD-F5obUFYjeHaZgNvPgzBb9N1tK-1FPPBilZKvNrN0qHuybvx1RFXbPoKHVHfmMYqt4YUinW2ecrXXyMtyQvs4ns35J8u"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-8')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">청춘 학원물 톤</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">Youth-Cyan</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Youth Highschool Modern</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#청량한파랑</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#투명한피부</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#풋풋한감성</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('청춘 학원물 톤')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('청춘 학원물 톤')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="action" data-name="다크 누아르 &amp; 시크 잉크" data-pro="true" data-tags="#강렬한명암 #거친펜선 #진지한일상">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Chiaroscuro gritty dark noir graphic novel style, stark black shadows, heavy contrast ink strokes, intense trenchcoat figure in a rain-slicked neon reflection alley, serious cinematic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2z3H3ePgPao_jc6xUcuYG2YwyANP_zEllw2JwfVUdPApdP9OMsH6bZs1LwnJ1j_p4iM4KT0-eK-Ga9RziZU8YoSRyauLtA9P-N7MWfF47DXQB4FNiGHBE5NQSuhbq4oru6eQTxFj7HQOjWIUP7T6qhcG_zCysboeFKjmU4Jav29_XRsT4mtd28QnubbrQdzQ3VfLwPU5uzHA1oWO5ma-shxy3aDjo2oBlIfevCqsd"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-9')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">다크 누아르 &amp; 시크 잉크</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Noir-Shadow</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Dark Noir Ink &amp; Shadow</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#강렬한명암</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#거친펜선</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#진지한일상</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('다크 누아르 &amp; 시크 잉크')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('다크 누아르 &amp; 시크 잉크')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 10 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="retro" data-name="빈티지 아메리칸 코믹스" data-pro="true" data-tags="#하프톤도트 #팝아트컬러 #볼드타이포">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Classic American pop art comic book panel with visible Ben-Day halftone dots, bold black ink outlines, primary yellow and cyan palette, vintage dramatic speech bubble, retro superhero style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALpL0H-NpgUeo7u0bzQ6Fq30_OfFGU8Wb4njDWfuLpc_e_bzYrngMaWxT0lVE27C4psaoNgili5zadJ7J79RGhQDWAqte9QtuRdl7mf1jqa6ImITq-X3xgP398g6RvNOHFXyukwxOGQUNK_2la67mx7VXweRT__Km4lRhwS_lSDLWVkAWSQe78Qksk9UqI83jG9OgavZgmv1dPYCs5Huslu61e0bD10yYKir-lx0IS"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-10')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">빈티지 아메리칸 코믹스</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Retro-Pop</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Vintage American Pop Comic</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#하프톤도트</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#팝아트컬러</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#볼드타이포</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('빈티지 아메리칸 코믹스')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('빈티지 아메리칸 코믹스')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 11 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="popart" data-name="픽셀 아트 레트로" data-pro="false" data-tags="#도트감성 #미니멀 #레트로게임">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Charming 16-bit retro pixel art scene of an indoor room with potted plants, a warm desk lamp, cute pixelated character typing on laptop, nostalgic video game palette, cozy atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOqN-sZAKy_Yge1Ev7JugfEmMaegktzuMpF6tvnnOBaYR_-5zsWRqW_0V4qPUY4AY6aJPMV9gfq3aUfxYoqdHkghTu8pvsohbqura0FAMz_qSRYo6QbD0ObLfv3vxhGKMQCeoJGHZwRraqwTv1ProGu7BWxOtJd-b6_RuGm4qkOfk1506jauWy-N0RwS7fUpUa2zEQTV9l6wlh0cbagGvzHnyFKdaVLIXhS92NxqiL"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-11')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">픽셀 아트 레트로</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">16Bit-Dot</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">16-bit Retro Pixel Art</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#도트감성</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#미니멀</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#레트로게임</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('픽셀 아트 레트로')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('픽셀 아트 레트로')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 12 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="watercolor" data-name="몽환 오일 파스텔" data-pro="true" data-tags="#도톰한질감 #포근한크레용 #감성에세이">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Thick textured dreamy oil pastel illustration of a sunset over the city rooftops, buttery crayon strokes in lavender, peach, and soft teal, gentle dreamy light, artistic essay book illustration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7XycQIIkjwstg7QePLCOCS9VisGuk5INw81KRqsqUnCj6p7F16FTkp1tssMG-REoKZCeTTjDCr_mbw-N6bmZJO9wqY_ll9nFZ5U83MD5Y01G_TX9IU0QBUX0JJa7k7geweiEj5Ka3t5CQQcCfMMjpjUrRemWMIKt-tyZAf-LzjFCacXa7x0xm3i1gJSeb_4UE0peObBZ5ZAVySFnBidmTmSPhCso6oBfs-yyBIC5Z"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-12')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">몽환 오일 파스텔</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Pastel-Thick</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Dreamy Oil Pastel</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#도톰한질감</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#포근한크레용</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#감성에세이</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('몽환 오일 파스텔')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('몽환 오일 파스텔')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 13 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="popart" data-name="3D 클레이메이션" data-pro="true" data-tags="#동글동글점토 #부드러운조명 #키치함">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Playful 3D claymation plasticine character sitting on a soft clay bench, rounded miniature clay props, soft ambient isometric lighting, tactile clay fingerprints texture, cute kitsch aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPHoZ2Xz1wKl5t8sBumPjcW-rKsmZ59yL9VBfYFQF-rYT0KU8lG8SoGKKa_zzW186iEg6zEIzTIYr2iHAz3_lgbS90KuXr2xPZuSGCOEO0K5fEW_IxYlYv7IXLMTRXzKBn0xPGL3lyqHQ6vGPIhq6Rgx0pLHC_7FLUzu2ZetbCjPM-QLGdE02HyVfkArKI6M5o6MqOiYnNpuTyP2icFLKdaD1rNG_DnligXiXnaE6N"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-13')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">3D 클레이메이션</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Clay-3D</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">3D Clay &amp; Isometric</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#동글동글점토</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#부드러운조명</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#키치함</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('3D 클레이메이션 캐릭터')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('3D 클레이메이션 캐릭터')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 14 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="daily" data-name="심플 미니멀 라인" data-pro="false" data-tags="#단색미학 #세련된여백 #인스타스토리형">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sophisticated minimalist line drawing of a person relaxing with a book, continuous thin black lines on an ivory paper background, balanced whitespace, subtle splash of warm beige tint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb3X-Wi5ldETREZJiEwgErDFot-fQ1pZq0yKB9eORlJhGg8WC2QPlACAoD90w-2IbnJFP9d1f7WClVk5yTWaVSHgvYBldA4qsfz7oH8zmMlrR2Wfff43UP1R3XeQHmgTpTsoOGfc2OGG7F0t1XjClItequiHhxCq6gJhJ5zhpiIXanf04ZpLF3051YL4rv9aWoaZhezLXRvUmQzh74IeiJ2tjTaIiOK1QV0Uww0y0T"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-14')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">심플 미니멀 라인</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Clean-Line</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Minimalist Clean Line</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#단색미학</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#세련된여백</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#인스타스토리형</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('심플 미니멀 라인드로잉')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('심플 미니멀 라인드로잉')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 15 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="action" data-name="판타지 모험 RPG" data-pro="true" data-tags="#마법이펙트 #웅장한배경 #모험가무드">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High fantasy action webtoon cut showing an adventurer warrior wielding a glowing cyan runic staff before ancient castle ruins, swirling magic particles, dramatic lens flare, epic cinematic scope." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9sw6lvBl9gHWy-_jjBkAZXiNiElkeI2kDH-w2kmqSUsamUANxDg3RJLgJKr39Yb5TlmsciAZH9offsc-DD4M80QijE8pCs7qSIO5MwSn4WnYf7Naf46QENGhNa_YfXl49pwo7kSJLbJfbI-JcXEtOYuK_A-atITR8wnojohEndQTxlLKIbjRB5DNHN1hXIhhNwDoOWlKzeky3tXYi4pYXPIzXSCBSDTOMM2KcAwHi"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-15')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">판타지 모험 RPG</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">RPG-Heroic</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Fantasy Adventure Webtoon</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#마법이펙트</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#웅장한배경</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#모험가무드</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('판타지 모험 RPG')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('판타지 모험 RPG')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 16 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="watercolor" data-name="따스한 색연필 에세이" data-pro="false" data-tags="#종이질감 #사각사각손그림 #다이어리감성">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Charming hand-drawn colored pencil diary illustration, subtle paper grain texture, soft crosshatched pencil marks showing a cat napping next to a warm cup of tea, wholesome cozy mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB673hFteapeEMs_lkclh9FYDmPjWbkNCqX4pMHBqLx9-ex1jOXP9unYMA6AW5t9wpXXR9ge2pEi-Aw5GiuEX_C0nQlJhtVqOq9lpikGD0EFDW8iZV8tusZbNlUajYYrnZ4Acw4o5PjRy2A9FCUscYuGtcL94RxuV81JOuwEc9G4bEgLFZb9fY2lVVYD5Bb9adWYHVkwRi2TO5DolDBwHjrngyEwKlVqrGEKLjUxtJb"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-16')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">따스한 색연필 에세이</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Pencil-Warm</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Colored Pencil Diary</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#종이질감</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#사각사각손그림</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#다이어리감성</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('따스한 색연필 에세이')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('따스한 색연필 에세이')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 17 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="action" data-name="사이버펑크 네온" data-pro="true" data-tags="#야경네온 #홀로그램 #도시퇴근길">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant cyberpunk city webtoon illustration at night, illuminated by holographic billboards and luminous cyan and violet neon lights, a commuter holding a futuristic umbrella, high gloss wet asphalt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiJgk73-760vX9GcJ51uzzfm5W7Cni8tpPpo8IWGwqe2FwdZtuuWNLKjijWid41eP1UHRVZIb6z5r4OCteHJBvyCMH6Zwm1e7eeSoYooE8VtwzULFK9tVXSRAzCm4iiyOuwgv02l6JJ0uO3B0Q8D6rILManlvzLsn-xBqBOI-0bSvEsAw9O7Uw2ZStGTnJtcdPjZkdmB1xGUzzrLnN32dwVmxzVbG6iVMG0tCtCkWF"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-17')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">사이버펑크 네온</h3>
+<span class="font-label-sm text-label-sm text-primary font-mono">Neon-Cyber</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Cyberpunk Neon Glow</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#야경네온</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#홀로그램</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#도시퇴근길</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('사이버펑크 네온')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('사이버펑크 네온')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 18 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="retro" data-name="수묵 캘리그라피 먹선" data-pro="true" data-tags="#유려한붓터치 #동양풍감성 #깊은여운">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Traditional East Asian ink wash painting style blended with modern webtoon linework, expressive dark sumi-e brush strokes, misty bamboo garden backdrop, subtle crimson seal stamp accent, profound tranquility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtRoBi67Fz1-92RFRTnKbHzS8CTzDC-WCMyMsdsJQzJkFN1DlUXkZZu-e1PQVOf0_3w8fETNumvuBGVxEuOSf3YObO5AIy5m220YBPMqywQNsIvjOJikafsJ0EIwzSgncXrNwt_TdcgScgSUA08TXFZOhjKCu3haFN3iSsiZwzMThDEAbrncP2oSsRQWn4giKXGyBdKiTPUBiYxYYIq-GUsdaHYJY7zzNLUHFSx5cH"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-18')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">수묵 캘리그라피 먹선</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Sumi-Modern</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Modern Ink Wash &amp; Brush</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#유려한붓터치</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#동양풍감성</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#깊은여운</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('수묵 캘리그라피 먹선')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('수묵 캘리그라피 먹선')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 19 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="daily" data-name="귀여운 카툰 동물화" data-pro="false" data-tags="#주인공반려동물화 #2등신찹쌀떡 #극강귀여움">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Extremely adorable 2-head chibi cartoon animal version of a diary protagonist, depicted as a round chubby otter holding a coffee mug, warm pastel tones, playful joyful expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8yJ-mlQHfRTxygbiW4BaLgcWJPzVEGLt1VxLDBKhosOvnAlUYfhEy5njPEaY-l-MdnzlbA7erGPKsREV7p02CV2-s3rfeHflUDLBb-Z8lpCF6fB3kteCLSGabHT7bD4poQ6kCskQSGSAYmHIz3e0lV5a578KYSpwo-t9a6KQlWGTYxX1X5RsQJ8WY1WtgCeDw4qJXujUmEadRg7AasD4GnroPmn4fyHZQNFYR0UI_"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">FREE</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-19')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">귀여운 카툰 동물화</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Chibi-Fauna</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Chibi Animal Character</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#반려동물화</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#2등신찹쌀떡</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#극강귀여움</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('귀여운 카툰 동물화')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('귀여운 카툰 동물화')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 20 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="popart" data-name="감성 북커버 일러스트" data-pro="true" data-tags="#단정한레이아웃 #차분한북유럽톤 #출판최적화">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Nordic essay book cover style vector illustration, muted olive and dusty terracotta color palette, elegant flat figures gazing towards a calm lake, modern editorial graphic elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDARmy5HYI3nDwaUjkjDmGwh8KTqORsTBgEJyS628j_dSO9lQ91BjNFI6vLP5mCuRItodbRIORYffaGXtwBuTob7NvskfBiKvea4OQevBmDCqujJnxPWfpvs70ayBn3WyNd-yBo4SHqzhwSZcmahL3nAcKK-AvJGuQ5qzZFydQhxWITWlLxASFVBrxQidSgpCZZkRizF75zKLa7Kldlo_NH4hrxPzvEFKDAVSzRGoSa"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-20')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">감성 북커버 일러스트</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Nordic-Editorial</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Nordic Book Cover Art</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#단정한레이아웃</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#차분한북유럽톤</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#출판최적화</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('감성 북커버 일러스트')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('감성 북커버 일러스트')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 21 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="romance" data-name="애니메이션 셀 채색" data-pro="true" data-tags="#명확한그림자 #선명한원색 #애니극장판">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Classic theatrical anime cel shaded animation keyframe, crisp hard shadows, vivid saturated colors, expressive character looking up at radiant morning sunlight across a cityscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfU-AHGM_U9Hjt4hOTTF8Z9uyidLeRcM664GpZjcYtju7I1lqtPfoneglnATbzAqZrRP0qyZp-ILAY2zl6yQt7I_VfSjFCiiyyK1Yc5QULfbLKjPaiCtA18-KokpLhCG3BERdujdvS2mWeOE8I1fcPPnkhMVxzP_3fRs6S891FEidBI4uyNgSIs8KsxUUB8wdLw9bWQZva8TPzVW7n1BmHqpNnVmoRWE6wIp8oPiGp"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-21')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">애니메이션 셀 채색풍</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Anime-Cel</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Classic Anime Cel Shading</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#명확한그림자</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#선명한원색</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#애니극장판</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('애니메이션 셀 채색풍')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('애니메이션 셀 채색풍')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 22 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="retro" data-name="프랑스 방드데시네" data-pro="true" data-tags="#디테일한배경 #앤틱톤 #예술적스토리">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Franco-Belgian comic Bande Dessinee artistic panel, intricate architectural Parisian background linework, muted olive and parchment tones, highly detailed vintage comic elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjaDHvk7QBdCGW5xvm7M806uC9rh3CN8E0DJiEqsRx3WJFZWFVQQfORVTs2m9AbHDPZ5PYgK_fXnKHPbxtCuhw-KS8tVqXXxa2hMcsa5Td1vvcOWN6MhXNSHZQtk_5hFLienGajX0DNiSfQtmHUGLtU-XvKTMIyruWagE_mN7FpcnEXWQg9JAcdUTGlesGL0mMXuiTDQR4IUx3sH5XpKAytNpUR1z7mA8AV-tiq0CP"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-22')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">프랑스 방드데시네</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">BD-Franco</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">French Bande Dessinée</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#디테일배경</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#앤틱톤</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#예술적스토리</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('프랑스 방드데시네')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('프랑스 방드데시네')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 23 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="retro" data-name="네온 레트로 시티팝" data-pro="true" data-tags="#보랏빛노을 #신스웨이브 #감성드라이브">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="1980s Japanese City Pop album cover aesthetic, a convertible car driving along a coastal highway with palm tree silhouettes against a glowing purple-orange twilight sky, synthwave vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2yABBJnzR7dNIc-EX0ho2C1rReQjTixM5JuivtvBMKpIh0YryfgRKWUTBC0C25zUjf2Xggj94-kkeWg8Eu2bB69vTvCSB5I9Q46t0Ai18afNGAQPxtBNzCRkrBuXwrpMB6laJvh-u2NFZXV0Lsw-Yn48z4_LpMOFy5vCrymGvEhLnhZBjn-eNzhhqvfHOhVSl4B9M2oZZqIG3KTKZGz2uEcpWws1S9krEU-sEwWDC"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-23')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">네온 레트로 시티팝</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">CityPop-80s</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">80s Japanese City Pop</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#보랏빛노을</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#신스웨이브</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#감성드라이브</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('네온 레트로 시티팝')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('네온 레트로 시티팝')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 24 -->
+<div class="style-card flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="popart" data-name="꼴라주 페이퍼 아트" data-pro="true" data-tags="#입체종이자르기 #아기자기한레이어 #핸드메이드">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Tactile 3D papercut collage style illustration, multi-layered cut paper craft forming a charming cafe scene with depth shadows, textured cardstock paper edges, warm crafty feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQoNd69Xvgna3ea5ESJsYm6R87gR6pM0s-OjGv7j6l8ICchwZI5JicblKPwMsP-w8Y9RQQQAhUgGdtuH0nplu2CTqJQG_z1nULUDTkpap7Zi_GZH8ZqAFAtXRf87e12LNuwIEIlbYg42hPRSk9Sph7CWkwF37xlDgCjwLQeR-q_0_7cdw7A9qK7NrHT4X313_ibdyHG7EFfgb7QcKdIGwee9TTwnco4fGi1KczsfDn"/>
+<div class="absolute top-space-xs left-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">PRO</span>
+</div>
+<button class="absolute top-space-xs right-space-xs w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-error transition-colors shadow-sm" onclick="toggleFavorite(this, 'card-24')">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">꼴라주 페이퍼 아트</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">PaperCraft-3D</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Collage &amp; Paper Cutout</p>
+<div class="flex flex-wrap gap-1 mb-space-sm">
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#입체종이자르기</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#아기자기레이어</span>
+<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant">#핸드메이드</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm" onclick="selectAndApplyStyle('꼴라주 페이퍼 아트')">
+              화풍 적용 &amp; 테스트
+            </button>
+<button class="w-9 h-9 rounded-full bg-surface-container text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="openTuneDrawer('꼴라주 페이퍼 아트')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty Results Fallback -->
+<div class="hidden w-full py-space-xl text-center bg-surface-container-low rounded-xl" id="noResultsNotice">
+<span class="material-symbols-outlined text-outline text-[48px] mb-space-xs">search_off</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">검색 조건에 맞는 화풍을 찾지 못했습니다.</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">다른 키워드(#순정, #수채화 등)를 입력하거나 필터를 초기화해 보세요.</p>
+<button class="mt-space-md px-space-lg py-space-sm bg-primary text-on-primary rounded-full font-label-lg text-label-lg shadow-sm" onclick="resetFilters()">
+        전체 화풍 다시 보기
+      </button>
+</div>
+</section>
+<!-- Side Tuning Drawer Overlay (Interactive Style Customizer) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300" id="tuneDrawerBackdrop" onclick="closeTuneDrawer()"></div>
+<div class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-surface-container-lowest shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out flex flex-col" id="tuneDrawer">
+<!-- Drawer Header -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="drawerStyleTitle">지브리 수채화 감성</h3>
+<p class="font-label-sm text-label-sm text-primary font-medium">ToonLog AI 커스텀 튜닝 • 실시간 적용</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" onclick="closeTuneDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Sliders & Fine-tuning Form -->
+<div class="flex-1 overflow-y-auto p-space-lg space-y-space-lg">
+<!-- Live Preview Tile -->
+<div class="relative aspect-video rounded-DEFAULT overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A tranquil watercolor frame showing a young woman walking with an umbrella under soft rain with pastel water reflections and lush green bushes, Studio Ghibli warm tones." id="drawerSampleImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtgXFSX3QSMN_v0tq0j11K_4irgA36ztDwLxhX4jYQF1bnGdmef25TvSLcw5vVx9qgI9wsrYB3a4i4nRwdawFV9DbQ7VbI81VHN6yabLvKWCbf5anbCfXZ6tJPCV8QZg5S-Ml_A-sPQVX71lKS48U-_YBqqAXi7MOz7dTZC2Oayrkg2vAqeGuH7ANcdIBNETEYPD_anjvy1mFUU7RsI1O9zqphu35oykTeOlyY-RXh"/>
+<div class="absolute bottom-2 left-2 px-2 py-1 bg-surface/90 backdrop-blur-md rounded-md font-label-sm text-label-sm text-on-surface font-semibold shadow-sm">
+          실시간 렌더링 시뮬레이션
+        </div>
+</div>
+<!-- Line Weight Slider -->
+<div class="space-y-space-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">draw</span>
+<span>펜선 굵기 (Line Weight)</span>
+</label>
+<span class="font-label-sm text-label-sm text-primary font-mono font-bold" id="valLine">42% (섬세한 선)</span>
+</div>
+<input class="w-full accent-primary cursor-pointer" max="100" min="10" oninput="document.getElementById('valLine').textContent = this.value &lt; 45 ? this.value + '% (섬세한 가는선)' : this.value + '% (볼드한 외곽선)'" type="range" value="42"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>섬세한 가는선</span>
+<span>볼드한 외곽선</span>
+</div>
+</div>
+<!-- Saturation / Warmth Slider -->
+<div class="space-y-space-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">wb_sunny</span>
+<span>채도 &amp; 감성 톤 (Warmth)</span>
+</label>
+<span class="font-label-sm text-label-sm text-tertiary font-mono font-bold" id="valWarmth">+15% (포근한 웜톤)</span>
+</div>
+<input class="w-full accent-tertiary cursor-pointer" max="40" min="-30" oninput="document.getElementById('valWarmth').textContent = this.value &gt; 0 ? '+' + this.value + '% (포근한 웜톤)' : this.value + '% (차분한 쿨톤)'" type="range" value="15"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>차분한 쿨블루 (-30%)</span>
+<span>포근한 웜베이지 (+40%)</span>
+</div>
+</div>
+<!-- AI Stylization Strength Slider -->
+<div class="space-y-space-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_awesome</span>
+<span>AI 디테일 강도 (Stylization)</span>
+</label>
+<span class="font-label-sm text-label-sm text-primary font-mono font-bold" id="valStyle">85%</span>
+</div>
+<input class="w-full accent-primary cursor-pointer" max="100" min="30" oninput="document.getElementById('valStyle').textContent = this.value + '%'" type="range" value="85"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>원작 유지 (30%)</span>
+<span>화풍 극대화 (100%)</span>
+</div>
+</div>
+<!-- SeedLock Consistency Monitor -->
+<div class="p-space-md bg-surface-container rounded-DEFAULT space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 font-label-md text-label-md text-on-surface font-bold">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span>SeedLock™ 캐릭터 동기화</span>
+</div>
+<span class="px-space-xs py-0.5 bg-secondary-container text-on-secondary-container rounded font-label-sm text-label-sm font-bold">100% 매칭 유지</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-relaxed">
+          이 화풍을 적용해도 저장된 작가님의 캐릭터 외모(헤어, 이목구비, 체형)가 4컷 만화 전반에 흔들림 없이 고정됩니다.
+        </p>
+</div>
+<!-- Preset Storage Info -->
+<div class="flex items-center gap-space-sm p-space-sm bg-tertiary-container/30 rounded-DEFAULT text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-tertiary text-[18px]">bookmark</span>
+<span>수정한 파라미터는 ‘나만의 커스텀 프리셋’으로 자동 저장됩니다.</span>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-space-lg bg-surface-container-lowest shadow-lg space-y-space-xs">
+<button class="w-full py-space-sm rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:opacity-95 transition-all flex items-center justify-center gap-space-xs active:scale-[0.98]" onclick="confirmDrawerSelection()">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+<span>이 화풍으로 4컷 만화 생성하기 (적용)</span>
+</button>
+<button class="w-full py-space-sm rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors text-center" onclick="saveAsPersonalDefault()">
+        나만의 기본 화풍으로 저장
+      </button>
+</div>
+</div>
+<!-- Bottom Floating Notification / Sticky Help Banner -->
+<aside class="sticky bottom-6 z-30 mx-margin-desktop self-center max-w-2xl w-full bg-surface-container-lowest/90 backdrop-blur-xl rounded-full p-space-xs pl-space-md shadow-xl flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping shrink-0"></span>
+<p class="font-label-sm text-label-sm text-on-surface truncate">
+<span class="font-semibold text-primary">💡 팁:</span> 마음에 드는 화풍을 고르면, 일기 작성 화면에서 즉시 기본 프리셋으로 자동 적용됩니다.
+      </p>
+</div>
+<a class="shrink-0 px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-on-primary-container transition-colors shadow-sm flex items-center gap-1" data-path="studio" href="#">
+<span>스튜디오로 돌아가기</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</aside>
+<!-- Toast Notification element -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-space-lg py-space-sm bg-inverse-surface text-inverse-on-surface rounded-full font-label-md text-label-md shadow-xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-space-xs" id="actionToast">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[18px]" id="toastIcon">check_circle</span>
+<span id="toastMsg">스타일이 성공적으로 반영되었습니다.</span>
+</div>
+</div>
+<script>
+  let currentCategory = 'all';
+  let activeStyle = '지브리 수채화 감성';
+
+  function filterCategory(cat, el) {
+    currentCategory = cat;
+    document.querySelectorAll('.category-pill').forEach(btn => {
+      btn.className = 'category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all';
+    });
+    el.className = 'category-pill px-space-md py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary-container font-semibold transition-all';
+    applyAllFilters();
+  }
+
+  function handleStyleSearch(val) {
+    applyAllFilters();
+  }
+
+  function toggleProOnly(isChecked) {
+    applyAllFilters();
+  }
+
+  function applyAllFilters() {
+    const query = (document.getElementById('styleSearchInput').value || '').trim().toLowerCase();
+    const proOnly = document.getElementById('proOnlyCheckbox').checked;
+    const cards = document.querySelectorAll('.style-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const isPro = card.getAttribute('data-pro') === 'true';
+      const name = (card.getAttribute('data-name') || '').toLowerCase();
+      const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+
+      const matchCat = (currentCategory === 'all' || cat === currentCategory);
+      const matchPro = (!proOnly || isPro);
+      const matchQuery = (!query || name.includes(query) || tags.includes(query));
+
+      if (matchCat && matchPro && matchQuery) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const notice = document.getElementById('noResultsNotice');
+    if (visibleCount === 0) {
+      notice.classList.remove('hidden');
+    } else {
+      notice.classList.add('hidden');
+    }
+  }
+
+  function resetFilters() {
+    document.getElementById('styleSearchInput').value = '';
+    document.getElementById('proOnlyCheckbox').checked = false;
+    const firstTab = document.querySelector('.category-pill');
+    if (firstTab) filterCategory('all', firstTab);
+  }
+
+  function sortStyles(criteria) {
+    const grid = document.getElementById('styleCardGrid');
+    const cards = Array.from(grid.querySelectorAll('.style-card'));
+
+    cards.sort((a, b) => {
+      if (criteria === 'name') {
+        const nameA = a.getAttribute('data-name');
+        const nameB = b.getAttribute('data-name');
+        return nameA.localeCompare(nameB, 'ko');
+      }
+      return 0;
+    });
+
+    cards.forEach(c => grid.appendChild(c));
+    showToast('정렬 방식이 변경되었습니다.');
+  }
+
+  function toggleFavorite(btn, id) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    const isFav = btn.getAttribute('data-fav') === 'true';
+    if (!isFav) {
+      btn.setAttribute('data-fav', 'true');
+      btn.classList.add('text-error');
+      icon.style.fontVariationSettings = "'FILL' 1";
+      showToast('화풍을 즐겨찾기에 등록했습니다 &hearts;');
+    } else {
+      btn.setAttribute('data-fav', 'false');
+      btn.classList.remove('text-error');
+      icon.style.fontVariationSettings = "'FILL' 0";
+      showToast('화풍 즐겨찾기를 해제했습니다.');
+    }
+  }
+
+  function selectAndApplyStyle(name) {
+    activeStyle = name;
+    showToast(`"${name}" 화풍이 생성 스튜디오 기본값으로 설정되었습니다.`);
+  }
+
+  function applyStyle(mainName, subName) {
+    showToast(`"${mainName}" 화풍을 불러와 일기 스튜디오에 바로 연결합니다.`);
+    setTimeout(() => {
+      const backLink = document.querySelector('a[data-path="studio"]');
+      if (backLink) backLink.click();
+    }, 700);
+  }
+
+  function openTuneDrawer(name) {
+    activeStyle = name;
+    document.getElementById('drawerStyleTitle').textContent = name;
+    const backdrop = document.getElementById('tuneDrawerBackdrop');
+    const drawer = document.getElementById('tuneDrawer');
+
+    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    backdrop.classList.add('opacity-100', 'pointer-events-auto');
+    drawer.classList.remove('translate-x-full');
+    drawer.classList.add('translate-x-0');
+  }
+
+  function closeTuneDrawer() {
+    const backdrop = document.getElementById('tuneDrawerBackdrop');
+    const drawer = document.getElementById('tuneDrawer');
+
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
+    backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+    drawer.classList.add('translate-x-full');
+    drawer.classList.remove('translate-x-0');
+  }
+
+  function confirmDrawerSelection() {
+    closeTuneDrawer();
+    showToast(`[${activeStyle}] 튜닝 파라미터가 4컷 스튜디오에 즉시 적용되었습니다!`);
+  }
+
+  function saveAsPersonalDefault() {
+    showToast(`[${activeStyle}] 커스텀 프리셋이 작가 기본값으로 영구 저장되었습니다.`);
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('actionToast');
+    const msgEl = document.getElementById('toastMsg');
+    msgEl.textContent = message;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2500);
+  }
+</script></main><footer class="w-full bg-surface-container-low py-space-xl"><div class="w-full px-margin-desktop"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 rounded-DEFAULT bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[14px]">auto_awesome</span></div><span class="font-headline-sm text-headline-sm text-on-surface">ToonLog AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">일상을 감성적인 4컷 웹툰 스토리로 완성하는 AI 그래픽 저널 스튜디오</p></div><div class="flex flex-wrap items-center gap-space-lg font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" href="#">이용약관</a><a class="hover:text-on-surface transition-colors" href="#">개인정보처리방침</a><a class="hover:text-on-surface transition-colors" href="#">AI 윤리 가이드라인</a><a class="hover:text-on-surface transition-colors" href="#">창작자 라이선스</a><a class="hover:text-on-surface transition-colors" href="#">고객지원 &amp; 피드백</a></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 ToonLog Inc. All rights reserved. Powered by ToonGen AI Engine.</p><div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span><span>스튜디오 서비스 정상 운영 중</span></div></div></div></footer></body></html>

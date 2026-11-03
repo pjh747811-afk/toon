@@ -1,0 +1,8 @@
+{
+  "name": "ToonLog (툰로그) - AI 4-Cut Webtoon Diary",
+  "description": "소소한 일상 텍스트를 AI 기반 4컷 일상 웹툰으로 변환해주는 크리에이티브 AI 플랫폼",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
