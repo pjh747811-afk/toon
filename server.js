@@ -59,10 +59,7 @@ const ROUTES = {
   '/book-publish': 'stitch_duplicate_of_ai/_12/code.html',
   '/book/specs': 'stitch_duplicate_of_ai/_13/code.html',
   // Motion Effects
-  '/motion': 'stitch_duplicate_of_ai/_14/code.html',
-  // Design System Showcase
-  '/design-system': 'stitch_duplicate_of_ai/toonlog_1/code.html',
-  '/design-system-showcase': 'stitch_duplicate_of_ai/toonlog_1/code.html'
+  '/motion': 'stitch_duplicate_of_ai/_14/code.html'
 };
 
 // 5-Color Harmony Stylesheet (sampled from user's attached image)
@@ -152,7 +149,7 @@ const PALETTE_THEME_CSS = `
       bottom: 0 !important;
       left: 0 !important;
       right: 0 !important;
-      height: 60px !important;
+      height: 58px !important;
       z-index: 40 !important;
       background: #ffffff !important;
       border-top: 1px solid #fed7aa !important;
@@ -161,15 +158,59 @@ const PALETTE_THEME_CSS = `
 
     body {
       padding-left: 0 !important;
-      padding-bottom: 70px !important;
+      padding-bottom: 66px !important;
       margin: 0 !important;
       box-sizing: border-box !important;
+      overflow-x: hidden !important;
     }
 
-    header.fixed, .fixed.top-0 {
+    header, header.fixed, .fixed.top-0 {
       left: 0 !important;
+      top: 0 !important;
+      right: 0 !important;
       width: 100% !important;
+      max-width: 100vw !important;
+      height: 56px !important;
       box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+
+    /* Keep header inner items compact and within screen bounds on mobile */
+    header .h-20, header > div {
+      height: 56px !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      gap: 8px !important;
+    }
+
+    /* '+ 오늘 일기 쓰기' button size reduction on mobile */
+    header a[data-path="studio"],
+    header .today-diary-nav-btn,
+    .today-diary-nav-btn {
+      padding: 4px 10px !important;
+      font-size: 11px !important;
+      line-height: 16px !important;
+      height: 30px !important;
+      max-height: 30px !important;
+      border-radius: 9999px !important;
+      white-space: nowrap !important;
+      box-shadow: 0 2px 8px rgba(254, 94, 127, 0.25) !important;
+      flex-shrink: 0 !important;
+    }
+
+    header a[data-path="studio"] span.material-symbols-outlined,
+    .today-diary-nav-btn span.material-symbols-outlined {
+      font-size: 15px !important;
+      margin-right: 2px !important;
+    }
+
+    /* Main container below header on mobile */
+    main {
+      padding-top: 60px !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
     }
 
     body > aside:not(#toonlog-pc-sidebar) {
@@ -434,25 +475,7 @@ const NAVIGATION_HTML_AND_SCRIPT = `
           </div>
           <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-purple-100 text-purple-700 font-semibold">NEW</span>
         </a>
-        <a href="/design-system" data-route="/design-system" class="pc-nav-item flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-[#fff0f3] hover:text-[#fe5e7f] transition-all">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[20px] text-[#ccffc0]">token</span>
-            <span class="font-medium">디자인 시스템 쇼케이스</span>
-          </div>
-          <span class="text-[10px] px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-500 font-medium">토큰</span>
-        </a>
       </nav>
-
-      <!-- GitHub Push / Sync Quick Action Button -->
-      <div class="pt-3 px-1">
-        <button type="button" onclick="window.openGitHubSyncModal()" class="w-full flex items-center justify-between px-3 py-2.5 rounded-xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white hover:from-[#fe5e7f] hover:to-[#fea7a7] shadow-sm transition-all group cursor-pointer">
-          <div class="flex items-center gap-2">
-            <svg class="w-4 h-4 fill-current text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span class="text-xs font-bold text-white tracking-tight">GitHub 푸시 / 백업</span>
-          </div>
-          <span class="text-[9px] px-1.5 py-0.5 rounded-full bg-[#fe5e7f] text-white font-extrabold animate-pulse">해결</span>
-        </button>
-      </div>
     </div>
   </div>
 
@@ -604,140 +627,6 @@ const NAVIGATION_HTML_AND_SCRIPT = `
           <span class="material-symbols-outlined text-[#fea7a7] text-[20px]">loyalty</span>
           <span class="text-xs font-semibold text-slate-800">멤버십 요금제</span>
         </a>
-        <a href="/design-system" class="p-2.5 rounded-xl border border-slate-100 bg-[#fffbfc] hover:border-[#fe5e7f] flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#ccffc0] text-[20px]">token</span>
-          <span class="text-xs font-semibold text-slate-800">디자인 시스템</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Mobile GitHub Action -->
-    <div class="pt-2 border-t border-slate-100">
-      <button type="button" onclick="window.openGitHubSyncModal()" class="w-full p-3 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 text-white flex items-center justify-between shadow-md cursor-pointer">
-        <div class="flex items-center gap-2.5">
-          <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <div class="text-left">
-            <div class="text-xs font-bold text-white">GitHub 푸시 / 백업 도구</div>
-            <div class="text-[10px] text-slate-300">토큰 원클릭 푸시 & ZIP 다운로드</div>
-          </div>
-        </div>
-        <span class="text-[10px] px-2 py-1 rounded-lg bg-[#fe5e7f] text-white font-bold">실행</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- 4. GitHub Sync & Push Modal -->
-<div id="toonlog-github-modal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4">
-  <!-- Backdrop -->
-  <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="window.closeGitHubSyncModal()"></div>
-  
-  <!-- Modal Content Box -->
-  <div class="relative bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-xl w-full max-h-[90vh] overflow-y-auto z-10 flex flex-col">
-    <!-- Modal Header -->
-    <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-t-3xl">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        </div>
-        <div>
-          <h3 class="text-base font-bold">ToonLog GitHub 푸시 & 백업</h3>
-          <p class="text-xs text-slate-300 font-mono">pjh747811-afk / Toon-Log (main)</p>
-        </div>
-      </div>
-      <button type="button" onclick="window.closeGitHubSyncModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
-        <span class="material-symbols-outlined text-[18px]">close</span>
-      </button>
-    </div>
-
-    <!-- 5-Color Strip -->
-    <div class="w-full h-1 toonlog-palette-strip"></div>
-
-    <div class="p-6 space-y-5">
-      <!-- Status Badge -->
-      <div class="p-3.5 rounded-2xl bg-gradient-to-r from-[#fff0f3] to-[#f4fdff] border border-[#fde8de] flex items-center justify-between">
-        <div class="flex items-center gap-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <div>
-            <div class="text-xs font-bold text-slate-800">로컬 최신 작업 커밋 준비 완료</div>
-            <div class="text-[11px] text-slate-500">원격 origin/main 브랜치 바로 위에 대기 중 (1 commit ahead)</div>
-          </div>
-        </div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-[#ccffc0] text-[#134418] font-bold">정상 준비됨</span>
-      </div>
-
-      <!-- Solution 1: GitHub PAT Direct Push (Recommended) -->
-      <div class="p-4 rounded-2xl bg-white border-2 border-[#fe5e7f]/30 hover:border-[#fe5e7f] transition-all shadow-xs">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#fe5e7f] text-white flex items-center justify-center text-xs font-bold">1</span>
-            <h4 class="text-sm font-bold text-slate-900">GitHub Personal Access Token (PAT)으로 즉시 푸시</h4>
-          </div>
-          <span class="text-[10px] px-2 py-0.5 rounded-md bg-[#fe5e7f] text-white font-bold">가장 확실한 해결법</span>
-        </div>
-        <p class="text-xs text-slate-600 mb-3 leading-relaxed">
-          AI Studio UI 버튼에서 오류가 날 때, 본인의 GitHub Personal Access Token을 넣으면 서버가 GitHub 저장소로 <strong>직접 즉시 푸시</strong>합니다.
-        </p>
-
-        <div class="space-y-3">
-          <div>
-            <label class="block text-[11px] font-bold text-slate-700 mb-1">GitHub Personal Access Token (PAT)</label>
-            <div class="relative flex items-center">
-              <input type="password" id="gh-token-input" placeholder="ghp_... 또는 github_pat_..." class="w-full px-3.5 py-2.5 pr-16 text-xs rounded-xl border border-slate-200 focus:outline-hidden focus:border-[#fe5e7f] font-mono bg-slate-50 focus:bg-white transition-all">
-              <button type="button" onclick="window.toggleTokenVisibility()" class="absolute right-2 text-[11px] px-2 py-1 text-slate-500 hover:text-slate-900 font-medium cursor-pointer">보기</button>
-            </div>
-            <p class="text-[10px] text-slate-500 mt-1">
-              * 토큰 생성: <a href="https://github.com/settings/tokens/new" target="_blank" rel="noreferrer" class="text-[#fe5e7f] font-bold underline">GitHub Tokens (classic) 생성</a>에서 <strong>repo</strong> 체크 후 생성하여 입력
-            </p>
-          </div>
-
-          <div class="flex items-center justify-between pt-1">
-            <label class="flex items-center gap-1.5 text-xs text-slate-600 cursor-pointer">
-              <input type="checkbox" id="gh-force-check" class="rounded text-[#fe5e7f] focus:ring-[#fe5e7f]">
-              <span class="text-[11px]">충돌 시 강제 푸시 (--force)</span>
-            </label>
-            <button type="button" id="gh-push-btn" onclick="window.submitGitHubPush()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#fe5e7f] to-[#fea7a7] hover:brightness-105 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-1.5 cursor-pointer">
-              <span class="material-symbols-outlined text-[16px]">upload</span>
-              <span>지금 GitHub에 푸시하기</span>
-            </button>
-          </div>
-
-          <!-- Push Result Output Box -->
-          <div id="gh-push-status" class="hidden p-3 rounded-xl bg-slate-900 text-slate-200 text-xs font-mono whitespace-pre-wrap max-h-48 overflow-y-auto border border-slate-700"></div>
-        </div>
-      </div>
-
-      <!-- Solution 2: One-Click Project ZIP Download -->
-      <div class="p-4 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 transition-all">
-        <div class="flex items-center justify-between mb-2">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-slate-800 text-white flex items-center justify-center text-xs font-bold">2</span>
-            <h4 class="text-sm font-bold text-slate-900">최신 완성 소스코드 전체 ZIP 다운로드</h4>
-          </div>
-          <span class="text-[10px] px-2 py-0.5 rounded-md bg-[#9cf6fe]/50 text-[#004d57] font-bold">즉시 보관</span>
-        </div>
-        <p class="text-xs text-slate-600 mb-3 leading-relaxed">
-          AI 에디터, Gemini API 연동, 4컷/8컷 캔버스 및 모든 최신 수정본을 ZIP 압축 파일로 내 컴퓨터에 바로 저장합니다.
-        </p>
-        <a href="/api/download-zip" download="ToonLog-latest.zip" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-all border border-slate-200">
-          <span class="material-symbols-outlined text-[16px]">download</span>
-          <span>ToonLog 프로젝트 전체 ZIP 다운로드 (ToonLog-latest.zip)</span>
-        </a>
-      </div>
-
-      <!-- Solution 3: Terminal Command -->
-      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-6 h-6 rounded-full bg-slate-600 text-white flex items-center justify-center text-xs font-bold">3</span>
-          <h4 class="text-sm font-bold text-slate-800">로컬 PC 터미널에서 올리기</h4>
-        </div>
-        <p class="text-xs text-slate-600 mb-2">
-          내 컴퓨터의 터미널에서 직접 푸시할 때 사용하는 명령어:
-        </p>
-        <div class="relative bg-slate-900 text-slate-200 p-2.5 rounded-xl font-mono text-[11px] flex items-center justify-between">
-          <span id="cmd-git-text">git clone https://github.com/pjh747811-afk/Toon-Log.git</span>
-          <button type="button" onclick="window.copyGitCommand()" class="px-2 py-1 bg-white/10 hover:bg-white/20 rounded-md text-[10px] text-white cursor-pointer">복사</button>
-        </div>
       </div>
     </div>
   </div>
@@ -764,8 +653,6 @@ const NAVIGATION_HTML_AND_SCRIPT = `
     'instagram': '/instagram',
     'book-publish': '/book',
     'book': '/book',
-    'design-system-showcase': '/design-system',
-    'design-system': '/design-system',
     'editor': '/editor',
     'editor-4cut': '/editor',
     'editor-8cut': '/editor/8cut',
@@ -874,85 +761,6 @@ const NAVIGATION_HTML_AND_SCRIPT = `
     if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
     if (backdrop) backdrop.addEventListener('click', closeDrawer);
   });
-
-  // Global GitHub Sync Modal Helpers
-  window.openGitHubSyncModal = function() {
-    const modal = document.getElementById('toonlog-github-modal');
-    if (modal) modal.classList.remove('hidden');
-  };
-
-  window.closeGitHubSyncModal = function() {
-    const modal = document.getElementById('toonlog-github-modal');
-    if (modal) modal.classList.add('hidden');
-  };
-
-  window.toggleTokenVisibility = function() {
-    const input = document.getElementById('gh-token-input');
-    if (!input) return;
-    input.type = input.type === 'password' ? 'text' : 'password';
-  };
-
-  window.copyGitCommand = function() {
-    const text = 'git clone https://github.com/pjh747811-afk/Toon-Log.git';
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert('Git clone 명령어가 복사되었습니다: ' + text);
-      });
-    }
-  };
-
-  window.submitGitHubPush = async function() {
-    const tokenInput = document.getElementById('gh-token-input');
-    const forceCheck = document.getElementById('gh-force-check');
-    const statusBox = document.getElementById('gh-push-status');
-    const pushBtn = document.getElementById('gh-push-btn');
-
-    const token = tokenInput ? tokenInput.value.trim() : '';
-    if (!token) {
-      alert('GitHub Personal Access Token(PAT)을 입력해주세요!');
-      if (tokenInput) tokenInput.focus();
-      return;
-    }
-
-    if (pushBtn) {
-      pushBtn.disabled = true;
-      pushBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>푸시 진행 중...</span>';
-    }
-
-    if (statusBox) {
-      statusBox.classList.remove('hidden');
-      statusBox.innerHTML = '<span class="text-amber-400">⚡ GitHub 저장소(pjh747811-afk/Toon-Log)로 푸시를 실행하고 있습니다...</span>';
-    }
-
-    try {
-      const res = await fetch('/api/github/push', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token, branch: 'main', force: forceCheck ? forceCheck.checked : false })
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        if (statusBox) {
-          statusBox.innerHTML = '<span class="text-emerald-400 font-bold">🎉 ' + data.message + '</span>\n\n' + (data.output || 'Push successful!');
-        }
-        alert('🎉 GitHub 저장소로 성공적으로 푸시되었습니다!');
-      } else {
-        if (statusBox) {
-          statusBox.innerHTML = '<span class="text-rose-400 font-bold">❌ 푸시 실패:</span> ' + (data.error || 'Unknown error') + '\n\n' + (data.details || '');
-        }
-      }
-    } catch (err) {
-      if (statusBox) {
-        statusBox.innerHTML = '<span class="text-rose-400 font-bold">❌ 통신 오류:</span> ' + err.message;
-      }
-    } finally {
-      if (pushBtn) {
-        pushBtn.disabled = false;
-        pushBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">upload</span><span>지금 GitHub에 푸시하기</span>';
-      }
-    }
-  };
 })();
 </script>
 `;
@@ -1110,69 +918,6 @@ app.post('/api/generate-toon', async (req, res) => {
       }
     });
   }
-});
-
-// GitHub Direct Push API
-app.post('/api/github/push', (req, res) => {
-  const { token, branch = 'main', force = false } = req.body;
-  if (!token || typeof token !== 'string') {
-    return res.status(400).json({ success: false, error: 'GitHub Personal Access Token (PAT)을 입력해주세요.' });
-  }
-
-  const cleanToken = token.trim();
-  // Safe token format check
-  if (!/^[a-zA-Z0-9_.-]+$/.test(cleanToken)) {
-    return res.status(400).json({ success: false, error: '유효하지 않은 토큰 형식입니다.' });
-  }
-
-  const pushTarget = `https://pjh747811-afk:${cleanToken}@github.com/pjh747811-afk/Toon-Log.git`;
-  const forceFlag = force ? '--force ' : '';
-  const cmd = `git push ${forceFlag}"${pushTarget}" ${branch}`;
-
-  exec(cmd, { cwd: __dirname }, (error, stdout, stderr) => {
-    // Mask token from all outputs
-    const mask = (str) => (str || '').replace(new RegExp(cleanToken.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), '***TOKEN***');
-    const safeStdout = mask(stdout);
-    const safeStderr = mask(stderr);
-
-    if (error) {
-      console.error('[GitHub Push Failed]:', safeStderr || error.message);
-      return res.status(500).json({
-        success: false,
-        error: safeStderr || error.message,
-        details: 'GitHub 푸시 중 거부되었습니다. GitHub Settings -> Developer settings -> Personal access tokens에서 repo 권한이 부여되었는지 확인해주세요.'
-      });
-    }
-
-    console.log('[GitHub Push Success]:', safeStdout || safeStderr);
-    return res.json({
-      success: true,
-      message: 'GitHub 저장소(pjh747811-afk/Toon-Log)의 main 브랜치로 성공적으로 푸시되었습니다! 🎉',
-      output: (safeStdout + '\n' + safeStderr).trim()
-    });
-  });
-});
-
-// Project Source Code Download as ZIP
-app.get('/api/download-zip', (req, res) => {
-  const zipPath = path.join('/tmp', 'toonlog-latest-source.zip');
-  const pyScript = `import zipfile, os
-with zipfile.ZipFile('${zipPath}', 'w', zipfile.ZIP_DEFLATED) as z:
-    for root, dirs, files in os.walk('${__dirname}'):
-        if any(ign in root for ign in ['node_modules', '.git', '.cache', 'stitch_duplicate_of_ai.zip']):
-            continue
-        for f in files:
-            fp = os.path.join(root, f)
-            rel = os.path.relpath(fp, '${__dirname}')
-            z.write(fp, rel)
-`;
-  exec(`python3 -c "${pyScript.replace(/"/g, '\\"')}"`, (err) => {
-    if (err) {
-      console.error('Zip generation error:', err);
-      return res.status(500).send('ZIP 파일 생성 중 오류가 발생했습니다.');
-    }
-    res.download(zipPath, 'ToonLog-latest.zip');
-  });
 });
 
 // Serve all static files from stitch_duplicate_of_ai and workspace
