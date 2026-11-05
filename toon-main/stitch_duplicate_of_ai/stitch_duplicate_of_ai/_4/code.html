@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "pastel-lavender": "#CBB4FF",
+          "pastel-pink": "#FFBDE2",
+          "pastel-rose": "#FFAAC9",
+          "pastel-peach": "#FFBA93",
+          "pastel-apricot": "#FFD175",
+          "pastel-butter": "#FFF57A",
+          "surface": "#12111c",
+          "surface-dim": "#0c0a14",
+          "surface-container-lowest": "#171424",
+          "surface-container-low": "#1d1a2e",
+          "surface-container": "#24203a",
+          "surface-container-high": "#2e2949",
+          "surface-container-highest": "#3a345b",
+          "on-surface": "#f6f4fe",
+          "on-surface-variant": "#c9c2e0",
+          "outline": "#7f7599",
+          "outline-variant": "#433b5c",
+          "primary": "#CBB4FF",
+          "primary-container": "#FFAAC9",
+          "on-primary": "#20123a",
+          "on-primary-container": "#3f1025",
+          "secondary": "#FFBA93",
+          "secondary-container": "#FFD175",
+          "tertiary": "#FFF57A"
+        },
+        borderRadius: {
+          DEFAULT: "1rem",
+          lg: "2rem",
+          xl: "3rem",
+          full: "9999px"
+        },
+        spacing: {
+          "space-xs": "0.25rem",
+          "gutter": "1.25rem",
+          "margin-desktop": "2.5rem",
+          "space-sm": "0.5rem",
+          "margin-tablet": "1.5rem",
+          "margin": "1rem",
+          "space-md": "1rem",
+          "space-xl": "2.25rem",
+          "gutter-desktop": "1.5rem",
+          "space-lg": "1.5rem"
+        },
+        fontFamily: {
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "label-lg": ["Inter"],
+          "label-sm": ["Inter"],
+          "display-hero-mobile": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "display-hero": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "label-md": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        fontSize: {
+          "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+          "display-hero-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "800"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+          "display-hero": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+          "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+          "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+          "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+        }
+      }
+    }
+  }
+</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen selection:bg-pastel-pink/30 selection:text-pastel-butter relative overflow-x-hidden">
+<!-- Soft Ambient Pastel Underlay (Lavender -> Pink -> Peach -> Butter) -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute -top-40 left-1/4 w-[650px] h-[550px] bg-gradient-to-br from-pastel-lavender/18 via-pastel-pink/15 to-transparent rounded-full blur-[130px]"></div>
+<div class="absolute top-[22%] -right-20 w-[550px] h-[550px] bg-gradient-to-bl from-pastel-peach/18 via-pastel-rose/14 to-transparent rounded-full blur-[140px]"></div>
+<div class="absolute top-[55%] -left-32 w-[600px] h-[600px] bg-gradient-to-tr from-pastel-lavender/15 via-pastel-butter/10 to-transparent rounded-full blur-[150px]"></div>
+<div class="absolute bottom-10 right-1/4 w-[500px] h-[400px] bg-gradient-to-tl from-pastel-apricot/15 via-pastel-rose/12 to-transparent rounded-full blur-[130px]"></div>
+</div>
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-dim/80 backdrop-blur-2xl border-b border-pastel-lavender/15 shadow-[0_12px_32px_-10px_rgba(203,180,255,0.12)]"><div class="h-20 w-full px-gutter-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-gutter"><a class="flex items-center gap-space-sm group" data-path="feed" href="#"><img alt="ToonLog Logo" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlidjpZVzi4ZSaqqhs49KAy4h-wwy3Ph_IOcLqXzXAtYkoe0pgCpXCghZ2OqJ6p9opntpJnxix6mjrgDwADjZfRar705k3lNAPNmtFu7FhHp6VzsE0s2fF0A3MKcKSSy9JdZysLNA14_GYTln-t5gi0fCVLUz2YkrBwRsBJHglsIW7F_gl6wlQ8E2olJ4LuzxWQVke8BW6g6MEEF_z8omw90M0l9p4EeWm_40bOIh3"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Toon<span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-lavender via-pastel-pink to-pastel-peach">Log</span></span><span class="px-space-xs py-0.5 rounded-full bg-gradient-to-r from-pastel-lavender/25 to-pastel-pink/25 border border-pastel-lavender/40 text-pastel-lavender font-label-sm text-label-sm tracking-widest font-bold shadow-[0_0_12px_rgba(203,180,255,0.25)]">BETA</span></div></a><nav class="hidden xl:flex items-center gap-space-xs"><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-pastel-lavender/10 hover:text-pastel-lavender transition-colors duration-200" data-path="studio" href="#">만들기 (Studio)</a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-pastel-lavender/10 hover:text-pastel-lavender transition-colors duration-200" data-path="feed" href="#">피드 &amp; 탐색 (Feed)</a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-pastel-lavender/10 hover:text-pastel-lavender transition-colors duration-200" data-path="my-archive" href="#">내 웹툰 다이어리 (My Archive)</a><a class="px-space-md py-space-sm rounded-DEFAULT font-label-lg text-label-lg text-on-surface-variant hover:bg-pastel-lavender/10 hover:text-pastel-lavender transition-colors duration-200" data-path="pricing" href="#">요금제 &amp; 멤버십 (Pricing)</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low/90 border border-pastel-peach/30 shadow-inner"><span class="w-2 h-2 rounded-full bg-pastel-peach animate-pulse shadow-[0_0_8px_#FFBA93]"></span><span class="font-label-sm text-label-sm text-on-surface-variant">오늘 무료 생성</span><span class="font-label-sm text-label-sm font-bold text-pastel-peach">1/1회 남음</span></div><a class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-gradient-to-r from-pastel-peach via-pastel-rose to-pastel-pink text-[#26101c] font-label-lg text-label-lg font-bold shadow-[0_4px_18px_rgba(255,186,147,0.35)] hover:shadow-[0_6px_24px_rgba(255,170,201,0.45)] hover:brightness-105 active:scale-95 transition-all duration-150" data-path="studio" href="#"><span class="material-symbols-outlined text-[18px]">stylus_note</span><span>+ 오늘 일기 쓰기</span></a><button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container/70 border border-pastel-lavender/20 hover:border-pastel-pink/40 text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-pastel-lavender/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpZ96hsN26f5FwrDGADnhDyO_loMndTfK_gQxOhWkNOVf_6uXj2GgzdzBbQrqPTDfBGSnv2uEu6eqEzu_B8mGE-_9ZOH3dmppvTAANFZzBncnb3Hrt4B5j7NIBPXdQKJr0vzL3RT6WGjIQx7aXQ9riN_NoanuGT-qJ447Vn4gdQYs5KEBy4oI7YLUjLyjxuA-troRp4qaL9aOgshR-V4u-9cqK0KvyZujHUwIsyPg7"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-pastel-butter ring-2 ring-surface-dim"></span></div><button class="hidden sm:flex items-center gap-space-xs text-left group" type="button"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold group-hover:text-pastel-lavender transition-colors">소라 작가님</span><span class="font-label-sm text-[10px] leading-tight text-pastel-peach">Pro Creator</span></div><span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-on-surface transition-colors">expand_more</span></button></div></div></div></header><main class="w-full pt-20 bg-surface/40 min-h-[calc(100vh-5rem)]"><div class="flex flex-col w-full">
+<!-- Dynamic Atmospheric Underlay / Glow Accent -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[960px] h-[380px] bg-gradient-to-r from-pastel-lavender/25 via-pastel-pink/20 to-pastel-apricot/20 blur-3xl pointer-events-none -z-10 rounded-full"></div>
+<div class="w-full max-w-7xl mx-auto px-gutter md:px-margin-desktop pt-6 pb-20 flex flex-col gap-space-xl">
+<!-- 1. Custom Model Active Notification Banner -->
+<section class="w-full">
+<div class="relative overflow-hidden rounded-lg bg-surface-container-lowest/85 backdrop-blur-xl border border-pastel-lavender/25 p-space-md md:p-space-lg shadow-[0_8px_24px_rgba(203,180,255,0.08)] flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-pastel-lavender via-pastel-rose to-pastel-apricot"></div>
+<div class="flex items-start md:items-center gap-space-md pl-space-xs">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-pastel-lavender/30 to-pastel-pink/30 border border-pastel-lavender/40 flex items-center justify-center text-pastel-lavender shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-pastel-lavender/25 to-pastel-rose/25 border border-pastel-lavender/40 text-pastel-lavender font-label-sm text-label-sm font-bold tracking-tight">Active Engine</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">내 커스텀 화풍 [소라의 몽환 수채화 믹스 v1] 적용 완료!</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                이제 작성하시는 모든 4컷 만화가 이 고유 화풍과 작가님의 시그니처 캐릭터(단발·안경)로 고정 렌더링됩니다.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="px-space-md py-space-xs rounded-full bg-surface-container/70 border border-pastel-lavender/25 text-on-surface-variant hover:text-pastel-lavender hover:border-pastel-lavender/50 transition-colors font-label-md text-label-md flex items-center gap-1 backdrop-blur" type="button">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>화풍 변경/해제</span>
+</button>
+<a class="px-space-md py-space-xs rounded-full bg-gradient-to-r from-pastel-lavender/25 to-pastel-pink/25 border border-pastel-lavender/40 hover:from-pastel-lavender/35 hover:to-pastel-pink/35 text-on-surface transition-all font-label-md text-label-md flex items-center gap-1 font-medium shadow-sm" href="#">
+<span class="material-symbols-outlined text-[16px] text-pastel-pink">palette</span>
+<span>화풍 라이브러리</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 2. Hero Headline Area -->
+<section class="flex flex-col gap-space-xs text-left max-w-4xl">
+<div class="inline-flex items-center gap-2 text-pastel-peach font-label-lg text-label-lg font-semibold tracking-wide">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-pastel-peach animate-ping"></span>
+<span>AI 4-Cut Narrative Studio · Sora Watercolor v1</span>
+</div>
+<h1 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface tracking-tight leading-tight">
+          당신의 소소한 일상, 오늘 하루는 <br class="hidden sm:inline"/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-peach via-pastel-rose to-pastel-lavender">몽환 수채화 4컷 만화</span>가 됩니다.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl pt-space-xs">
+          텍스트 한 줄만 적으면 AI가 4단계 감성 장면 분할, '소라의 몽환 수채화' 텍스처 터치, 등장인물 일관성, 그리고 맞춤 말풍선 대사까지 자동으로 완성합니다.
+        </p>
+</section>
+<!-- 3. Central Webtoon Generation Studio (Two-Pane Bento) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left 8 Cols: Input & Creative Parameters -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Custom Style Badge Header Card -->
+<div class="rounded-lg bg-surface-container-low/85 backdrop-blur-xl border border-pastel-lavender/20 p-space-md md:p-space-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shadow-sm shrink-0 bg-surface-container ring-2 ring-pastel-lavender/30">
+<img class="w-full h-full object-cover" data-alt="Dreamy watercolor illustration preview with soft pastel tones, blooming cyan and lavender watercolors, featuring an artsy female character with short bob hair and delicate wireframe round glasses sitting by a rainy cafe window with soft warm glowing light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABW-lTmic8CQDhubxB5PBtV2fwx1oXVlCkEvJaXjmKI1etT4oAMMRlQEtOAO6V57vwNDqWp6PYh8CtgTBRXnygdRzT5g3-oc-heeP_9zVG5DYbVBHf7DpGWMa8YSrVS7HxFyINI5iqbyIh8WhvzQqZXet68SxZEczXmLE5OMxOTNAAkTUk3QHzGmax3-5ymYw1HM94i3U8PpP4kigJvHM_vVquHO4xHSLQIPiumjTd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 via-transparent to-transparent"></div>
+<span class="absolute bottom-1 right-1 text-pastel-butter material-symbols-outlined text-[14px]">brush</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">소라의 몽환 수채화 믹스 v1</span>
+<span class="px-2.5 py-0.5 rounded-full bg-pastel-lavender/20 border border-pastel-lavender/40 text-pastel-lavender font-label-sm text-label-sm font-semibold">Custom LoRA v2.4</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-pastel-peach" style="font-variation-settings: 'FILL' 1;">lock</span>
+                    SeedLock™ 캐릭터 외형 100% (단발/안경 소라)
+                  </span>
+<span>·</span>
+<span class="text-pastel-apricot font-medium">스타일 강도 85% (최적 균형)</span>
+</div>
+</div>
+</div>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container/70 border border-pastel-lavender/20 text-on-surface font-label-md text-label-md shadow-sm hover:border-pastel-lavender/40 hover:bg-surface-container flex items-center gap-1.5 self-end sm:self-center transition-all backdrop-blur" type="button">
+<span class="material-symbols-outlined text-[16px] text-pastel-lavender">tune</span>
+<span>화풍 파라미터 세부조정</span>
+</button>
+</div>
+<!-- Diary Text Area with Frosted Texture -->
+<div class="rounded-lg bg-surface-container-lowest/90 backdrop-blur-xl border border-pastel-lavender/20 p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 font-headline-sm text-headline-sm text-on-surface" for="diary-input">
+<span class="material-symbols-outlined text-pastel-pink text-[22px]">history_edu</span>
+<span>오늘 있었던 일을 솔직하게 적어보세요</span>
+</label>
+<div class="font-label-md text-label-md text-outline" id="char-count">
+<span class="text-pastel-rose font-bold">103</span> / 400자
+              </div>
+</div>
+<!-- Interactive Textarea -->
+<div class="relative w-full rounded-DEFAULT bg-surface-container-low/70 border border-pastel-lavender/25 p-space-md transition-all focus-within:border-pastel-rose/70 focus-within:shadow-[0_0_20px_rgba(255,170,201,0.25)]">
+<textarea class="w-full bg-transparent resize-none border-0 p-0 text-on-surface font-body-lg text-body-lg placeholder:text-outline focus:ring-0 focus:outline-none leading-relaxed" id="diary-input" placeholder="오늘 퇴근길에 겪은 사소한 일, 친구와의 대화, 감정의 조각을 편하게 털어놓아 보세요..." rows="4">비 오는 날 퇴근길, 비에 젖은 길모퉁이 붕어빵 트럭에서 슈크림 3개를 샀다. 품에 꼭 안고 뛰어가는데 수채화처럼 번지는 가로등 불빛에 마음이 몽글몽글 녹아내렸다. 차가운 빗방울 사이로 달콤한 온기가 퍼지던 순간.</textarea>
+<div class="flex items-center justify-between pt-space-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-pastel-apricot">psychology</span>
+<span>AI 감정 분석: <strong class="text-pastel-apricot font-semibold">따스함 / 노스탤지어 / 위로</strong></span>
+</div>
+<button class="text-outline hover:text-pastel-rose font-label-sm text-label-sm flex items-center gap-1 transition-colors" id="clear-btn" type="button">
+<span class="material-symbols-outlined text-[14px]">backspace</span>
+<span>비우기</span>
+</button>
+</div>
+</div>
+<!-- Emotional Recommendation Keyword Chips -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-outline font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-pastel-lavender">tag</span>
+<span>스토리를 더 생생하게 만들 추천 감성 키워드</span>
+</span>
+<div class="flex flex-wrap items-center gap-space-xs" id="tags-group">
+<button class="tag-chip px-3 py-1.5 rounded-full bg-surface-container/60 border border-pastel-lavender/20 text-on-surface-variant hover:border-pastel-lavender/50 hover:text-pastel-lavender font-label-md text-label-md transition-all backdrop-blur" type="button">#비오는퇴근길</button>
+<button class="tag-chip px-3 py-1.5 rounded-full bg-gradient-to-r from-pastel-peach/30 to-pastel-rose/30 border border-pastel-rose/50 text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all backdrop-blur" type="button">#따뜻한붕어빵 ✓</button>
+<button class="tag-chip px-3 py-1.5 rounded-full bg-gradient-to-r from-pastel-lavender/30 to-pastel-pink/30 border border-pastel-lavender/50 text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all backdrop-blur" type="button">#수채화골목길 ✓</button>
+<button class="tag-chip px-3 py-1.5 rounded-full bg-surface-container/60 border border-pastel-lavender/20 text-on-surface-variant hover:border-pastel-lavender/50 hover:text-pastel-lavender font-label-md text-label-md transition-all backdrop-blur" type="button">#소소한행복</button>
+<button class="tag-chip px-3 py-1.5 rounded-full bg-surface-container/60 border border-pastel-lavender/20 text-on-surface-variant hover:border-pastel-lavender/50 hover:text-pastel-lavender font-label-md text-label-md transition-all backdrop-blur" type="button">#겨울밤</button>
+<button class="tag-chip px-2.5 py-1.5 rounded-full bg-surface-container-high/60 border border-pastel-peach/30 text-pastel-peach font-label-sm text-label-sm hover:border-pastel-peach/60 transition-all flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>직접 추가</span>
+</button>
+</div>
+</div>
+<!-- Production Options Selector Grid -->
+<div class="pt-space-sm flex flex-col gap-space-md">
+<!-- Style Presets Carousel / Slot Row -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">그림체 스타일 프리셋</span>
+<a class="font-label-sm text-label-sm text-pastel-lavender hover:text-pastel-pink hover:underline flex items-center gap-0.5" href="#">
+<span>전체 24개 라이브러리</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<!-- Active Custom LoRA Slot -->
+<div class="relative rounded-DEFAULT p-space-sm bg-gradient-to-b from-pastel-lavender/20 via-pastel-pink/15 to-surface-container-lowest border-2 border-pastel-lavender/60 shadow-[0_4px_16px_rgba(203,180,255,0.2)] flex flex-col gap-2 cursor-pointer group">
+<div class="absolute -top-1.5 -right-1.5 bg-gradient-to-r from-pastel-peach to-pastel-rose text-[#26101c] rounded-full w-5 h-5 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[13px] font-bold">check</span>
+</div>
+<div class="aspect-video w-full rounded overflow-hidden bg-surface-container-high ring-1 ring-pastel-lavender/40">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Watercolor sketch art with soft glowing colors and dreamy brush strokes of a woman holding a warm paper pastry bag in falling rain, vivid soft cyan and lavender hue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZXpi5TxK9g0gpmy--yssfQZk4um-SwfEPqQTVzNU18JrFWpvNiKQ44msKEggQ3Peu2GQ3QX4l--OfNQKDHrsz8mdpnqDDsvFAfZHCdO8euCAMtiu3cccXiurSTrQT1Nixv3q8zkGDIbkr8AqxPoUQQ6Ix0NA7ja-8FIJYzzYMA0DcOMzi2jG3Cutqbay0TFYK4ryDwybN60D718xUELQmVvouKQbCd4D0jwG-q8xc"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="text-pastel-butter material-symbols-outlined text-[14px]">stars</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold truncate">소라 몽환 수채화</span>
+</div>
+<span class="font-label-sm text-[10px] text-pastel-lavender font-medium">내 학습 모델 (Active)</span>
+</div>
+</div>
+<!-- Standard Style 1 -->
+<div class="rounded-DEFAULT p-space-sm bg-surface-container-low/70 border border-pastel-lavender/15 hover:border-pastel-pink/40 hover:bg-surface-container/80 transition-all flex flex-col gap-2 cursor-pointer group">
+<div class="aspect-video w-full rounded overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Clean and cute modern Korean Instagram webtoon style art of a smiling girl drinking bubble tea, crisp vector lines with flat bright pastel colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL2u1OSAj15hBPQqlNjFnNFQoObuAHaDO0Oqecik-h7lnNJhXhZx2hYaLDEyctCK3q7ABnZ6Fil-Pf_TdprIbQkqJzNnX0OD10ZqXOYWgeUqiZdjkaT7-1HY3anrn3XT-OPOPtQTWczaSQQztahubhqQGN6FDlGnoQpUWFzRebnTAs-dbteLi7PYajq49m7N-Oo9Dg8XuhoXmWsYHPAR4oz4g_yYv7VoZU7ikxFXPK"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate">인스타 일상툰</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">깔끔한 라인 &amp; 공감</span>
+</div>
+</div>
+<!-- Standard Style 2 -->
+<div class="rounded-DEFAULT p-space-sm bg-surface-container-low/70 border border-pastel-lavender/15 hover:border-pastel-rose/40 hover:bg-surface-container/80 transition-all flex flex-col gap-2 cursor-pointer group">
+<div class="aspect-video w-full rounded overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Romantic shoujo manga anime style art, glowing sparkling soft focus, emotional deep eyes, subtle rose and mint tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAze_RDHI6AJ22tj9-6vhWh6QWqZQle7ib03cEdihuDh4_Sj4ZVkXW-Uaj_mgg0SEXYGh_cWjCBwLgLw-ZbWSq6bbd4M-62sW-JNV6ZQLlIK_tHec6R35wrmAxg6II6A6wofr42OtzHjUFlUCWaHC4eI_Z1UfM_DyndTu0V4knKqMv5XuxPbuW_wCsBhcHpLVzu1o1LZrVSyCIbY168HW3NBwR18jvCStm9dg6lVxk4"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate">순정 로맨스풍</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">반짝이는 감성 씬</span>
+</div>
+</div>
+<!-- Standard Style 3 -->
+<div class="rounded-DEFAULT p-space-sm bg-surface-container-low/70 border border-pastel-lavender/15 hover:border-pastel-peach/40 hover:bg-surface-container/80 transition-all flex flex-col gap-2 cursor-pointer group">
+<div class="aspect-video w-full rounded overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Studio Ghibli inspired nostalgic anime scenery, lush painted greenery, cloudy sky, painterly analog texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4RjokXJtm1mNmFIVQaZbM4dRKPlekFT79KLEsnRDzxi9MvIl5-M9nWsuf-MPrmUL-5smL9rwsvB-DVbdQioDq1vQesJSVaml6jVs_dzrPjRpVoJx1QCIzZUbl5PRZN42jsthnHLCxDXiC8d4KioboqKKUn5AwBTYlzo17zAB9lXnvo2ugQJNFVCr9ZDBUyJflAoZwiIYIY7eAkYC44mB6ycbOFWJhzKo-xS8ZPO0I"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate">지브리 감성풍</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">따스한 아날로그 채색</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Format & Director Options Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<!-- Cut Count -->
+<div class="rounded-DEFAULT bg-surface-container-low/70 border border-pastel-lavender/20 p-space-sm flex flex-col gap-1.5 backdrop-blur">
+<span class="font-label-sm text-label-sm text-outline">연출 분량</span>
+<div class="flex items-center gap-1">
+<button class="flex-1 py-1 rounded bg-gradient-to-r from-pastel-lavender/35 to-pastel-pink/35 border border-pastel-lavender/50 text-on-surface shadow-sm font-label-md text-label-md font-bold text-center" type="button">4컷 (추천)</button>
+<button class="flex-1 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center" type="button">1컷 일러</button>
+<button class="flex-1 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md text-center" type="button">6컷 확장</button>
+</div>
+</div>
+<!-- Tone of Story -->
+<div class="rounded-DEFAULT bg-surface-container-low/70 border border-pastel-lavender/20 p-space-sm flex flex-col gap-1.5 backdrop-blur">
+<span class="font-label-sm text-label-sm text-outline">스토리 톤앤매너</span>
+<div class="flex items-center justify-between px-2 py-1 rounded bg-surface-container-lowest/80 border border-pastel-peach/30 shadow-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-pastel-apricot">spa</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">따뜻하고 힐링</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+</div>
+<!-- Dialogue & Bubble Auto Generation Toggle -->
+<div class="rounded-DEFAULT bg-surface-container-low/70 border border-pastel-lavender/20 p-space-sm flex items-center justify-between backdrop-blur">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">대사 &amp; 말풍선 자동 생성</span>
+<span class="font-label-sm text-[11px] text-outline">AI가 내레이션 분할 배치</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="bubble-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-pastel-peach peer-checked:to-pastel-rose"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Big Glowing Main CTA Trigger -->
+<div class="pt-space-md">
+<button class="w-full py-4 px-space-lg rounded-full bg-gradient-to-r from-pastel-peach via-pastel-rose via-pastel-pink to-pastel-lavender text-[#200f1c] font-headline-sm text-headline-sm font-bold shadow-[0_8px_30px_rgba(255,186,147,0.4)] hover:shadow-[0_12px_36px_rgba(255,170,201,0.55)] hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-space-sm relative overflow-hidden group" id="generate-btn" type="button">
+<span class="absolute inset-0 bg-white/25 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></span>
+<span class="material-symbols-outlined text-[24px] animate-spin-slow text-[#200f1c]" style="font-variation-settings: 'FILL' 1;">magic_button</span>
+<span>✨ [소라의 몽환 수채화]로 4컷 만화 생성하기</span>
+<span class="px-2.5 py-0.5 rounded-full bg-[#200f1c]/15 text-[#200f1c] font-label-sm text-label-sm font-semibold tracking-wide">무료 1회 사용 ➔</span>
+</button>
+<div class="flex items-center justify-center gap-space-md pt-space-xs font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-pastel-apricot">bolt</span>
+                  평균 생성 시간: 약 18초
+                </span>
+<span>•</span>
+<span>고해상도 4K 캔버스 내보내기 지원</span>
+<span>•</span>
+<span>Seed 락 캐릭터 보존</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 4 Cols: Live Studio 4-Cut Preview Canvas -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="rounded-lg bg-surface-container-lowest/85 backdrop-blur-xl border border-pastel-lavender/25 p-space-md shadow-[0_10px_30px_rgba(203,180,255,0.08)] flex flex-col gap-space-sm sticky top-28">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-pastel-rose animate-pulse shadow-[0_0_8px_#FFAAC9]"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">실시간 4-Cut 프리뷰</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-pastel-lavender/15 border border-pastel-lavender/30 font-label-sm text-label-sm text-pastel-lavender font-medium">스토리보드 시뮬레이션</span>
+</div>
+<!-- Vertical 4-Cut Strip Canvas Frame -->
+<div class="flex flex-col gap-space-sm rounded-DEFAULT bg-surface-container-low/70 border border-pastel-lavender/15 p-space-sm">
+<!-- Cut 1 -->
+<div class="group relative rounded-DEFAULT overflow-hidden bg-surface-container-lowest shadow-sm aspect-square flex flex-col justify-end ring-1 ring-pastel-lavender/20">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="First panel of 4-cut webtoon: A young woman with sleek short hair and round eyeglasses holding a transparent umbrella in twilight rain, looking back with a gentle smile under soft cyan and lavender watercolor wash." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjOOdEhocM-piLhakDU8GsOMcFZQ3H-L1cav6h0qxDVXe9rWSsyDWW8CJGvCpB0WmATfKODyAGvobDb9tO5fIHSrtcZ1pysdZ-pwzg7kDclbOUqSN8nnvAkDCGnecOA1t4CD86ZGqCNHgr9LUyL7HYn6EBynigFO7XfC4Lp3NlpMObnHVpW5BBdeeqdXYzZmj9pGd56ht287w4UHvAEr9IUacKrkpRxgErJf0v4S4e"/>
+<div class="absolute top-2 left-2 px-2.5 py-0.5 rounded-full bg-surface-dim/80 text-pastel-lavender border border-pastel-lavender/30 font-label-sm text-label-sm backdrop-blur-md font-semibold">Cut 1</div>
+<!-- Dialogue bubble overlay -->
+<div class="relative z-10 m-2.5 p-2 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md border border-pastel-lavender/30 shadow-sm">
+<span class="font-label-sm text-[11px] text-pastel-pink font-bold block">SCENE 1 · 퇴근길 골목</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">"오늘따라 비 냄새가 유난히 다정하게 느껴졌다."</p>
+</div>
+</div>
+<!-- Cut 2 -->
+<div class="group relative rounded-DEFAULT overflow-hidden bg-surface-container-lowest shadow-sm aspect-square flex flex-col justify-end ring-1 ring-pastel-lavender/20">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Second panel of 4-cut webtoon: Close up watercolor illustration of steaming fresh custard bungeoppang being picked from a warm vintage street cart grill, glowing golden yellow and dreamy soft focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzva7lYcDoKd0_fbawTZoGLhHh4_RIEhBn9nor_4lbLKA7faRSf7u68ving2faRePE2_4-j9GRSKRioaTepnSXYA4kfO2YzwEHpZwJn2MZHXE06kwfFp9esqULHB5Zyyizzea0WB4e4Wi_rMTNv2AAiwW3kNDEI7t_nYDCla0B4tJWf_YJWVfGTlOwsZHKBNoLgLptUAEAT8gFz8GjiB3xC_oIPMIgOxekmE0PP3xK"/>
+<div class="absolute top-2 left-2 px-2.5 py-0.5 rounded-full bg-surface-dim/80 text-pastel-apricot border border-pastel-apricot/30 font-label-sm text-label-sm backdrop-blur-md font-semibold">Cut 2</div>
+<div class="relative z-10 m-2.5 p-2 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md border border-pastel-apricot/30 shadow-sm">
+<span class="font-label-sm text-[11px] text-pastel-apricot font-bold block">SCENE 2 · 김이 모락모락</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">"골목 끝 붉은 포장마차... 슈크림 3개의 유혹!"</p>
+</div>
+</div>
+<!-- Cut 3 -->
+<div class="group relative rounded-DEFAULT overflow-hidden bg-surface-container-lowest shadow-sm aspect-square flex flex-col justify-end ring-1 ring-pastel-lavender/20">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Third panel of 4-cut webtoon: The short-haired bespectacled girl clutching a warm brown paper bag closely against her coat, running lightly across reflecting rain puddles with streetlights spreading like water droplets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2j9etnENkfXPMnuUiH2Pfw_-CTAYx2MJmUL_afyDsrNgdbJICC5DwpmN9pe-jPI-a02pa-kGqGmp3f3PCFP3mVOwTu3-6NnorOUOnlpdonobLT9vDUN5gvzQa5VlflonejFoSI3hClMlp6KgHpy4ux3eAiVFVpBKJuA_zrOxjduBkBg0DDKdqSqVYYN5v6s8mSxKxPKLPa6j1ssijc7DoyCUYSGQjJdgdnYWS3oI"/>
+<div class="absolute top-2 left-2 px-2.5 py-0.5 rounded-full bg-surface-dim/80 text-pastel-peach border border-pastel-peach/30 font-label-sm text-label-sm backdrop-blur-md font-semibold">Cut 3</div>
+<div class="relative z-10 m-2.5 p-2 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md border border-pastel-peach/30 shadow-sm">
+<span class="font-label-sm text-[11px] text-pastel-peach font-bold block">SCENE 3 · 품 안의 온기</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">"품 안에 안긴 따스함 하나로 발걸음이 가벼워진다."</p>
+</div>
+</div>
+<!-- Cut 4 -->
+<div class="group relative rounded-DEFAULT overflow-hidden bg-surface-container-lowest shadow-sm aspect-square flex flex-col justify-end ring-1 ring-pastel-lavender/20">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Fourth panel of 4-cut webtoon: Warm close-up of the protagonist taking a happy bite of the warm pastry inside a cozy lit apartment entrance, dreamy watercolor splash texture, serene peaceful smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdkHqPUUpNvLTTCAUVbvNSqfK2H0uicq0mDaXRHR3fH5SJphj3NtbyM6_Ba-cmdLYaNyInNvpnbBOnwBjEMb_2qTafma8Fj6qVDiamGzmonAYuuhpietHHfu4nYTNgNmZFbYwy74cmmCQKPwR8dYb0WEA5mM63mk0v0e9xESn5_iuxZXmH4uQ6K6UcZ7Vefg2Z0znJvOXrhUhzA0azmm6u7ooPeQlLgYv2ob46AuL-"/>
+<div class="absolute top-2 left-2 px-2.5 py-0.5 rounded-full bg-surface-dim/80 text-pastel-butter border border-pastel-butter/30 font-label-sm text-label-sm backdrop-blur-md font-semibold">Cut 4</div>
+<div class="relative z-10 m-2.5 p-2 rounded-lg bg-surface-container-lowest/90 backdrop-blur-md border border-pastel-butter/30 shadow-sm">
+<span class="font-label-sm text-[11px] text-pastel-butter font-bold block">SCENE 4 · 녹아내린 마음</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">"달콤한 위로 한 입. 오늘 하루도 수고했어!"</p>
+</div>
+</div>
+</div>
+<!-- Canvas Quick Actions -->
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-pastel-apricot">check_circle</span>
+                프레임 레이아웃 1:1 정사각
+              </span>
+<button class="text-pastel-lavender hover:text-pastel-pink hover:underline font-semibold flex items-center gap-0.5" type="button">
+<span>풀스크린 뷰</span>
+<span class="material-symbols-outlined text-[14px]">open_in_full</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Community Gallery & Style Showcase -->
+<section class="flex flex-col gap-space-lg pt-space-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-pastel-lavender/30 to-pastel-pink/30 border border-pastel-lavender/40 text-pastel-lavender font-label-sm text-label-sm font-bold">Style Showcase</span>
+<span class="font-headline-md text-headline-md text-on-surface">소라 작가님의 화풍으로 기록된 에피소드들</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              몽환 수채화 믹스로 제작된 최근 다이어리 컷들입니다. 고유의 터치와 파스텔 톤이 일상을 동화처럼 물들입니다.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-space-md py-space-xs rounded-full bg-surface-container-low/70 border border-pastel-lavender/20 text-on-surface font-label-md text-label-md hover:border-pastel-lavender/50 transition-colors" type="button">인기순</button>
+<button class="px-space-md py-space-xs rounded-full bg-gradient-to-r from-pastel-peach/30 to-pastel-rose/30 border border-pastel-rose/50 text-on-surface font-label-md text-label-md font-semibold" type="button">최신순</button>
+</div>
+</div>
+<!-- 3-Column Card Mosaic of Previous Watercolor Toons -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<!-- Sample Card 1 -->
+<article class="rounded-lg bg-surface-container-lowest/80 backdrop-blur-xl border border-pastel-lavender/20 p-space-md shadow-sm hover:shadow-[0_8px_24px_rgba(203,180,255,0.18)] hover:border-pastel-lavender/50 transition-all flex flex-col gap-space-md group">
+<div class="aspect-[4/3] w-full rounded-DEFAULT overflow-hidden bg-surface-container-high relative ring-1 ring-pastel-lavender/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Watercolor comic strip style illustration of a weekend morning coffee routine with a fluffy white cat looking out a sunlit apartment window, warm cyan and peach watercolor tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgxhWajp8hs4Rt5WT-rYbLK9g8ANazSbzTaapStHLhR41G3w1_RvQvDw4tM-h4OtPiozXqqIDrSrZYLyj66idvuUA88rwLeCCSt9xvdC-0E5sJrlTnUe8XPBOgaEa3n9n38mzuq-9zL4-B9ao1TVWTUc6NI68BxQnvirJzDLRLa-w5XUvU2CQCeU_XHw2-VTk03W4tLoBKLogvsMLjNQmmRLuD2y2Yj1Tb7ulQfhEq"/>
+<span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-surface-dim/85 border border-pastel-lavender/30 font-label-sm text-label-sm text-pastel-lavender font-semibold backdrop-blur">2025.02.14 · 4컷 완결</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-pastel-lavender transition-colors">햇살과 고양이, 그리고 드립 커피 한 잔의 온기</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                침대에서 뒹굴거리다 커피콩을 갈았을 뿐인데, 고양이가 슬그머니 다가와 코를 킁킁거렸다. 주말이란 이토록 사소한 조각들이 모여 만들어지는 평화.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-1 text-pastel-rose">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                  342
+                </span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">chat_bubble</span>
+                  28
+                </span>
+</div>
+<span class="text-pastel-lavender/80">소라 몽환 수채화 v1</span>
+</div>
+</article>
+<!-- Sample Card 2 -->
+<article class="rounded-lg bg-surface-container-lowest/80 backdrop-blur-xl border border-pastel-lavender/20 p-space-md shadow-sm hover:shadow-[0_8px_24px_rgba(255,189,226,0.18)] hover:border-pastel-pink/50 transition-all flex flex-col gap-space-md group">
+<div class="aspect-[4/3] w-full rounded-DEFAULT overflow-hidden bg-surface-container-high relative ring-1 ring-pastel-pink/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Watercolor painting of two friends talking under flowering spring cherry blossom tree canopy with dreamy water bleeds and soft glowing pink-cyan light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhEpSCF2rC1ozB8revAYnb2XwTrcls7rgc_Mdk40J-OGI-prAWBo4PYiQ6_YK7Y75uqOymJTgC_1n2Ppxj8kzlzVmXw82XOKcFyDapMfxV7mYZMTd-vda9SWlncaUdbPz3rucU2yTQY4wRpSvRZUAV03_SStuXUXFYqSYc6WM1_rTuEbVpHZ-dOEbhW0-wqkkSfluAe_jf4lcYhFl7mI-SxwKPok_apoOc5_hpMU9v"/>
+<span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-surface-dim/85 border border-pastel-pink/30 font-label-sm text-label-sm text-pastel-pink font-semibold backdrop-blur">2025.02.11 · 4컷 완결</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-pastel-pink transition-colors">오랜 친구와 나눈 늦은 밤 편의점 벤치 토크</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                거창한 조언 대신 캔맥주를 부딪치며 건넨 "너 진짜 잘하고 있어" 한마디. 찬 공기 속에서 피어오른 몽글몽글한 우정의 색감.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-1 text-pastel-rose">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                  519
+                </span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">chat_bubble</span>
+                  44
+                </span>
+</div>
+<span class="text-pastel-pink/80">소라 몽환 수채화 v1</span>
+</div>
+</article>
+<!-- Sample Card 3 -->
+<article class="rounded-lg bg-surface-container-lowest/80 backdrop-blur-xl border border-pastel-lavender/20 p-space-md shadow-sm hover:shadow-[0_8px_24px_rgba(255,186,147,0.18)] hover:border-pastel-peach/50 transition-all flex flex-col gap-space-md group">
+<div class="aspect-[4/3] w-full rounded-DEFAULT overflow-hidden bg-surface-container-high relative ring-1 ring-pastel-peach/20">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Dreamy watercolor illustration of an empty subway seat late at night with reflections on glass window, soft nostalgic mood with glowing streetlights rushing by." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjDxYfGI72-fPy4R8rEjJ2gD4M4yAN8-oMUpoweAH8I6afRbCf3GC1nY7L78BJupoEuuJvgWEoCWc8cJrgh6Veq1P-zNiVqLE-twfBD5Zsptb84jj6LmR8PPUW9xVUHx2ayPqH8rzGa9x8TFvAas34XprOWAhwKq7EU_u6V_CTCsmNKXWx7Ve8jGi5B8PtuZiJQue53Z-p0EkbQ5OEJQjnPofhaV8b0fxxCFdzGRz2"/>
+<span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-surface-dim/85 border border-pastel-peach/30 font-label-sm text-label-sm text-pastel-peach font-semibold backdrop-blur">2025.02.08 · 4컷 완결</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-pastel-peach transition-colors">심야 2호선 막차에서 들었던 옛 플레이리스트</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                창문에 비친 피곤한 얼굴 위로 번져가는 네온사인. 이어폰에서 흘러나오는 멜로디가 지친 발걸음을 토닥여주던 퇴근길의 몽환적인 씬.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-1 text-pastel-rose">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                  298
+                </span>
+<span>·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">chat_bubble</span>
+                  19
+                </span>
+</div>
+<span class="text-pastel-peach/80">소라 몽환 수채화 v1</span>
+</div>
+</article>
+</div>
+</section>
+<!-- Bottom Floating Mobile-Friendly Quick Status / Draw Bar -->
+<aside aria-label="Quick Action Floating Bar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-11/12 max-w-xl bg-surface-container-lowest/85 backdrop-blur-2xl rounded-full p-2 px-4 shadow-[0_12px_36px_rgba(203,180,255,0.22)] border border-pastel-lavender/30 flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-2.5 pl-1">
+<div class="w-3 h-3 rounded-full bg-gradient-to-r from-pastel-peach to-pastel-rose animate-pulse shadow-[0_0_8px_#FFBA93]"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold leading-tight">소라 몽환 수채화 적용 중</span>
+<span class="font-label-sm text-[10px] text-pastel-peach leading-tight">오늘 무료 1회 남음</span>
+</div>
+</div>
+<button class="px-space-lg py-2 rounded-full bg-gradient-to-r from-pastel-peach to-pastel-rose text-[#26101c] font-label-md text-label-md font-bold hover:brightness-110 active:scale-95 transition-all flex items-center gap-1.5 shadow-[0_4px_14px_rgba(255,186,147,0.35)]" onclick="document.getElementById('generate-btn').scrollIntoView({behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span>지금 그리기</span>
+</button>
+</aside>
+</div>
+</div>
+</div>
+<script>
+  // Simple reactive behaviors for micro-interactions
+  const diaryInput = document.getElementById('diary-input');
+  const charCount = document.getElementById('char-count');
+  const clearBtn = document.getElementById('clear-btn');
+  const tags = document.querySelectorAll('.tag-chip');
+  const generateBtn = document.getElementById('generate-btn');
+
+  if (diaryInput && charCount) {
+    diaryInput.addEventListener('input', () => {
+      const len = diaryInput.value.length;
+      charCount.innerHTML = `<span class="text-pastel-rose font-bold">${len}</span> / 400자`;
+    });
+  }
+
+  if (clearBtn && diaryInput) {
+    clearBtn.addEventListener('click', () => {
+      diaryInput.value = '';
+      diaryInput.dispatchEvent(new Event('input'));
+      diaryInput.focus();
+    });
+  }
+
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      const text = tag.innerText.replace('✓', '').trim();
+      if (!diaryInput.value.includes(text)) {
+        diaryInput.value = (diaryInput.value.trim() + ' ' + text).trim();
+        diaryInput.dispatchEvent(new Event('input'));
+      }
+    });
+  });
+
+  if (generateBtn) {
+    generateBtn.addEventListener('click', () => {
+      generateBtn.classList.add('opacity-90');
+      generateBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[24px] animate-spin text-[#200f1c]">progress_activity</span>
+        <span>스토리 4장면 분석 &amp; 몽환 수채화 채색 중... (약 15초)</span>
+      `;
+      setTimeout(() => {
+        generateBtn.classList.remove('opacity-90');
+        generateBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[24px] text-[#200f1c]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          <span>생성 완료! 결과 미리보기에 반영되었습니다 ✨</span>
+        `;
+      }, 2500);
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-lowest/90 backdrop-blur-xl border-t border-pastel-lavender/15 py-space-xl mt-auto shadow-[0_-1px_16px_rgba(203,180,255,0.06)]"><div class="w-full px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-lg text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm text-on-surface">Toon<span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-peach to-pastel-lavender">Log</span></span><span class="text-outline">|</span><span>일상을 네 컷 만화로 기록하는 AI 스토리 스튜디오</span></div><div class="flex items-center gap-space-lg font-label-md text-label-md"><a class="hover:text-pastel-lavender transition-colors" href="#">이용약관</a><a class="hover:text-pastel-lavender transition-colors" href="#">개인정보처리방침</a><a class="hover:text-pastel-lavender transition-colors" href="#">제작 가이드</a><a class="hover:text-pastel-lavender transition-colors" href="#">고객지원</a></div><div class="font-label-sm text-label-sm text-outline">© 2025 ToonLog Inc. All rights reserved.</div></div></footer></body></html>

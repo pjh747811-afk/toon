@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>ToonLog</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#baebf5","secondary-container":"#baebf5","inverse-primary":"#3ed9f0","tertiary-fixed":"#f2daff","outline":"#6c797c","primary":"#006875","surface-bright":"#f5fafc","tertiary":"#744e92","on-surface":"#171d1e","outline-variant":"#bbc9cc","secondary-fixed-dim":"#9ecfd8","primary-container":"#39d6ed","secondary":"#36656e","on-tertiary-fixed":"#2c044a","on-tertiary":"#ffffff","error":"#ba1a1a","tertiary-fixed-dim":"#e1b6ff","surface-variant":"#dee3e5","surface-container":"#e9eff1","on-surface-variant":"#3c494c","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-primary-container":"#005965","primary-fixed":"#9defff","surface-container-highest":"#dee3e5","on-primary-fixed-variant":"#004e59","primary-fixed-dim":"#3ed9f0","surface-container-low":"#eff4f7","on-secondary-container":"#3c6b74","on-secondary-fixed-variant":"#1b4d56","on-tertiary-fixed-variant":"#5b3678","inverse-on-surface":"#ecf2f4","on-error":"#ffffff","surface":"#f5fafc","on-secondary-fixed":"#001f24","on-primary":"#ffffff","on-background":"#171d1e","surface-dim":"#d5dbdd","on-tertiary-container":"#664083","background":"#f5fafc","on-primary-fixed":"#001f24","surface-container-high":"#e3e9eb","surface-tint":"#006875","tertiary-container":"#dfb3ff","inverse-surface":"#2b3133","on-error-container":"#93000a","error-container":"#ffdad6"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-xl":"2.25rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-md":"1rem","margin":"1rem","space-xs":"0.25rem","margin-tablet":"1.5rem","gutter":"1.25rem","space-sm":"0.5rem","margin-desktop":"2.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"body-lg":["Inter"],"label-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"body-sm":["Inter"],"body-md":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Inter"]},"fontSize":{"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","fontWeight":"800"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","fontWeight":"800"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-8"><a class="flex items-center gap-2 group" data-path="feed" href="#"><span class="font-headline-md text-headline-md text-primary tracking-tight">ToonLog</span><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide uppercase">BETA</span></a><nav class="hidden lg:flex items-center gap-2 p-1" data-active-classes="bg-secondary-container text-on-secondary-container font-bold rounded-full"><a aria-current="page" class="px-4 py-2 transition-colors bg-secondary-container text-on-secondary-container font-bold rounded-full" data-path="studio" href="#">만들기</a><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="feed" href="#">피드 &amp; 탐색</a><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="my-archive" href="#">내 웹툰 다이어리</a><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="pricing" href="#">요금제 &amp; 멤버십</a></nav></div><div class="flex items-center gap-4"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span><span>무료 1회 생성 가능</span></div><a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-lg text-label-lg transition-all shadow-[0_4px_16px_rgba(2,194,217,0.25)]" data-path="studio" href="#"><span class="material-symbols-outlined text-[18px]">stylus</span><span>오늘 일기 쓰기</span></a><div class="flex items-center gap-2.5 pl-2"><div class="hidden md:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface">소라 작가님</span><span class="font-label-sm text-label-sm text-tertiary">Pro Creator</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-18rem)]"><div class="flex flex-col w-full pb-20">
+<!-- Top Ambient Glow -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-96 h-96 bg-primary-fixed/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -top-24 right-1/4 w-80 h-80 bg-tertiary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<!-- 1. Navigation & Meta Header -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6 relative z-10">
+<!-- Breadcrumb & Status Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all shadow-sm" data-path="studio" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>웹툰 에디터로 돌아가기</span>
+</a>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">sync_saved_locally</span>
+<span class="font-semibold">에디터 연동 완료</span>
+</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>SeedLock™ 고유 캐릭터 일관성 98.4% 보존됨</span>
+</div>
+</div>
+<!-- Header Title & Narrative -->
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span>EP.04 확장판 8컷 연동</span>
+<span class="inline-block w-1 h-1 rounded-full bg-on-tertiary-fixed"></span>
+<span>하드커버 오프셋 출판</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg sm:text-display-hero text-on-surface tracking-tight">
+          단행본 실물 만화책 주문 &amp; 맞춤 출판
+        </h1>
+<p class="max-w-3xl font-body-lg text-body-lg text-on-surface-variant">
+          웹툰 에디터의 8컷 콘티가 단행본 양면 펼침 내지로 정밀 자동 조판되었습니다.
+          고해상도 오프셋 인쇄와 하드커버 양장 제본으로 오직 하나뿐인 일상 만화책을 실물로 소장하세요.
+        </p>
+</div>
+<!-- Metadata Badges Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
+<div class="p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant">연동 에피소드</p>
+<p class="font-headline-sm text-label-lg text-on-surface truncate">EP.04 힐링견 확장판 (8컷)</p>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">splitscreen</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant">조판 포맷</p>
+<p class="font-headline-sm text-label-lg text-on-surface truncate">양면 8컷 (좌4 + 우4)</p>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant">SeedLock™ 일관성</p>
+<p class="font-headline-sm text-label-lg text-on-surface truncate">98.4% 검증 통과</p>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">high_density</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant">출력 해상도</p>
+<p class="font-headline-sm text-label-lg text-on-surface truncate">4K 300 DPI 무손실</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content 2-Column Studio Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-4">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT: 3D Book Preview & Interactive Viewer (lg:col-span-7) -->
+<div class="lg:col-span-7 space-y-5">
+<!-- Preview Segment Tabs -->
+<div class="flex items-center justify-between bg-surface-container-low p-1.5 rounded-2xl shadow-sm">
+<div class="flex items-center gap-1">
+<button class="px-4 py-2 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-label-lg shadow-sm transition-all flex items-center gap-1.5" id="tab-spread" onclick="switchPreviewTab('spread')">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>내지 펼침면 (8컷 콘티)</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-headline-sm text-label-lg transition-all flex items-center gap-1.5" id="tab-cover" onclick="switchPreviewTab('cover')">
+<span class="material-symbols-outlined text-[18px]">book_2</span>
+<span>하드커버 표지</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-headline-sm text-label-lg transition-all flex items-center gap-1.5" id="tab-perks" onclick="switchPreviewTab('perks')">
+<span class="material-symbols-outlined text-[18px]">redeem</span>
+<span>스티커 &amp; 특전 패키지</span>
+</button>
+</div>
+<div class="hidden sm:flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>라이브 렌더링 3D</span>
+</div>
+</div>
+<!-- 3D Book Container (Spread View) -->
+<div class="relative p-4 sm:p-6 rounded-3xl bg-surface-container-low shadow-xl overflow-hidden transition-all duration-300" id="view-spread-container">
+<!-- Book Spine Ambient Depth -->
+<div class="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-black/5 to-transparent pointer-events-none"></div>
+<!-- The Physical Spread Sheet -->
+<div class="relative bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden transition-transform duration-300 transform scale-100" id="book-spread-sheet">
+<!-- Center Binding Gutter & Shadow Illusion -->
+<div class="absolute top-0 bottom-0 left-1/2 w-8 -translate-x-1/2 bg-gradient-to-r from-black/10 via-black/20 to-black/10 z-20 pointer-events-none"></div>
+<div class="absolute top-0 bottom-0 left-1/2 w-[2px] -translate-x-1/2 bg-on-surface/20 z-30 pointer-events-none"></div>
+<div class="grid grid-cols-2 divide-none min-h-[580px]">
+<!-- LEFT PAGE (Page 01) -->
+<div class="p-3.5 sm:p-5 flex flex-col justify-between bg-[#fffefc] relative">
+<!-- Page Header & Running Head -->
+<div class="flex items-center justify-between pb-2 border-b-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">01 | 소라의 출근길</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px]">EP.04-A</span>
+</div>
+<!-- 4 Panels Stack (Left Side) -->
+<div class="grid grid-cols-2 gap-2 my-2 flex-1">
+<!-- Cut 1 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A Korean female webtoon artist commuting inside a crowded, hectic Monday morning subway, holding a subway strap, looking utterly exhausted and sleepy, soft pastel watercolor anime style with gentle cyan and blush tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHcs0aTYBCcutIs9RDEmhXy_wSWeBf_z70mTMnKpWrh9N0nkkkkJlmjEqmT6rYWKcm6l2BscquihxdVK0vJ8RpTNhJArp0ovT_Jiq23UlWdtXJfvjt_Sjlq_rO5xZ56cTFkwdUgeDiGb9W_XdhevaNoTO5kng0zd1Gll9agF1PBEiOTxF_vflGuQGAn30lZffLCj5Ep8XsctIVKaWwA-DAu35r4JTW4B0Bfiq8TNg"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-on-surface/70 text-surface font-label-sm text-[10px]">#1</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      월요일 8시... 벌써 집에 가고 싶다...
+                    </p>
+</div>
+<!-- Cut 2 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Close up view of the protagonist looking down at the subway station exit, finding an adorable fluffy golden puppy with sparkling innocent eyes touching her sneaker, delicate comic style with bright lavender highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwQIl5qsuUll9c2LXxX6ZSDTYeA-hQSdc_OBpbE-qUIav4V-RHt0JzRN18YYSBrB-X2_1V8l01WkaQzjmLIh5eCwATwz6jbLg_vDQgKSjrZGacDtIJ9S8Vfw-0Px1qsVIHL-adF2W3ZEGZMCP7hp6RGzP6E736sWUtC80zB1UUZAq1AkzxuIRRsXUYHWaJKUuOEvkTRD_AAmEwvZXa9bYc-w2TrO2Udv0pe-XG-7M"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-on-surface/70 text-surface font-label-sm text-[10px]">#2</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      촉촉- 발끝에 닿는 이 몽실한 느낌은?!
+                    </p>
+</div>
+<!-- Cut 3 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A warm emotional scene of a tiny fluffy puppy smiling brightly and tilting its head at the protagonist, flower bloom effects, vibrant pastel comic aesthetic with warm apricot and yellow tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZksrRT56alIEN2FROpDCH0asrf9n1Vdefx5ATHxYvmGRS6vFcSPY_DSHR7KYUPpMeBWt_f7_HqTYL_-4Ba-PeHSbI1fZSWM3Os04CsnkrKnPp3JRM1A0NC1N7JlhO2_k7wIk733-eLY1kXixUwcduvwPUxL4FIybc-gQZaLZlunp0OvoEgBw_2XO6BdG34zI2d1I2tkkXbCYEvGTLBc4zYGQs33LGA4wzSSpCAfc"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-on-surface/70 text-surface font-label-sm text-[10px]">#3</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      심쿵! 너 지금 나 보고 웃은 거야?!
+                    </p>
+</div>
+<!-- Cut 4 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Female character smiling warmly with glistening energized eyes, walking into sunlight with fresh determination, pastel aesthetic with vibrant cyan backlighting and sparkling dust particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa_1raR5QFIks_kYAwQqKjC2tjsqklehaOrpef6hS5wzFZmkS5ygB4YoWKQ4bar3b7Y1YnfM2vWCVqt0tvq3bDaIBXcCZv7Kc_BeiLzBp9LLouXrOQYD34gipv6HpQxFp5NYtzZ9G-igereWGpIDYAZHUQaIGRquafGZ1WM6gDlV3ov4rCiCuMFL3LBoIMNWyPY3E8Wnqy7K0kTELcO3xmWNhmA-LHJHsTZOtuV-c"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-on-surface/70 text-surface font-label-sm text-[10px]">#4</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      너 덕분에 이번 주도 어떻게든 살아보자! ✨
+                    </p>
+</div>
+</div>
+<!-- Page Footer -->
+<div class="pt-1 text-center font-label-sm text-[10px] text-on-surface-variant">
+                  - 1 -
+                </div>
+</div>
+<!-- RIGHT PAGE (Page 02) -->
+<div class="p-3.5 sm:p-5 flex flex-col justify-between bg-[#fffefc] relative">
+<!-- Page Header & Running Head -->
+<div class="flex items-center justify-between pb-2 border-b-0">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px]">EP.04-B</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">02 | 작은 기적</span>
+</div>
+<!-- 4 Panels Stack (Right Side) -->
+<div class="grid grid-cols-2 gap-2 my-2 flex-1">
+<!-- Cut 5 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Young female professional humming cheerfully with musical notes floating around in front of modern corporate elevator doors, stylish soft cartoon illustration in mint and cream tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMqvFSgrfWTbWqDU7pXu3DRRyEoI4Nb1NWurVBa_QELWS5b3K4Edwf4QIqKYvF7oBsaJpQDg0-B4ZOuVktpDbnv4glgaTcU1tPaUIbJKjTwYC0zCRiDbUSWY1MQwKw9-tvbz3KMreWNOA9GdHFN8n84PDbP5U0dzXHWNL7GsA3rs26CMfxhKzfocIa2oysXSaru_Pv7Vnn2mE3j2kJXf6gGVpk1w81NVYTydHl2SQ"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-on-surface/70 text-surface font-label-sm text-[10px]">#5</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      회사 엘리베이터 앞, 콧노래가 흥얼흥얼~ 🎵
+                    </p>
+</div>
+<!-- Cut 6 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Confident protagonist receiving urgent document requests at office desk with calm playful smirk and shining aura, comic webtoon style with pastel coral and slate palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxErSSmrZQUIYoLmm9LG0UPDWnZCeJsMDU_enefcevYV6AFejQtqqVrokHIGG-dwyQI_8yNLaso61Y_PVO3sOecBkJJ1sDQjnWkHldH1VlpQ34ElG5s7Cezhh2pD3Qu1jHUr2Ww8aIhj1wlCDB1qOIFZAvAjKNMSmsz_gl6o7P5R2Wjs7yR6JZrqs6Wc67Sc8T2AE9GWUBxBLdREFYVw0-nUyCq68TyREtt4Ew4cs"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-on-surface/70 text-surface font-label-sm text-[10px]">#6</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      팀장님 급한 보고에도 오늘은 멘탈 끄떡없음! 💥
+                    </p>
+</div>
+<!-- Cut 7 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Convenience store interior during lunchtime, young woman delightfully purchasing organic dog snacks at the counter with warm blush cheeks, cute cozy slice-of-life cartoon style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGjdIL3vZMsM_fb3tU7p9uVbqY4zqLdmcVmvy-8KB-G4ehc7bGhsOlikp5aQsVIrh6WeI65XerLpi6rOzbOQN6Wb82YG5-cWiyYOt3KXBpseSZSDeZomtkQZrfdZIP67PkRptlHUMH14mQzGqBJevlQG6tnFAD3rL_oP88qu8aSxTvp0qDLUDRfLJ-ad6OAXZBvfgYSq9WHOWmBIeVHKY1ssDZK_7PWii-zx_Yijo"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-on-surface/70 text-surface font-label-sm text-[10px]">#7</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      점심시간, 편의점에서 댕댕이 간식 사는 나... 🐾
+                    </p>
+</div>
+<!-- Cut 8 -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-2 relative group overflow-hidden ring-1 ring-primary/20">
+<div class="aspect-square w-full rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Heartwarming epilogue panel showing the woman looking up at evening sky with cheerful reflection, surrounded by soft cherry blossoms, pastel watercolor style with warm glowing lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALKAjOtbIDRKZp1dGCfvwmPvxu_juq0VKM-3QCT25b5DdbpMSEZK9F0S4mjgABLJsNwkbWMy-DJOTJCRn-kgFzF_YPb-bAvJ_EWBPWC4H0w5c0-ylRSCE9BWK1RVvrkLrQLg7s05PLxviOwjWcatfEwLJkg-eERLl6JnUvdmNq6fcXScxz9AufehqdbHu0XOe5TmHT-5dR3zP2mjOEMlKUyo4BHYlNd-5YzrMQvuQ"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-md bg-primary text-on-primary font-label-sm text-[10px]">#8 결말</span>
+</div>
+<p class="mt-1.5 font-label-sm text-[11px] text-on-surface font-medium line-clamp-2 leading-tight">
+                      사소한 위로 하나가 하루 전체를 구원한다 🌸
+                    </p>
+</div>
+</div>
+<!-- Page Footer -->
+<div class="pt-1 text-center font-label-sm text-[10px] text-on-surface-variant">
+                  - 2 -
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cover Preview Container (Hidden by default) -->
+<div class="hidden p-6 rounded-3xl bg-surface-container-low shadow-xl" id="view-cover-container">
+<div class="flex flex-col sm:flex-row gap-6 items-center justify-center">
+<!-- Front Cover 3D Mock -->
+<div class="w-64 aspect-[1/1.414] rounded-2xl bg-surface-container-lowest shadow-2xl relative overflow-hidden transform hover:-rotate-1 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Hardcover book front design titled ToonLog Ep 4 featuring cute golden puppy sitting on train seat with girl artist smiling, luxury foil finish, aesthetic pastel cyan and blush cover artwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzQz4ZT_1ofQOS4Qkq1MKJ-vPgs654VKdUWJETJ1buLeXcaLt_TVMNJHKa8zp1Z7QUuZTApxhx7F8nq7OfzFTmDbQS0kqf7ePXfZkCWH_kuHnqk6qLhOa0Uh2B8jY0DHZDnEZ5sGv5QG940qySD7UfzyEMXMcNc7DaW3pPB3ib4tSUhAlU9nIaVHQ1W5Jw6G4WsCahhG8al_waKVYVQf-zkwlmkMOiPYQ6_d2peuo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-5 text-surface">
+<span class="font-label-sm text-label-sm text-secondary-fixed">ToonLog Volume 01</span>
+<p class="font-headline-md text-headline-sm text-surface leading-tight">출근길의 작은 힐링견</p>
+<p class="font-label-sm text-label-sm text-surface-variant mt-1">글·그림 소라 작가</p>
+</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[11px]">
+                하드커버 에폭시
+              </div>
+</div>
+<!-- Book Spine & Back Info -->
+<div class="space-y-3 max-w-xs">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+                프리미엄 양장 표지 마감
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">3mm 두께의 고강도 보드 하드커버</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                견고한 코팅 하드커버로 180도 펼침 상태에서도 갈라짐이 없으며, 캐릭터 및 타이틀 영역에 입체 에폭시 코팅이 기본 시공됩니다.
+              </p>
+<div class="p-3 rounded-xl bg-surface-container flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">금박/에폭시 광택 효과 포함</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">빛의 각도에 따라 빛나는 감성 마감</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Perks Preview Container (Hidden by default) -->
+<div class="hidden p-6 rounded-3xl bg-surface-container-low shadow-xl" id="view-perks-container">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col">
+<div class="aspect-video w-full rounded-xl overflow-hidden bg-surface-container-high mb-3">
+<img class="w-full h-full object-cover" data-alt="Holographic foil stickers set showing cute cartoon golden puppy expressions and artist characters with sparkling reflections on a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByzcoZrbJY2_vBWowvGT5iVo_D4WmD4gQdJbIm02nDujKSMaum8ZjDdomiG88NOcU1ruNvEnqRMw5Gizj2rPBg7BHx-5JizeDB_SzKiHARqHaZ1uIpUPnSTCd7EN93bVwxKZIX998FlqZQQqfagdbDmC-lKvbcJ97sHO9EzKbOQCyr_8GRPiklFa-Hon8op-9UQthaivreOQXu57m5BOcvrw7Va6M1ygclaMEwCAA"/>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold">증정 특전 01</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-0.5">홀로그램 컷 스티커팩 (6종)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">방수 코팅된 다이어리용 데코 스티커</p>
+</div>
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col">
+<div class="aspect-video w-full rounded-xl overflow-hidden bg-surface-container-high mb-3">
+<img class="w-full h-full object-cover" data-alt="Artistic bookmark showing warm webtoon frame and motivational Korean text ribbon resting on an open book with pastel aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYiILnAD21L5aQ8VlHgPJ9asiLQu6EZRro2sSzGzKj8nbnjETS6763ipTweFCaF1C7-RMlwtlxyR60fHCWhGaHobhd61me-8wr6TNtr7qwDB3jvGBhMahmYyqhrBA44lkjTKE7Ojqe1lB8rLWu_lBvFIgpJn3Vyv6-4AfEBYZeDVX6_slLC3Tl0n9zDF1sGDB3jQRtdeaDEEC8cw1cnnOsNOWdb2hUbFVhCGO30oI"/>
+</div>
+<span class="font-label-md text-label-md text-tertiary font-semibold">증정 특전 02</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-0.5">시그니처 패브릭 북마크</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">EP.04 마지막 컷 대사가 새겨진 텍스타일 책갈피</p>
+</div>
+</div>
+</div>
+<!-- Viewer Bottom Interactive Controls -->
+<div class="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm">
+<!-- Page Flip Navigation -->
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface px-2">1-2p (8컷 본문) <span class="text-on-surface-variant">/ 4p</span></span>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<!-- Zoom & 300DPI Detail Controls -->
+<div class="flex items-center gap-2">
+<div class="inline-flex rounded-xl bg-surface-container p-0.5">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-xs font-semibold" id="zoom-100" onclick="applyZoom(1.0)">100%</button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm" id="zoom-150" onclick="applyZoom(1.15)">125%</button>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-md text-label-md transition-all" onclick="alert('300DPI 고해상도 인쇄 원본 조판 레이어가 확인되었습니다. 글자 뭉개짐 없이 선명하게 출력됩니다.');">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+<span>300DPI 실물 검수</span>
+</button>
+</div>
+</div>
+<!-- Quality & Guarantee Strip -->
+<div class="p-4 rounded-2xl bg-secondary-fixed/30 flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">verified_user</span>
+<div>
+<p class="font-headline-sm text-label-lg text-on-surface">ToonLog 무결점 인쇄 보증 제도</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              인쇄 시 재단선 오차 0.5mm 이내 교정 시스템을 적용하며, 파본 또는 인쇄 불량 발생 시 즉시 무상 재제작을 약속드립니다.
+            </p>
+</div>
+</div>
+</div>
+<!-- RIGHT: Publication Spec Customizer Panel (lg:col-span-5) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Customizer Accordion / Step Container -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm space-y-6">
+<!-- Step 1: Format & Binding -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-[11px] flex items-center justify-center font-bold">1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">책 판형 및 커버 제본</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">필수 선택</span>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Option A (Recommended / Selected) -->
+<label class="cursor-pointer relative p-3.5 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-3 shadow-xs">
+<input checked="" class="mt-1 accent-primary w-4 h-4" name="binding_spec" type="radio" value="hardcover"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-label-lg text-on-surface">A5 프리미엄 하드커버 양장</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-bold">추천</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    148 x 210mm · 단단한 양장 표지 · 180도 완전 펼침 제본
+                  </p>
+</div>
+</label>
+<!-- Option B -->
+<label class="cursor-pointer relative p-3.5 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low transition-all flex items-start gap-3 shadow-xs">
+<input class="mt-1 accent-primary w-4 h-4" name="binding_spec" type="radio" value="softcover"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-label-lg text-on-surface">B6 포켓 소프트커버</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">-₩3,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    128 x 182mm · 가볍고 휴대하기 편한 무선제본
+                  </p>
+</div>
+</label>
+</div>
+</div>
+<!-- Step 2: Paper & Post-Processing -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-[11px] flex items-center justify-center font-bold">2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">내지 용지 &amp; 표지 후가공</h3>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Paper 1 -->
+<label class="cursor-pointer p-3 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">랑데뷰 울트라 160g</span>
+<input checked="" class="accent-primary w-3.5 h-3.5" name="paper_spec" type="radio" value="rendezvous"/>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1">
+                    무광 감성 코팅, 은은한 파스텔 종이 질감
+                  </p>
+</div>
+<span class="mt-2 text-primary font-label-sm text-[11px]">기본 포함</span>
+</label>
+<!-- Paper 2 -->
+<label class="cursor-pointer p-3 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">스노우지 180g</span>
+<input class="accent-primary w-3.5 h-3.5" name="paper_spec" type="radio" value="snow"/>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-1">
+                    고광택 선명한 만화 잉크 발색
+                  </p>
+</div>
+<span class="mt-2 text-on-surface-variant font-label-sm text-[11px]">+₩0</span>
+</label>
+</div>
+<!-- Post processing check -->
+<label class="p-3 rounded-2xl bg-tertiary-fixed/30 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-2.5">
+<input checked="" class="accent-tertiary w-4 h-4" type="checkbox"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">표지 부분 입체 에폭시 코팅</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">타이틀 및 강아지 캐릭터 부분 투명 광택 돋움</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-tertiary font-label-sm text-[11px] font-bold">무상 지원</span>
+</label>
+</div>
+<!-- Step 3: Layout & Inspection Checklist -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-[11px] flex items-center justify-center font-bold">3</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">8컷 콘티 조판 레이아웃</h3>
+</div>
+</div>
+<div class="p-3.5 rounded-2xl bg-surface-container-low space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">양면 8컷 와이드 그리드 (좌4 + 우4)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px]">적용중</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant">
+                스크롤 웹툰의 리듬감을 양면 펼침형 4컷 대칭 구조로 완벽 재조정하였습니다.
+              </p>
+</div>
+<!-- 8-cut Quality Inspection Checklist -->
+<div class="p-3.5 rounded-2xl bg-surface-container space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">8컷 전체 인쇄 품질 자동 사전 검수</span>
+<span class="text-primary font-label-sm text-label-sm font-semibold">8/8 통과</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5">
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#1컷 정상</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#2컷 정상</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#3컷 정상</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#4컷 정상</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#5컷 정상</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#6컷 정상</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#7컷 정상</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] text-on-surface">
+<span class="material-symbols-outlined text-primary text-[14px]">check_circle</span>
+<span>#8컷 정상</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 4: Special Limited Perks -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-[11px] flex items-center justify-center font-bold">4</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">에디터 연동 한정 특전</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-bold">전원 증정</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-3 rounded-2xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px]">stars</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">출근길 힐링견 홀로그램 스티커팩 (6종)</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">다이어리 커스텀 스티커 1세트</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">무료 포함</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-2xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">bookmark</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">시그니처 감성 북마크 1종</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">책갈피 동봉 발송</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">무료 포함</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Order Summary & Payment Card (Stickable / Prominent) -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-xl space-y-4 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">주문 요약 명세</h3>
+<!-- Quantity Picker -->
+<div class="flex items-center gap-2 bg-surface-container rounded-full p-1">
+<button class="w-6 h-6 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center font-bold text-xs hover:bg-surface-container-high transition-all" onclick="updateQty(-1)">-</button>
+<span class="font-headline-sm text-label-md text-on-surface px-1.5" id="order-qty">1</span>
+<button class="w-6 h-6 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center font-bold text-xs hover:bg-surface-container-high transition-all" onclick="updateQty(1)">+</button>
+</div>
+</div>
+<!-- Price Ledger -->
+<div class="space-y-2 py-2">
+<div class="flex items-center justify-between font-body-md text-body-md text-on-surface-variant">
+<span>하드커버 단행본 제작비</span>
+<span id="base-price">18,000원</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md text-primary">
+<span class="flex items-center gap-1">
+<span>8컷 확장판 조판 특별 할인</span>
+<span class="material-symbols-outlined text-[14px]">high_res</span>
+</span>
+<span id="discount-price">-3,000원</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md text-on-surface-variant">
+<span>배송비 (첫 단행본 출판)</span>
+<span class="text-tertiary font-medium">0원 (무료 배송)</span>
+</div>
+</div>
+<!-- Total Calculation -->
+<div class="pt-3 flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">최종 결제 금액</span>
+<span class="font-label-sm text-[11px] text-tertiary">부가세 및 인쇄 감리비 포함</span>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight" id="final-total">15,000원</span>
+</div>
+</div>
+<!-- Production ETA Notice -->
+<div class="p-3 rounded-2xl bg-secondary-fixed/40 flex items-center gap-2 text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>주문 즉시 맞춤 인쇄 ➔ 영업일 3일 내 정밀 검수 후 발송</span>
+</div>
+<!-- CTAs -->
+<div class="space-y-2.5 pt-1">
+<button class="w-full py-4 rounded-2xl bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-headline-sm text-headline-sm transition-all shadow-[0_8px_24px_rgba(2,194,217,0.35)] flex items-center justify-center gap-2 group" onclick="handleOrderPlacement()">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">menu_book</span>
+<span id="btn-order-text">단행본 실물 만화책 주문 제작하기 (₩15,000)</span>
+</button>
+<button class="w-full py-3 rounded-2xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg transition-all flex items-center justify-center gap-2" onclick="downloadPdfSample()">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>인쇄용 고해상도 PDF 미리보기 다운로드</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive Script -->
+<script>
+    let currentQty = 1;
+    const baseUnit = 18000;
+    const discountUnit = 3000;
+
+    function updateQty(delta) {
+      currentQty = Math.max(1, currentQty + delta);
+      document.getElementById('order-qty').textContent = currentQty;
+      
+      const currentTotal = (baseUnit - discountUnit) * currentQty;
+      document.getElementById('base-price').textContent = (baseUnit * currentQty).toLocaleString() + '원';
+      document.getElementById('discount-price').textContent = '-' + (discountUnit * currentQty).toLocaleString() + '원';
+      document.getElementById('final-total').textContent = currentTotal.toLocaleString() + '원';
+      document.getElementById('btn-order-text').textContent = `단행본 실물 만화책 주문 제작하기 (₩${currentTotal.toLocaleString()})`;
+    }
+
+    function switchPreviewTab(tab) {
+      const spreadView = document.getElementById('view-spread-container');
+      const coverView = document.getElementById('view-cover-container');
+      const perksView = document.getElementById('view-perks-container');
+
+      const tabSpread = document.getElementById('tab-spread');
+      const tabCover = document.getElementById('tab-cover');
+      const tabPerks = document.getElementById('tab-perks');
+
+      // Reset tabs styling
+      [tabSpread, tabCover, tabPerks].forEach(t => {
+        t.className = "px-4 py-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-headline-sm text-label-lg transition-all flex items-center gap-1.5";
+      });
+
+      // Hide all
+      spreadView.classList.add('hidden');
+      coverView.classList.add('hidden');
+      perksView.classList.add('hidden');
+
+      if (tab === 'spread') {
+        spreadView.classList.remove('hidden');
+        tabSpread.className = "px-4 py-2 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-label-lg shadow-sm transition-all flex items-center gap-1.5";
+      } else if (tab === 'cover') {
+        coverView.classList.remove('hidden');
+        tabCover.className = "px-4 py-2 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-label-lg shadow-sm transition-all flex items-center gap-1.5";
+      } else if (tab === 'perks') {
+        perksView.classList.remove('hidden');
+        tabPerks.className = "px-4 py-2 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-label-lg shadow-sm transition-all flex items-center gap-1.5";
+      }
+    }
+
+    function applyZoom(scale) {
+      const sheet = document.getElementById('book-spread-sheet');
+      const btn100 = document.getElementById('zoom-100');
+      const btn150 = document.getElementById('zoom-150');
+
+      sheet.style.transform = `scale(${scale})`;
+      if (scale === 1.0) {
+        btn100.className = "px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-xs font-semibold";
+        btn150.className = "px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm";
+      } else {
+        btn150.className = "px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-xs font-semibold";
+        btn100.className = "px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm";
+      }
+    }
+
+    function handleOrderPlacement() {
+      const total = ((baseUnit - discountUnit) * currentQty).toLocaleString();
+      alert(`[ToonLog 단행본 주문 접수]\n\nEP.04 확장판 8컷 하드커버 양장 단행본 ${currentQty}권 주문이 정상 접수되었습니다.\n총 결제금액: ₩${total}\n\n제작 기간: 영업일 기준 3일 소요 예정 (인쇄 시작 알림이 카카오톡으로 발송됩니다)`);
+    }
+
+    function downloadPdfSample() {
+      alert('오프셋 인쇄 규격(300 DPI, CMYK 프로파일 변환 완료) PDF 감리 샘플 다운로드를 시작합니다.');
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex flex-col items-center md:items-start gap-2"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-primary">ToonLog</span><span class="font-body-sm text-body-sm text-on-surface-variant">일상의 소중한 순간을 4컷 웹툰 스토리로 기록하는 공간</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 ToonLog Studio Inc. All rights reserved.</p></div><div class="flex flex-wrap items-center justify-center gap-6"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">이용약관</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">개인정보처리방침</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="creator-guide" href="#">제작 가이드</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="support" href="#">고객지원</a></div></div></footer></body></html>

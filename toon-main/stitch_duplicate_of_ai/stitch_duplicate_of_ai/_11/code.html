@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#baebf5","on-tertiary":"#ffffff","secondary-container":"#baebf5","background":"#f5fafc","surface-container":"#e9eff1","on-tertiary-fixed-variant":"#5b3678","on-error":"#ffffff","primary-fixed":"#9defff","surface-variant":"#dee3e5","on-secondary-container":"#3c6b74","inverse-surface":"#2b3133","surface-container-lowest":"#ffffff","inverse-on-surface":"#ecf2f4","on-error-container":"#93000a","surface":"#f5fafc","surface-container-highest":"#dee3e5","surface-container-low":"#eff4f7","on-primary-container":"#005965","on-secondary":"#ffffff","error":"#ba1a1a","surface-container-high":"#e3e9eb","surface-bright":"#f5fafc","inverse-primary":"#3ed9f0","on-primary":"#ffffff","on-secondary-fixed-variant":"#1b4d56","primary-container":"#39d6ed","secondary-fixed-dim":"#9ecfd8","tertiary-fixed":"#f2daff","tertiary-container":"#dfb3ff","outline":"#6c797c","on-secondary-fixed":"#001f24","secondary":"#36656e","tertiary-fixed-dim":"#e1b6ff","primary":"#006875","on-background":"#171d1e","on-tertiary-fixed":"#2c044a","on-primary-fixed-variant":"#004e59","on-primary-fixed":"#001f24","surface-tint":"#006875","outline-variant":"#bbc9cc","surface-dim":"#d5dbdd","error-container":"#ffdad6","on-surface-variant":"#3c494c","on-surface":"#171d1e","tertiary":"#744e92","primary-fixed-dim":"#3ed9f0","on-tertiary-container":"#664083"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-md":"1rem","gutter-desktop":"1.5rem","space-xl":"2.25rem","margin-desktop":"2.5rem","margin":"1rem","margin-tablet":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter":"1.25rem"},"fontFamily":{"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","fontWeight":"800"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","fontWeight":"800"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop mx-auto flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs font-headline-md text-headline-md text-primary tracking-tight" data-path="dashboard" href="#"><span class="text-primary font-bold">ToonLog</span><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider">BETA</span></a><a class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors ml-space-sm pl-space-sm border-l border-outline-variant/40" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">arrow_back</span><span class="font-label-md text-label-md hidden sm:inline">스튜디오 홈</span></a></div><nav class="hidden xl:flex items-center gap-space-xs p-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="studio" href="#">만들기 (Studio)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="feed" href="#">피드 & 탐색 (Feed)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-archive" href="#">내 웹툰 다이어리 (My Archive)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pricing" href="#">요금제 & 멤버십 (Pricing)</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-xs rounded-full shadow-[0_0_16px_rgba(2,194,217,0.12)]"><span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span><span class="font-label-sm text-label-sm text-on-surface-variant">오늘 무료 <strong class="text-primary font-bold">1/1</strong> 생성</span></div><button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs border-l border-outline-variant/40"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(2,194,217,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">소라 작가님</span><span class="font-label-sm text-label-sm text-tertiary leading-tight">Pro Creator</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-margin md:px-gutter-desktop py-space-md flex flex-col gap-space-lg">
+<!-- Top Action Breadcrumb & Title Bar -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<a class="inline-flex items-center gap-1 text-primary hover:text-on-primary-container transition-colors font-label-md text-label-md" data-path="my-archive" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>내 웹툰 다이어리로 돌아가기</span>
+</a>
+<span class="text-outline-variant font-body-sm text-body-sm">/</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">실물 단행본 제작 스튜디오</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pt-space-xs">
+<div>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+            PRINT ON DEMAND STUDIO
+          </span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">
+            한 달의 일상을 하드커버 만화책으로, <span class="text-primary font-extrabold">나만의 단행본 출판</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            앱에서 그린 4컷 일상 웹툰을 만지는 감동 그대로, 프리미엄 아트북 제본으로 실물 보관하세요.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="px-space-md py-space-xs rounded-xl bg-surface-container flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Pro 패키지 연 1회 <strong>30% 인쇄 바우처</strong> 적용 가능</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Wizard Stepper Indicator -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm md:gap-space-md relative">
+<!-- Step 1 (Completed) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-semibold">STEP 01 (완료)</span>
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">에피소드 선택 & 목차 구성</span>
+</div>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg bg-surface-container-lowest shadow-sm ring-2 ring-primary-container">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm shrink-0">
+<span class="font-bold text-[14px]">2</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-1">
+              STEP 02 <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> 진행 중
+            </span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">표지 & 내지 디자인 커스텀</span>
+</div>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg opacity-70">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0 font-label-md text-label-md font-bold">
+            3
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">STEP 03</span>
+<span class="font-label-md text-label-md text-on-surface truncate">용지 및 제본 옵션 선택</span>
+</div>
+</div>
+<!-- Step 4 (Pending) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg opacity-70">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0 font-label-md text-label-md font-bold">
+            4
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">STEP 04</span>
+<span class="font-label-md text-label-md text-on-surface truncate">주문 및 배송지 입력</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main 2-Column Publishing Studio Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Interactive 3D Mockup & Page Viewer (5 Cols on large screen) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Book Stage Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col items-center relative overflow-hidden">
+<div class="absolute top-space-md left-space-md flex items-center gap-space-xs z-10">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px]">3d_rotation</span> 실물 3D 시뮬레이션
+            </span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm" id="active-view-chip">
+              앞표지 뷰
+            </span>
+</div>
+<div class="absolute top-space-md right-space-md flex items-center gap-1 z-10">
+<button class="w-8 h-8 rounded-full bg-surface-container-high hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors shadow-sm" id="toggle-zoom" title="확대 미리보기" type="button">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-surface-container-high hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors shadow-sm" id="rotate-book" title="책 회전" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+</button>
+</div>
+<!-- Dynamic 3D Book Display Viewport -->
+<div class="w-full py-space-xl flex justify-center items-center relative min-h-[460px]">
+<!-- Atmospheric Studio Lighting Radial Gradient in Card -->
+<div class="absolute inset-0 bg-gradient-to-b from-secondary-fixed/20 via-transparent to-primary-fixed/20 pointer-events-none rounded-lg"></div>
+<!-- Book Perspective Showcase -->
+<div class="relative transition-all duration-500 ease-out flex items-center justify-center" id="book-mockup-wrapper">
+<!-- Front Cover View -->
+<div class="relative w-[280px] h-[390px] sm:w-[310px] sm:h-[430px] rounded-r-2xl rounded-l-sm bg-surface-container-low shadow-2xl flex flex-col overflow-hidden transition-transform duration-300 hover:scale-[1.02]" id="preview-front">
+<!-- Hardcover Spine Ridge & Crease Effect -->
+<div class="absolute top-0 bottom-0 left-0 w-5 bg-gradient-to-r from-on-background/25 via-on-background/10 to-transparent z-20 pointer-events-none"></div>
+<div class="absolute top-0 bottom-0 left-5 w-[1.5px] bg-white/40 z-20 pointer-events-none"></div>
+<!-- Cover Artwork Placeholder -->
+<div class="relative w-full h-[64%] bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A warm, charming aesthetic webtoon illustration depicting a female artist drinking warm tea beside a steaming bowl of bungeoppang pastries on a rainy day in Seoul, watercolor pastel tones, cozy lighting, cyan teal and warm golden mood, clean line art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwLbKNLpylwSZ1HOU8SUS4_cUVUOUWrLuc2tFIyWeE95MPS15BXjjVJ8HWX6DCE5aV5J4e_j0rsg8hnsMcYBfW1y0pYykNZ-MgpotL7KzjInkJfHVTGUG1sAK3Q1VGZVn25FHUuT9lrChZp1LKD5FSK10ga8eGUeVVvV1LajXifrs1cbjkCPIwevmA0PUIvLWMcU5EeP1K2a83MnSR_m7vt5ilJ6M2uqRmmt6jYYol"/>
+<!-- Matte Soft Finish Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<!-- Comic Publisher Stamp -->
+<div class="absolute top-space-md right-space-md px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm font-bold shadow-sm">
+                    VOL. 11
+                  </div>
+</div>
+<!-- Cover Typography Strip (Customizable Preview) -->
+<div class="flex-1 p-space-md bg-surface-container-lowest flex flex-col justify-between relative z-10">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider" id="preview-subtitle">
+                      ToonLog Monthly Collection
+                    </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-tight" id="preview-title">
+                      소라 작가의 11월 일상툰:<br/>비 오는 날의 붕어빵
+                    </h3>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-auto">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary text-[10px] font-bold">
+                        소라
+                      </div>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="preview-author">소라 작가 지음</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">ToonLog Books</span>
+</div>
+</div>
+<!-- Realistic Book Edge Thickness Shadow -->
+<div class="absolute right-0 top-1 bottom-1 w-2 bg-gradient-to-l from-black/15 to-transparent pointer-events-none"></div>
+</div>
+<!-- Inside Spread View (Sample Page - Hidden by default) -->
+<div class="hidden w-[320px] sm:w-[460px] h-[320px] sm:h-[350px] bg-surface-container-lowest rounded-lg shadow-2xl overflow-hidden grid grid-cols-2 relative" id="preview-inside">
+<!-- Center Fold Shadow -->
+<div class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-8 bg-gradient-to-r from-black/10 via-black/20 to-black/10 z-20 pointer-events-none"></div>
+<!-- Left Page: Prologue / Diary text -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col justify-between border-r border-outline-variant/30">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-bold">PROLOGUE</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1">11월 12일의 기록</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                      갑자기 추워진 화요일 저녁, 지하철 출구 앞 붕어빵 트럭에서 피어오르던 팥 냄새. 젖은 아스팔트 위로 번지던 네온빛을 잊지 못해 태블릿을 켰다.
+                    </p>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Page 14</div>
+</div>
+<!-- Right Page: 4-cut Panel Sample -->
+<div class="p-space-xs bg-surface-container flex flex-col gap-1 items-center justify-center">
+<div class="w-full h-full rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean grid of four comic panels showing a young female artist standing by a steam pastry stand in the rain, biting into a warm pastry, smiling happily with cozy cyan umbrella, pastel comic webtoon style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxVVb1RxF8O3rDSqX7gL1jbOy34uGTsCY_zYBNcHzS5ACxGDzUlb_EKwIOhvqDnEfCPELOO1eNUX1r68jnUnP4BCj-BYB0YDtkYkYbX04SjfjyudsifyC53QFp-SPQvcSQs41URFEj4DDo6OH1i4zae97mtB4LaBLHsnejJG44s0blgRaAhPs5DVONhujJ0cqW72uCIgrBeiLCXsJP9xBf58jTm_LXacZocf34uULX"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Soft Floor Shadow Under Book -->
+<div class="absolute bottom-6 w-[260px] h-6 bg-on-background/10 blur-xl rounded-full -z-10"></div>
+</div>
+<!-- Page Flip View Toggle Controls -->
+<div class="w-full flex items-center justify-between gap-space-xs pt-space-md bg-surface-container-low/60 rounded-xl px-space-md py-space-sm mt-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium hidden sm:inline">페이지 둘러보기</span>
+<div class="flex items-center gap-space-xs w-full sm:w-auto justify-center">
+<button class="page-flip-btn active px-space-sm py-1 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-sm transition-all" data-flip="front" type="button">
+                앞표지
+              </button>
+<button class="page-flip-btn px-space-sm py-1 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm transition-all" data-flip="prologue" type="button">
+                속표지/프롤로그
+              </button>
+<button class="page-flip-btn px-space-sm py-1 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm transition-all" data-flip="sample" type="button">
+                내지 샘플 (11/12)
+              </button>
+<button class="page-flip-btn px-space-sm py-1 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm transition-all" data-flip="back" type="button">
+                뒷표지/후기
+              </button>
+</div>
+</div>
+</div>
+<!-- Book Specs Bento Pill Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[20px] mb-0.5">collections_bookmark</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">수록 에피소드</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">24화 (96컷)</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[20px] mb-0.5">menu_book</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">제본 형태</span>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="badge-binding">하드커버 양장</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary text-[20px] mb-0.5">aspect_ratio</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">판형 규격</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">A5 (148×210)</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[20px] mb-0.5">layers</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">내지 용지</span>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="badge-paper">아르떼 105g</span>
+</div>
+</div>
+<!-- Live Proof Quality Checklist Notification -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">palette</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">ToonLog 정밀 CMYK 색상 캘리브레이션 지원</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              웹툰 디지털 원본(RGB)의 네온/시안 계열 색상이 인쇄 시 칙칙해지지 않도록 인디고 12000 디지털 7색 인쇄 시스템을 자동 적용합니다.
+            </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Configuration Panels & Options (7 Cols on large screen) -->
+<div class="lg:col-span-6 flex flex-col gap-space-lg">
+<!-- Section 1: Cover Design Customizer -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">A</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">표지 레이아웃 템플릿</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">실시간 3D 반영 중</span>
+</div>
+<!-- Cover Style Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- Option 1: Poster Illustration -->
+<label class="cover-theme-card cursor-pointer p-space-sm rounded-xl bg-surface-container-low transition-all relative flex flex-col gap-space-xs ring-2 ring-primary">
+<input checked="" class="sr-only" name="cover_theme" type="radio" value="poster"/>
+<div class="h-28 rounded-lg bg-surface-container-high overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Miniature book cover template thumbnail with full artwork and bold title overlay, artistic cyan illustration style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyRIk_Exvt3_LGJxZBs3OjL2Gn2DHlD16WVQAFPyrXQr2JmqU3dWsSU6Q56k2K3jL2YN0sWFXUdT89v7uO3YmVZGQ9IjocSG4nudKfTyGY27slkKBo9cRLAFGeBUj0nkDxOBZiDciYbXx9T90wVaCbAoat4cSvLTCI-3ncG1Hdk4UOBhcP0H2zrOOC0QQ1IqXWDR0XgPDUCkmJHjlTrFrcjBd5kWjOhhB2QwBx_v1L"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-on-background/70 text-surface text-[10px] font-bold">포스터형</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">일러스트 포스터형</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">대표 일러스트 중심 전면 배치</span>
+</div>
+<div class="theme-check-icon absolute top-2 right-2 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</label>
+<!-- Option 2: 4-Cut Collage -->
+<label class="cover-theme-card cursor-pointer p-space-sm rounded-xl bg-surface-container-low transition-all relative flex flex-col gap-space-xs">
+<input class="sr-only" name="cover_theme" type="radio" value="collage"/>
+<div class="h-28 rounded-lg bg-surface-container-high p-1.5 grid grid-cols-2 gap-1">
+<div class="rounded bg-surface-container-highest"></div>
+<div class="rounded bg-surface-container-highest"></div>
+<div class="rounded bg-surface-container-highest"></div>
+<div class="rounded bg-secondary-fixed"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">4컷 그리드 콜라주</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">베스트 4컷을 표지에 타일링</span>
+</div>
+<div class="theme-check-icon hidden absolute top-2 right-2 w-5 h-5 rounded-full bg-primary text-on-primary items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</label>
+<!-- Option 3: Minimal Typo -->
+<label class="cover-theme-card cursor-pointer p-space-sm rounded-xl bg-surface-container-low transition-all relative flex flex-col gap-space-xs">
+<input class="sr-only" name="cover_theme" type="radio" value="minimal"/>
+<div class="h-28 rounded-lg bg-surface-container-high p-3 flex flex-col justify-center items-center text-center">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">ToonLog</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">VOL. 11 ESSAY</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">미니멀 에세이형</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">감성적인 타이포그래피</span>
+</div>
+<div class="theme-check-icon hidden absolute top-2 right-2 w-5 h-5 rounded-full bg-primary text-on-primary items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</label>
+</div>
+<!-- Cover Title & Author Input Fields -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="book-title-input">
+<span>표지 메인 제목</span>
+<span class="font-label-sm text-label-sm text-outline">최대 25자</span>
+</label>
+<input class="w-full px-space-md py-space-sm rounded-xl bg-surface-container text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all" id="book-title-input" type="text" value="비 오는 날의 붕어빵"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="book-author-input">
+<span>작가명 표기</span>
+<span class="font-label-sm text-label-sm text-outline">책등(Spine) 인쇄</span>
+</label>
+<input class="w-full px-space-md py-space-sm rounded-xl bg-surface-container text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all" id="book-author-input" type="text" value="소라 작가"/>
+</div>
+</div>
+</div>
+<!-- Section 2: Paper & Binding Options -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">B</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">제본 및 지류 사양</h2>
+</div>
+<!-- Binding Toggle: Hardcover vs Softcover -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">커버 및 제본 방식</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Hardcover Option (Selected) -->
+<label class="binding-option cursor-pointer p-space-md rounded-xl bg-surface-container-low transition-all relative flex flex-col justify-between ring-2 ring-primary">
+<input checked="" class="sr-only" name="binding_type" type="radio" value="hardcover"/>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">book_2</span>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold block">무광 하드커버 양장</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">180도 완전 펼침, 단단한 2.5mm 합지</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">추천 영구 보관용</span>
+<span class="font-label-md text-label-md text-primary font-bold">+₩5,000</span>
+</div>
+</label>
+<!-- Softcover Option -->
+<label class="binding-option cursor-pointer p-space-md rounded-xl bg-surface-container-low transition-all relative flex flex-col justify-between opacity-80">
+<input class="sr-only" name="binding_type" type="radio" value="softcover"/>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[22px]">import_contacts</span>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold block">소프트커버 무선제본</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">가볍고 휴대성이 뛰어난 날개형 표지</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">기본 사양</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">+₩0</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Paper Choice -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">내지 용지 선택</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Paper 1: Arte -->
+<label class="paper-option cursor-pointer p-space-sm rounded-xl bg-surface-container-low transition-all flex items-center justify-between ring-2 ring-primary">
+<input checked="" class="sr-only" name="paper_type" type="radio" value="arte"/>
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">texture</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">친환경 아르떼 105g</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">따뜻한 자연 질감, 눈의 피로 저감</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</label>
+<!-- Paper 2: Rendezvous -->
+<label class="paper-option cursor-pointer p-space-sm rounded-xl bg-surface-container-low transition-all flex items-center justify-between opacity-80">
+<input class="sr-only" name="paper_type" type="radio" value="rendezvous"/>
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[18px]">photo</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">랑데뷰 울트라화이트 130g</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">선명하고 쨍한 발색력, 높은 광택</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px] invisible">check_circle</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Section 3: Collector's Special Pack & Add-ons -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">C</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">스페셜 리미티드 굿즈 팩</h2>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-bold">컬렉터 패키지</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Checkbox 1: Postcards + Sticker Pack -->
+<label class="cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-sm">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary mt-0.5" id="addon-goods" type="checkbox"/>
+<div class="flex-1 flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">포토 엽서 4종 세트 & 캐릭터 리무버블 스티커 팩</span>
+<span class="font-label-md text-label-md text-primary font-bold">+₩3,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  해당 권에 수록된 인기 4컷 씬 고해상도 무광 엽서 4매와 일상툰 속 주인공 이모티콘 스티커 1매가 동봉됩니다.
+                </p>
+</div>
+</label>
+<!-- Checkbox 2: Author Signature Page -->
+<label class="cursor-pointer p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-sm">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary mt-0.5" id="addon-signature" type="checkbox"/>
+<div class="flex-1 flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">첫 장 원문 친필 디지털 서명 & 헌사 페이지 각인</span>
+<span class="font-label-md text-label-md text-secondary font-bold">무료 제공 (Event)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  ‘소라 작가의 11월을 함께해 준 모든 독자분들께’ 친필 손글씨 폰트로 책 앞표지 안쪽에 영구 인쇄됩니다.
+                </p>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Checkout & Cost Summary Bottom Container -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-xl mt-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<!-- Left: Price Breakdown Rows -->
+<div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">기본 제작비 (24화/96컷)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">₩24,000</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">하드커버 양장 옵션</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5" id="price-hardcover">+₩5,000</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">스페셜 굿즈 패키지</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5" id="price-goods">+₩3,000</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stars</span> Pro 멤버십 할인
+            </span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5">-₩4,000</span>
+</div>
+</div>
+<!-- Right: Final Total & Submit CTA -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-lg shrink-0">
+<div class="flex flex-col sm:items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">최종 결제 예정 금액</span>
+<div class="flex items-baseline gap-1">
+<span class="font-display-hero text-display-hero text-on-surface font-extrabold tracking-tight" id="total-price">₩28,000</span>
+<span class="font-label-md text-label-md text-on-surface-variant">(배송비 무료)</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 w-full sm:w-auto">
+<button class="w-full sm:w-auto px-space-xl py-space-md rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-headline-sm text-headline-sm font-bold shadow-lg hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2" id="btn-submit-order" type="button">
+<span>주문서 작성하고 최종 시안 확인하기</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center sm:justify-end gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">local_shipping</span> 주문 제작 3영업일 내 출고
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">picture_as_pdf</span> 인쇄 전 디지털 감리 무료
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Publishing Guarantee & FAQ Accordion Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-sm mb-space-lg">
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">100% 인쇄 불량 안심 보상제</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            페이지 누락, 오탈자(시스템 오류), 파손 수령 시 무조건 무료 재인쇄 및 특급 재발송을 보장합니다.
+          </p>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">웹툰 에피소드 고화질 리샘플링</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            생성된 AI 4컷 캔버스를 600DPI 인쇄 규격 벡터 업스케일링하여 픽셀 깨짐 없는 선명한 인쇄본을 제작합니다.
+          </p>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[18px]">share_reviews</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">독립출판 ISBN 발급 연계 지원</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            원할 시 알라딘, 교보문고 전자책/종이책 POD 서점 등록 및 바코드 인쇄 연계 서비스를 신청할 수 있습니다.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Logic Script -->
+<script>
+    (function initPublishingStudio() {
+      // Input text live synchronization with 3D Book Preview
+      const titleInput = document.getElementById('book-title-input');
+      const authorInput = document.getElementById('book-author-input');
+      const previewTitle = document.getElementById('preview-title');
+      const previewAuthor = document.getElementById('preview-author');
+
+      if (titleInput && previewTitle) {
+        titleInput.addEventListener('input', function(e) {
+          const val = e.target.value.trim();
+          previewTitle.innerHTML = val ? val.replace('\n', '<br>') : '비 오는 날의 붕어빵';
+        });
+      }
+
+      if (authorInput && previewAuthor) {
+        authorInput.addEventListener('input', function(e) {
+          const val = e.target.value.trim();
+          previewAuthor.textContent = val ? (val + ' 지음') : '소라 작가 지음';
+        });
+      }
+
+      // Page-flip controls & 3D Stage Switcher
+      const flipButtons = document.querySelectorAll('.page-flip-btn');
+      const previewFront = document.getElementById('preview-front');
+      const previewInside = document.getElementById('preview-inside');
+      const activeViewChip = document.getElementById('active-view-chip');
+
+      flipButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          flipButtons.forEach(b => {
+            b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          this.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+          this.classList.remove('text-on-surface-variant');
+
+          const flipType = this.getAttribute('data-flip');
+          if (flipType === 'sample' || flipType === 'prologue') {
+            previewFront.classList.add('hidden');
+            previewInside.classList.remove('hidden');
+            activeViewChip.textContent = flipType === 'sample' ? '내지 4컷 샘플 뷰' : '속표지 프롤로그 뷰';
+          } else {
+            previewInside.classList.add('hidden');
+            previewFront.classList.remove('hidden');
+            activeViewChip.textContent = flipType === 'back' ? '뒷표지 에필로그 뷰' : '앞표지 뷰';
+          }
+        });
+      });
+
+      // Price Recalculation Engine
+      const bindingRadios = document.querySelectorAll('input[name="binding_type"]');
+      const addonGoods = document.getElementById('addon-goods');
+      const priceHardcoverEl = document.getElementById('price-hardcover');
+      const priceGoodsEl = document.getElementById('price-goods');
+      const totalPriceEl = document.getElementById('total-price');
+      const badgeBinding = document.getElementById('badge-binding');
+      const badgePaper = document.getElementById('badge-paper');
+      const paperRadios = document.querySelectorAll('input[name="paper_type"]');
+
+      function calculatePrice() {
+        let base = 24000;
+        let discount = 4000;
+        let hardcover = 0;
+        let goods = 0;
+
+        const selectedBinding = document.querySelector('input[name="binding_type"]:checked').value;
+        if (selectedBinding === 'hardcover') {
+          hardcover = 5000;
+          priceHardcoverEl.textContent = '+₩5,000';
+          badgeBinding.textContent = '하드커버 양장';
+        } else {
+          hardcover = 0;
+          priceHardcoverEl.textContent = '+₩0';
+          badgeBinding.textContent = '소프트커버 무선';
+        }
+
+        if (addonGoods && addonGoods.checked) {
+          goods = 3000;
+          priceGoodsEl.textContent = '+₩3,000';
+        } else {
+          goods = 0;
+          priceGoodsEl.textContent = '+₩0';
+        }
+
+        const total = base + hardcover + goods - discount;
+        totalPriceEl.textContent = '₩' + total.toLocaleString('ko-KR');
+      }
+
+      bindingRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          document.querySelectorAll('.binding-option').forEach(card => {
+            card.classList.remove('ring-2', 'ring-primary', 'opacity-100');
+            card.classList.add('opacity-80');
+          });
+          this.closest('.binding-option').classList.add('ring-2', 'ring-primary', 'opacity-100');
+          this.closest('.binding-option').classList.remove('opacity-80');
+          calculatePrice();
+        });
+      });
+
+      if (addonGoods) {
+        addonGoods.addEventListener('change', calculatePrice);
+      }
+
+      paperRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          document.querySelectorAll('.paper-option').forEach(card => {
+            card.classList.remove('ring-2', 'ring-primary', 'opacity-100');
+            card.classList.add('opacity-80');
+            const icon = card.querySelector('.material-symbols-outlined:last-child');
+            if (icon) icon.classList.add('invisible');
+          });
+          const parent = this.closest('.paper-option');
+          parent.classList.add('ring-2', 'ring-primary', 'opacity-100');
+          parent.classList.remove('opacity-80');
+          const checkIcon = parent.querySelector('.material-symbols-outlined:last-child');
+          if (checkIcon) checkIcon.classList.remove('invisible');
+
+          if (this.value === 'arte') {
+            badgePaper.textContent = '아르떼 105g';
+          } else {
+            badgePaper.textContent = '랑데뷰 130g';
+          }
+        });
+      });
+
+      // Cover Themes Selector UI
+      const coverThemes = document.querySelectorAll('input[name="cover_theme"]');
+      coverThemes.forEach(radio => {
+        radio.addEventListener('change', function() {
+          document.querySelectorAll('.cover-theme-card').forEach(card => {
+            card.classList.remove('ring-2', 'ring-primary');
+            const check = card.querySelector('.theme-check-icon');
+            if (check) check.classList.add('hidden');
+          });
+          const parent = this.closest('.cover-theme-card');
+          parent.classList.add('ring-2', 'ring-primary');
+          const check = parent.querySelector('.theme-check-icon');
+          if (check) check.classList.remove('hidden');
+        });
+      });
+
+      // Rotate 3D Book Visual Micro-action
+      const rotateBtn = document.getElementById('rotate-book');
+      const bookWrapper = document.getElementById('book-mockup-wrapper');
+      let isRotated = false;
+      if (rotateBtn && bookWrapper) {
+        rotateBtn.addEventListener('click', function() {
+          isRotated = !isRotated;
+          bookWrapper.style.transform = isRotated ? 'rotateY(-18deg) rotateX(4deg)' : 'rotateY(0deg) rotateX(0deg)';
+        });
+      }
+
+      // Order Submit Toast Mock
+      const submitBtn = document.getElementById('btn-submit-order');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          this.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> 시안 렌더링 중...';
+          setTimeout(() => {
+            alert('단행본 최종 시안이 성공적으로 생성되었습니다! 배송지 입력 단계로 이동합니다.');
+            this.innerHTML = '<span>주문서 작성하고 최종 시안 확인하기</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>';
+          }, 700);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.02)] mt-auto"><div class="w-full px-gutter-desktop mx-auto py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col md:flex-row items-center gap-space-md text-center md:text-left"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">ToonLog</span><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 ToonLog Inc. 일상을 4컷 만화 예술로 기록하는 AI 스토리그래픽 스튜디오.</p></div><div class="flex items-center gap-space-md font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">이용약관</a><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">개인정보처리방침</a><a class="hover:text-on-surface transition-colors" data-path="creator-guide" href="#">창작자 가이드</a><a class="hover:text-on-surface transition-colors" data-path="customer-center" href="#">고객지원센터</a></div></div></footer></body></html>

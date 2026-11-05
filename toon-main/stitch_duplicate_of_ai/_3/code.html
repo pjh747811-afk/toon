@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#baebf5","on-tertiary":"#ffffff","secondary-container":"#baebf5","background":"#f5fafc","surface-container":"#e9eff1","on-tertiary-fixed-variant":"#5b3678","on-error":"#ffffff","primary-fixed":"#9defff","surface-variant":"#dee3e5","on-secondary-container":"#3c6b74","inverse-surface":"#2b3133","surface-container-lowest":"#ffffff","inverse-on-surface":"#ecf2f4","on-error-container":"#93000a","surface":"#f5fafc","surface-container-highest":"#dee3e5","surface-container-low":"#eff4f7","on-primary-container":"#005965","on-secondary":"#ffffff","error":"#ba1a1a","surface-container-high":"#e3e9eb","surface-bright":"#f5fafc","inverse-primary":"#3ed9f0","on-primary":"#ffffff","on-secondary-fixed-variant":"#1b4d56","primary-container":"#39d6ed","secondary-fixed-dim":"#9ecfd8","tertiary-fixed":"#f2daff","tertiary-container":"#dfb3ff","outline":"#6c797c","on-secondary-fixed":"#001f24","secondary":"#36656e","tertiary-fixed-dim":"#e1b6ff","primary":"#006875","on-background":"#171d1e","on-tertiary-fixed":"#2c044a","on-primary-fixed-variant":"#004e59","on-primary-fixed":"#001f24","surface-tint":"#006875","outline-variant":"#bbc9cc","surface-dim":"#d5dbdd","error-container":"#ffdad6","on-surface-variant":"#3c494c","on-surface":"#171d1e","tertiary":"#744e92","primary-fixed-dim":"#3ed9f0","on-tertiary-container":"#664083"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-md":"1rem","gutter-desktop":"1.5rem","space-xl":"2.25rem","margin-desktop":"2.5rem","margin":"1rem","margin-tablet":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter":"1.25rem"},"fontFamily":{"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"display-hero":["48px",{"lineHeight":"56px","fontWeight":"800"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","fontWeight":"800"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop mx-auto flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs font-headline-md text-headline-md text-primary tracking-tight" data-path="dashboard" href="#"><span class="text-primary font-bold">ToonLog</span><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider">BETA</span></a><a class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors ml-space-sm pl-space-sm border-l border-outline-variant/40" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">arrow_back</span><span class="font-label-md text-label-md hidden sm:inline">스튜디오 홈</span></a></div><nav class="hidden xl:flex items-center gap-space-xs p-1" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="studio" href="#">만들기 (Studio)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="feed" href="#">피드 & 탐색 (Feed)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-archive" href="#">내 웹툰 다이어리 (My Archive)</a><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="pricing" href="#">요금제 & 멤버십 (Pricing)</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-xs rounded-full shadow-[0_0_16px_rgba(2,194,217,0.12)]"><span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span><span class="font-label-sm text-label-sm text-on-surface-variant">오늘 무료 <strong class="text-primary font-bold">1/1</strong> 생성</span></div><button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs border-l border-outline-variant/40"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(2,194,217,0.2)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">소라 작가님</span><span class="font-label-sm text-label-sm text-tertiary leading-tight">Pro Creator</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full">
+<div class="w-full px-gutter-desktop max-w-[1440px] mx-auto py-space-xl flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md mb-1 w-fit" data-path="studio" href="/studio">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>스튜디오 홈으로 돌아가기</span>
+</a>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">인스타그램 자동 연동 & 원클릭 발행 관리 스튜디오</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            Meta Graph API v20.0
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">ToonLog에서 창작한 4컷 만화 다이어리를 고화질 피드 규격에 맞춰 자동 최적화하고 인스타그램 채널로 즉시 퍼블리싱합니다.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<span class="px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+          인스타 비즈니스 프로 연동됨
+        </span>
+</div>
+</div>
+<!-- 1. Account Connection & Channel Health Status -->
+<div class="w-full rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-full bg-gradient-to-tr from-tertiary-container via-primary-container to-secondary-container p-1 shadow-md">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stylish modern Korean webtoon creator female avatar with headphones, drawing digitally, pastel cyan and purple palette, artistic cartoon profile style, luminous lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAychujUKOa60GKoBaVoo21Iyd3sxH3u0eF9zeWgEbRcFhkPTzKG6dvtj57MXQ2X_C2VP0ZKhR_bjz1VSAeBdCjCaRHWNWfTFt3iKtTe4rTQcHAYDaTc8VVKK0xAoxeCWPclrapoOP9asNrZKOFmyGFpV_ycBxTUQ0unvTvKYmCd0dfTgTB0T0EJS0EMy8Exd5VTevF77UnU6NKzh7V5Tn5sM8jIG4gz_lU-85XdUSq"/>
+</div>
+</div>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary ring-2 ring-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-primary">check</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight truncate">@sora_toon_daily</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/40 text-on-primary-container font-label-sm text-label-sm font-semibold">팔로워 12.4K</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">인스타툰 크리에이터</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1 flex-wrap font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]">cloud_done</span>
+              정상 연동됨 (자동 발행 준비 완료)
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">timer</span>
+              액세스 토큰 만료 58일 남음 (자동 갱신 활성)
+            </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full lg:w-auto shrink-0 justify-end">
+<button class="px-space-md py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+          토큰 즉시 재동기화
+        </button>
+<button class="px-space-md py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">switch_account</span>
+          계정 전환 / 재인증
+        </button>
+</div>
+</div>
+<!-- Main Workspace Split (Left Settings, Right Preview & Engine) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column (Format & Auto Strategy) -->
+<div class="xl:col-span-7 flex flex-col gap-space-xl">
+<!-- 2. Instagram Post Format & Visual Optimization Setting -->
+<section class="w-full rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">view_carousel</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">인스타그램 비주얼 및 규격 최적화</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">모바일 알고리즘 노출과 체류 시간을 극대화하는 맞춤 레이아웃 설정</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">스마트 리사이징</span>
+</div>
+<!-- Aspect Ratio Presets -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span>슬라이드 비율 프리셋 선택</span>
+<span class="text-tertiary font-normal text-body-sm">(추천 규격 적용 시 노출량 +28%)</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<label class="cursor-pointer relative rounded-xl p-space-md bg-secondary-fixed/30 hover:bg-secondary-fixed/50 transition-all flex items-start gap-space-sm shadow-sm">
+<input checked="" class="mt-1 accent-primary" name="aspect_ratio" type="radio" value="4:5"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">캐러셀 4:5 세로형</span>
+<span class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">도달률 최고</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">1080 × 1350px • 피드 화면 가득 채움</span>
+<span class="font-label-sm text-label-sm text-primary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">smartphone</span> 모바일 스크롤 이탈 방지
+                  </span>
+</div>
+</label>
+<label class="cursor-pointer relative rounded-xl p-space-md bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-sm shadow-sm">
+<input class="mt-1 accent-primary" name="aspect_ratio" type="radio" value="1:1"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">정사각 1:1 클래식</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">표준</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">1080 × 1080px • 전통 4컷 만화 비율</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">grid_view</span> 격자 피드 썸네일 왜곡 제로
+                  </span>
+</div>
+</label>
+</div>
+</div>
+<!-- Feature Toggles -->
+<div class="flex flex-col gap-space-sm pt-2">
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">title</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">첫 컷 썸네일 제목 타이틀 바 오버레이</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">피드 탐색 탭에서 눈에 띄도록 에피소드 제목을 세련된 그래픽 배너로 합성합니다.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 ml-4">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface block">팔로우 & 좋아요 유도 엔딩 슬라이드 자동 부착</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-container/50 text-on-tertiary-container font-label-sm text-label-sm font-semibold">인터랙션 +40%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4컷 만화 완결 후 마지막 5번째 슬라이드에 작가 프로필 CTA 카드를 자동 배치합니다.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 ml-4">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">branding_watermark</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">ToonLog 브랜드 워터마크 숨김</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Pro Creator 멤버십 혜택 적용 중 (클린 퍼블리싱 활성화)</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock_open</span> 무제한 제거됨
+              </span>
+</div>
+</div>
+</section>
+<!-- 3. AI Caption & Automated Hashtag Strategy Engine -->
+<section class="w-full rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">AI 캡션 & 스마트 해시태그 전략 엔진</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">웹툰 줄거리 및 일기 감정을 분석하여 최적의 인스타그램 본문과 태그를 작성했습니다.</p>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span> AI 문구 재작성
+            </button>
+</div>
+<!-- Caption Text Editor -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold">인스타그램 피드 본문 캡션 (수정 가능)</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">142 / 2,200자</span>
+</div>
+<div class="relative">
+<textarea class="w-full rounded-2xl bg-surface-container-low p-space-md font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container transition-all resize-none shadow-inner leading-relaxed" rows="4">퇴근길 지하철 멘탈 바사삭 직전에 만난 천사...🐾💛 발끝에 닿은 작은 온기 덕분에 이번 주도 버텨볼 힘 충전 완료! 다들 오늘 하루도 따뜻하게 보내세요✨</textarea>
+<div class="absolute bottom-3 right-3 flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container-highest/80 hover:bg-surface-container text-on-surface-variant flex items-center justify-center text-sm" title="이모지 추가" type="button">
+                  😊
+                </button>
+</div>
+</div>
+</div>
+<!-- Smart Hashtags -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold">스마트 해시태그 번들 (클릭하여 켜기/끄기)</label>
+<span class="font-label-sm text-label-sm text-primary font-medium">선택된 태그 6개 • 예상 도달 인덱스 94점</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm" type="button">
+                #인스타툰 <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm" type="button">
+                #일상툰 <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm" type="button">
+                #출근길힐링 <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm" type="button">
+                #월요병극복 <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm" type="button">
+                #4컷만화 <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm" type="button">
+                #반려견툰 <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+                + 태그 직접 입력
+              </button>
+</div>
+</div>
+<!-- Engagement Booster: First comment auto-post -->
+<div class="p-space-md rounded-2xl bg-secondary-container/20 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">forum</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">인게이지먼트 부스터: 첫 댓글 소통 질문 자동 등록</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">발행 직후 1초 내로 첫 댓글에 질문을 남겨 독자 참여율과 댓글 알고리즘 가중치를 높입니다.</p>
+<div class="bg-surface-container-lowest rounded-xl p-2.5 flex items-center gap-2 shadow-inner">
+<span class="material-symbols-outlined text-secondary text-[16px]">chat_bubble_outline</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none" type="text" value="여러분은 오늘 어떤 일로 힐링하셨나요? 댓글로 나눠주세요! 💬✨"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Live Carousel Mockup & Publishing Schedule) -->
+<div class="xl:col-span-5 flex flex-col gap-space-xl">
+<!-- Live Carousel Preview Mockup -->
+<div class="w-full rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">phone_iphone</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">인스타그램 피드 실시간 프리뷰</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">슬라이드 1 / 5</span>
+</div>
+<!-- Phone Card Wrapper -->
+<div class="w-full bg-surface-container-lowest rounded-2xl shadow-md p-space-sm flex flex-col gap-space-xs">
+<!-- IG Header Mockup -->
+<div class="flex items-center justify-between px-2 py-1">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-container p-0.5">
+<div class="w-full h-full rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Clean minimal avatar icon of a girl illustrator with cozy teal beanie." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlwcsfNETKWdovL7atjle3kK_embsLREVClaVQ7e2vJ7icKeJSW-PRAaVK01ukSik4dCN4NE2EuCFoPxwQk0lZty7X43XoKfWX46rThQ_s868wbs_qgpe1ELXYaHtwRut_JdV-WUgLDUWnj2bEGJ-_9KWg1rELlfRnvbowZOcOEzVX4o3yzn4JkhSc1VQCPNfXa8JNVLCbmC4hTyfyvG6moHx7nv6XDUichEhDaxq4"/>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold leading-none">sora_toon_daily</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-0.5">서울시 마포구 • 오리지널 웹툰</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">more_horiz</span>
+</div>
+<!-- Slide Image (4:5 Aspect Container) -->
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="First panel of a heartwarming webtoon in 4:5 vertical proportion: a tired young professional sitting on a late evening subway seat, feeling exhausted, when suddenly a cute golden retriever puppy gently touches her shoe. Warm glowing cinematic light, clean pastel comic line art with turquoise accents, speech bubble '퇴근길의 작은 천사'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH77oDPkIigD03bzmyo5I6ffMuiC_hvXsXlekUy2-gGglafulI7zXmyBEnO87hFVGmHyoEsovQUbihl26zV3ZdhwTzCHEgWhqgI6f6jsGhBF03ikdbc4HcKw9zM_doju91qKLUf34ZgyWpRefXEYQNalEYcnQ8MYzDKtH6_Vu3M67QBnKE6UN2bI66A6QRFdKoHk1ssQfaZcmqQ7G8glAanEFLJGyw4Z8Qh1vHyzmE"/>
+<!-- First slide Title Bar Overlay -->
+<div class="absolute top-0 inset-x-0 bg-gradient-to-b from-inverse-surface/80 via-inverse-surface/40 to-transparent p-4 flex flex-col text-inverse-on-surface">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase tracking-wider">Ep. 42</span>
+<span class="text-xs bg-surface-container-lowest/20 backdrop-blur-md px-2 py-0.5 rounded-full text-inverse-on-surface">1/5</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold mt-1 text-white tracking-tight drop-shadow-sm">출근길의 작은 힐링견 🐾</h4>
+</div>
+<!-- Quick Slide Dots Navigation Indicator -->
+<div class="absolute bottom-3 inset-x-0 flex justify-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary shadow-sm"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>
+</div>
+</div>
+<!-- IG Actions -->
+<div class="flex items-center justify-between px-2 pt-2">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-[22px] text-error" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-[22px]">chat_bubble_outline</span>
+<span class="material-symbols-outlined text-[22px]">send</span>
+</div>
+<span class="material-symbols-outlined text-[22px] text-on-surface">bookmark_border</span>
+</div>
+<div class="px-2 pb-1">
+<p class="font-label-md text-label-md text-on-surface"><span class="font-bold">sora_toon_daily</span> 퇴근길 지하철 멘탈 바사삭 직전에 만난 천사...🐾💛</p>
+</div>
+</div>
+</div>
+<!-- 4. Scheduled Publishing Calendar & Queue Settings -->
+<section class="w-full rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[20px]">schedule_send</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">발행 스케줄링 설정</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">지금 바로 업로드하거나 타깃 오디언스 피크 타임에 예약하세요.</p>
+</div>
+</div>
+</div>
+<!-- Schedule Mode Selector -->
+<div class="grid grid-cols-2 gap-space-xs p-1 rounded-xl bg-surface-container">
+<button class="py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+              즉시 발행하기
+            </button>
+<button class="py-2.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-bold shadow-sm flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">alarm_on</span>
+              최적 시간 자동 예약
+            </button>
+</div>
+<!-- Peak Recommendation Box -->
+<div class="rounded-xl p-space-md bg-secondary-fixed/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-secondary-fixed font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+                추천 골든 타임 (팔로워 활성 피크)
+              </span>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold">참여율 98%</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">event_available</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">오늘 저녁 20:30 (KST)</span>
+</div>
+<button class="text-primary hover:underline font-label-sm text-label-sm font-semibold" type="button">시간 변경</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">지난 30일간 @sora_toon_daily 팔로워의 접속률이 가장 높았던 시간대입니다.</p>
+</div>
+</section>
+</div>
+</div>
+<!-- 5. Primary CTA Sticky Action Bar -->
+<div class="w-full rounded-2xl bg-surface-container-lowest p-space-md sm:p-space-lg shadow-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold block">발행 준비 완료</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">캐러셀 5장 • 4:5 최적화 • 스마트 해시태그 포함</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end flex-wrap">
+<button class="px-space-md py-3 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">send_and_archive</span>
+          테스트 비공개 전송
+        </button>
+<button class="px-space-lg py-3 rounded-full bg-gradient-to-r from-primary-container via-primary to-secondary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:opacity-95 transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+          오늘 저녁 20:30에 예약 발행하기
+        </button>
+</div>
+</div>
+<!-- Recent Publishing History & Analytics Table -->
+<section class="w-full rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">인스타그램 퍼블리싱 히스토리 & 예약 큐</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ToonLog를 통해 송고된 최근 인스타툰 성과 및 대기열 목록</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> 대기 1건</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> 완료 18건</span>
+</div>
+</div>
+<!-- History Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<th class="py-3 px-4 rounded-l-xl">에피소드 정보</th>
+<th class="py-3 px-4">규격 및 슬라이드</th>
+<th class="py-3 px-4">발행 상태</th>
+<th class="py-3 px-4">일시</th>
+<th class="py-3 px-4">인사이트 (좋아요/저장)</th>
+<th class="py-3 px-4 rounded-r-xl text-right">관리</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 (Scheduled Queue Item) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-14 rounded-lg overflow-hidden shrink-0 shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Miniature thumbnail of puppy meeting webtoon artwork, pastel colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6L0wUiccM7u4FYhF6i6d3zn-Xq9MU0TJ22MsjF2TLFlU7Q9p1HVBAa7PP4uVUPSaD8kpBoCaG3-2tIXT2sg86uwwSYtLJKCjcmUeeDsy5fq19trbNrozX7pCbg-9dSd3wvA0JwuSL9lNChguxhLAj6QF2-cw0u_IMV4HgqbfGrtx0VnSwjPmuy44xjVH9uOtUn1QGUf8je8YfOPG-wuNrKZN23rf5uooBLPks513y"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">출근길의 작은 힐링견</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ToonLog AI #42 다이어리 연계</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">4:5 캐러셀 (5장)</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">alarm</span>
+                  예약 대기 중
+                </span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface">
+                오늘 20:30 (자동 송고 예정)
+              </td>
+<td class="py-4 px-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm">- 발행 후 집계 -</span>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="text-primary hover:text-on-surface transition-colors font-label-md text-label-md font-semibold px-2 py-1" type="button">수정/취소</button>
+</td>
+</tr>
+<!-- Row 2 (Published Success) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-14 rounded-lg overflow-hidden shrink-0 shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Webtoon panel cover of delicious Korean winter fish pastry bungeoppang in rain, warm cozy illustration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMIAB6KUF8AAMaYGxNA-N8OV_QyyUiTY6RqiaHcQiTjPgJltW6WPIT6P-2H3Mh4IrZSs0JGOVA_KK0yR8BSjUeL7yEUwIrVqOGI35YeYRgNekSl-5bFVi3rt7V_9brblSNuuXP8pq95CuWduaj-PPVuFOrQogpBAsZ3ZmBiw4B1PcMVoBG-lBLFpi6X4GTuKIsSt5DvjxVIJNQFRY5zbv3FsY8uwGQtw4BxnCkWPtF"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">비 오는 날의 붕어빵</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ToonLog AI #41 다이어리 연계</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">4:5 캐러셀 (4장)</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container/30 text-on-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  발행 성공
+                </span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">
+                11월 12일 (화) 20:35
+              </td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-error text-[16px]">favorite</span> 1,420
+                  </span>
+<span class="flex items-center gap-1 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-primary text-[16px]">bookmark</span> 342
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 inline-flex items-center gap-1" href="#">
+                  보기 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 (Published Success) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-14 rounded-lg overflow-hidden shrink-0 shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Comical webtoon panel of an exhausted girl trying a gym fitness machine for the first time." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy4GQSvDB-O4MEu0HpwY6B32XkoDj6MA-f3T9MN9dQIJ8scAy8qgbNVoWqrUVT-HmbOZH0FbaQ0ydLDEvo_CLmXjQjYQTJE-CTg0ynDRWV9q8L2TrPKdi70jvNQMRF_IT-IB18dn1mJyUJEKHnyP7PlrvmgJooAXkYiovuC8rX_zp9uPolC4Fb19AVrid83VbIqddYMqcmBmgBmaCl8jk10qfXLvd1y5nRjlKaXFFG"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">첫 헬스장 등록기</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ToonLog AI #40 다이어리 연계</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">1:1 정사각 (4장)</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container/30 text-on-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  발행 성공
+                </span>
+</td>
+<td class="py-4 px-4 font-label-md text-label-md text-on-surface-variant">
+                11월 10일 (일) 19:10
+              </td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-error text-[16px]">favorite</span> 980
+                  </span>
+<span class="flex items-center gap-1 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-primary text-[16px]">bookmark</span> 185
+                  </span>
+</div>
+</td>
+<td class="py-4 px-4 text-right">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 inline-flex items-center gap-1" href="#">
+                  보기 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.02)] mt-auto"><div class="w-full px-gutter-desktop mx-auto py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col md:flex-row items-center gap-space-md text-center md:text-left"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">ToonLog</span><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 ToonLog Inc. 일상을 4컷 만화 예술로 기록하는 AI 스토리그래픽 스튜디오.</p></div><div class="flex items-center gap-space-md font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">이용약관</a><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">개인정보처리방침</a><a class="hover:text-on-surface transition-colors" data-path="creator-guide" href="#">창작자 가이드</a><a class="hover:text-on-surface transition-colors" data-path="customer-center" href="#">고객지원센터</a></div></div></footer></body></html>
